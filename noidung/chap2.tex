@@ -1,0 +1,25 @@
+\chapter{Related Works}
+%\large
+\noindent
+
+
+%\section{Mô hình ngôn ngữ - Language model}
+%	\noindent
+%
+	In the past decades, many systems for automatic HC measurement have been introduced with various traditional approaches. In 2005, Wei Lu et al presented a system that used a low-pass filter to reduce noise in ultrasound images and a transformation filter to increase contrast between skull and background (this process method is based on the signature of bones on ultrasound image that usually brighter than the background). And they optimized K-mean algorithm and morphologic binary area opening operation to achieved skull segment. After that, Wei Lu et al assumed the skull was elliptical shape and then applied an iterative randomized Hough transform to predict the offset value of the ellipse. Their result was quite remarkable with the differences between sonographers and the system only 0.52\% while predicting HC \cite{lu}.
+	
+	In 2017, Jing li et al was inspired by ellipse fitting methods, and proposed a system that employed a random forest algorithm to locate the fetal head. Then, they used phrase symmetry algorithm to detect the ellipse center and applied a non-iterative ellipse fitting method to efficiently fit the ellipse on the fetal head. As a result, their method archived an average measurement error of 1.7 mm and outperformed traditional methods \cite{li}.
+	
+	In the next year, Thomas L. A. van den Heuvel et al introduced a method included three systems that measure the HC in all trimester of pregnancy. Each system architecture has different number of pipelines that employs a random forest algorithm to extract Haar-like features and a set of Hough transform, dynamic program, ellipse fitting algorithm to measure the HC. Therefore, by focusing on the nature of each trimester, this system showed not only the feasibility but also the robustness on fetal heads of each trimester \cite{thomas}.
+	
+	Many systems for automatic HC measurement have been introduced with various traditional approaches using Hough transform, Haar-like features, ellipse fitting, etc. giving promising results. However, variations on the dataset are high due to noise, format, screening parameters configurations, etc. Therefore, traditional methods which based on hand-crafted features are not robust to all the variations of the images. 
+	
+	Base on others research, we consider this problem is not only the detection task but it is, specifically, the segmentation task that separates the fetal head from the noisy background. In this research, we focus on a more novel method for fetal head detection and segmentation using convolutional neural networks (CNNs) that show the robustness on a lot of computer vision tasks \cite{yamashita}, \cite{guidetocnn}, \cite{dlvstradition}. 
+	
+	Many models in this research have been utilized to evaluate the performance of different CNNs configuration to analyze the insight of the dataset. The CNN model we used was fine-tuned and trained on 999 ultrasound images, and then it was tested on 335 ultrasound images of the HC-18 dataset which is public on grand-challenge.org. The model significantly shows robustness on the dataset with the detection loss and segmentation loss are 0.0129 and 0.0656 respectively in validation stage.
+
+	
+ 
+	
+	
+

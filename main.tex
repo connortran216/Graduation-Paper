@@ -1,0 +1,47 @@
+\documentclass[12pt]{Thesis}
+%\documentclass[14pt,a4paper]{extreport}
+\input{caidat/package}
+\input{caidat/configuration}
+\input{caidat/command}
+
+\begin{document}
+%	\fontsize{28}{28}\selectfont{fdfdfddffdfdf}
+\pagenumbering{roman}
+\input{khac/trangbia}
+\input{khac/trangbia}
+\input{khac/loicamon} 
+\clearpage
+\input{khac/loicamdoan} %% 2
+\input{khac/nhanxet} %% 3
+\clearpage
+\tableofcontents
+\input{khac/viettat-kyhieu}
+\listoftables
+\listoffigures
+% \listofalgorithms
+\input{khac/loigioithieu} %% 4i
+
+
+\pagenumbering{arabic}
+\input{noidung/chap1}
+\input{noidung/chap2}
+\input{noidung/chap3}
+\input{noidung/chap4}
+\input{noidung/chap5}
+%\input{noidung/chap6}
+%\input{noidung/ket}
+%\input{noidung/nhap}
+
+\input{khac/tailieuthamkhao}
+\nocite{*}
+\newpage
+
+
+\newpage 
+\clearpage
+\newpage
+\vspace{5cm} 
+\addcontentsline{toc}{chapter}{CHỈ MỤC}
+\printindex
+\newpage
+\end{document}

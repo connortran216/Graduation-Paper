@@ -1,0 +1,9 @@
+\newpage
+\clearpage
+\addcontentsline{toc}{chapter}{ABSTRACT} 
+\begin{abstract}
+	\noindent
+  
+  In this paper, we introduce a segmentation system that can automatically measure the fetal head circumference (HC) in real-time by using ultrasound images. With the optimized results, the HC can be applied to estimate the gestational age and keep track on the health of the infants. Therefore, it can help solving the shortage of well-trained specialists, doctors, and sonographers. The system includes three core stages that are responsible for specific task. The first stage is a detection and segmentation stage which adopts convolutional neural network to generate a mask for the fetal head. After that, we optimize the result of the mask by using an ellipse fitting algorithm that smoothing the edge of the mask. Finally, in the third stage, a simple ellipse perimeter calculation is applied to estimate the HC. The system was trained, and tested on 999 ultrasound images and 335 ultrasound images respectively. The model effectively shows a robust performance with the detection loss and segmentation loss are 0.0129 and 0.0656 respectively in validation stage. Thus, it outperforms many traditional systems that employ handcrafted methods to estimate the HC. 
+
+\end{abstract}

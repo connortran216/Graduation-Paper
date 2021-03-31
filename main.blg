@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: ./bibliography.bib
+Warning--empty booktitle in backpropagation
+Warning--empty journal in fastrcnn
+Warning--empty booktitle in rcnn
+Warning--empty booktitle in fcn
+Warning--empty booktitle in fasterrcnn
+Warning--empty publisher in perceptron
+Warning--empty booktitle in dlvstradition
+Warning--empty booktitle in xorproblem
+Warning--empty publisher in dive2dl
+You've used 16 entries,
+            2118 wiz_defined-function locations,
+            589 strings with 6641 characters,
+and the built_in function-call counts, 6232 in all, are:
+= -- 566
+> -- 356
+< -- 5
++ -- 142
+- -- 124
+* -- 466
+:= -- 1025
+add.period$ -- 49
+call.type$ -- 16
+change.case$ -- 108
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 232
+empty$ -- 451
+format.name$ -- 124
+if$ -- 1303
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 18
+newline$ -- 84
+num.names$ -- 32
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 94
+quote$ -- 0
+skip$ -- 171
+stack$ -- 0
+substring$ -- 325
+swap$ -- 58
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 60
+warning$ -- 9
+while$ -- 48
+width$ -- 18
+write$ -- 167
+(There were 9 warnings)

@@ -1,0 +1,97 @@
+\begin{thebibliography}{10}
+
+\bibitem{backpropagation}
+Luiz Camargo, Hegler Tissot, and Aurora Pozo.
+\newblock Use of backpropagation and differential evolution algorithms to
+  training mlps.
+\newblock pages 78--86, 11 2012.
+
+\bibitem{fastrcnn}
+Ross Girshick.
+\newblock Fast r-cnn.
+\newblock 04 2015.
+
+\bibitem{rcnn}
+Ross Girshick, Jeff Donahue, Trevor Darrell, and Jitendra Malik.
+\newblock Rich feature hierarchies for accurate object detection and semantic
+  segmentation.
+\newblock 11 2014.
+
+\bibitem{maskrcnn}
+Kaiming He, Georgia Gkioxari, Piotr Dollar, and Ross Girshick.
+\newblock Mask r-cnn.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  PP:1--1, 06 2018.
+
+\bibitem{thomas}
+Thomas Heuvel, Dagmar de~bruijn, Chris de~Korte, and Bram Ginneken.
+\newblock Automated measurement of fetal head circumference using 2d ultrasound
+  images.
+\newblock {\em PLOS ONE}, 13:e0200412, 08 2018.
+
+\bibitem{guidetocnn}
+Salman Khan, Hossein Rahmani, Syed Shah, and Mohammed Bennamoun.
+\newblock A guide to convolutional neural networks for computer vision.
+\newblock {\em Synthesis Lectures on Computer Vision}, 8:1--207, 02 2018.
+
+\bibitem{lenet}
+Yann Lecun, Leon Bottou, Y.~Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86:2278 -- 2324, 12 1998.
+
+\bibitem{li}
+Jing Li, Yi~Wang, Baiying Lei, Jie-Zhi Cheng, Jing Qin, Tianfu Wang, Shenli Li,
+  and Dong Ni.
+\newblock Automatic fetal head circumference measurement in ultrasound using
+  random forest and fast ellipse fitting.
+\newblock {\em IEEE Journal of Biomedical and Health Informatics}, PP:1--1, 05
+  2017.
+
+\bibitem{fcn}
+Jonathan Long, Evan Shelhamer, and Trevor Darrell.
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock pages 3431--3440, 06 2015.
+
+\bibitem{lu}
+Wei Lu, Jinglu Tan, and Randall Floyd.
+\newblock Fetal head detection and measurement in ultrasound images by an
+  iterative randomized hough transform.
+\newblock {\em Ultrasound in medicine \& biology}, 31:929--36, 08 2005.
+
+\bibitem{fasterrcnn}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
+\newblock Faster r-cnn: Towards real-time object detection with region proposal
+  networks.
+\newblock pages 1--10, 01 2016.
+
+\bibitem{perceptron}
+Frank Rosenblatt.
+\newblock {\em The Perceptron: A Probabilistic Model for Information Storage
+  and Organization (1958)}, pages 183--190.
+\newblock 02 2021.
+
+\bibitem{dlvstradition}
+Joseph Walsh, Niall O'~Mahony, Sean Campbell, Anderson Carvalho, Lenka
+  Krpalkova, Gustavo Velasco-Hernandez, Suman Harapanahalli, and Daniel
+  Riordan.
+\newblock Deep learning vs. traditional computer vision.
+\newblock 04 2019.
+
+\bibitem{yamashita}
+Rikiya Yamashita, Mizuho Nishio, Richard Do, and Kaori Togashi.
+\newblock Convolutional neural networks: an overview and application in
+  radiology.
+\newblock {\em Insights into Imaging}, 9, 06 2018.
+
+\bibitem{xorproblem}
+Zhao Yanling, Deng Bimin, and Wang Zhanrong.
+\newblock Analysis and study of perceptron to solve xor problem.
+\newblock pages 168 -- 173, 12 2002.
+
+\bibitem{dive2dl}
+Aston Zhang, Zachary~C. Lipton, Mu~Li, and Alexander~J. Smola.
+\newblock {\em Dive into Deep Learning}.
+\newblock 2019.
+\newblock \url{http://www.d2l.ai}.
+
+\end{thebibliography}
