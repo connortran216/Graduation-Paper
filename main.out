@@ -9,15 +9,16 @@
 \BOOKMARK [1][-]{section.3.2}{Convolutional neural network}{chapter.3}% 9
 \BOOKMARK [2][-]{subsection.3.2.1}{A brief history of CNN}{section.3.2}% 10
 \BOOKMARK [2][-]{subsection.3.2.2}{A CNN architecture}{section.3.2}% 11
-\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 12
-\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 16
-\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 17
-\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 18
-\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 19
-\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 21
-\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 22
-\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{Gradient descent}{section.3.2}% 12
+\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 13
+\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 18
+\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 20
+\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 23
+\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 24

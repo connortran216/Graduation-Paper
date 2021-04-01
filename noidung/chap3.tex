@@ -225,7 +225,109 @@
 	\end{figure}
 	
 	
+\subsection{Gradient descent}
+	\noindent
 	
+	In deep learning in particular and optimization math in general, we often have to find the smallest value of a function. However, finding the global minima of loss functions in deep learning is very complicated or even impossible. Instead, people often try to find the local minima points, and to a certain extent, consider it the solution to be found in the problem.
+	
+	The local minima points are the solutions of the derivative equation equal to 0. If it is possible to find the whole (finite) minimum points, we can replace each of those local minimum points into the objective function and then find the point making it the smallest value. 
+	
+	Yet, in most cases it is not possible to solve zero derivative equations. The cause can come from the complexity of the derivative form, from the fact that the data points have a large number of dimensions (Look at figure bla bla for more detail).
+	
+	\begin{figure}[H]
+		\centering
+		{\includegraphics[width=0.5\textwidth]{./hinhanh/chap3/flutuate_plate.jpg}}
+		\caption{It is hard for GD to be converging at global minima.}
+	\end{figure}
+	
+%	\begin{figure}[H]
+%		\centering
+%		\subcaptionbox{Gradient descent in a perfect condition.}{\includegraphics[width=0.3\textwidth]{./hinhanh/chap3/GD.png}}%
+%		\hfill % <-- Seperation
+%		\subcaptionbox{Gradient descent is stuck at local minima.}{\includegraphics[width=0.3\textwidth]{./hinhanh/chap3/GD-2.png}}%
+%		\hfill % <-- Seperation
+%		\subcaptionbox{Gradient descent with momentum overcome local minima.}{\includegraphics[width=0.3\textwidth]{./hinhanh/chap3/GD_momentum.png}}%
+%		\hfill % <-- Seperation
+%		\caption{Gradient descent versus Gradient descent with momentum.}
+%	\end{figure}
+	
+	The most typical approach is to start from a point that we consider to be close to the global minima, then use an iteration to move closer to the desired point. Gradient Descent (GD) and its variations are among the most popular methods.
+	
+	In this part, we will take gradient descent in one dimension as a simple example to explain it functional mechanism. Let assume we have a function as follow.
+	
+	\[f(x) = \frac{1}{2} \cdot (x - 1)^2 -2\]
+	
+	Supposed $x_t$ is the point that we find after the $t$-th iteration. The goal is to define a function that can bring $x_t$ as close as possible to the global minima after a specific number of iteration.
+	
+	\begin{figure}[H]
+		\centering
+		{\includegraphics[width=0.3\textwidth]{./hinhanh/chap3/simple_f(x).png}}
+		\caption{$ f(x) = \frac{1}{2} \cdot (x - 1)^2 -2 $.}
+	\end{figure}
+	
+	Look at the plot of the objective function. It is noticeable that if the derivative of the objective function at $x_t$ is greater than zero, $x_t$ will stay on the right compared to the global minima and contrast. Therefore, to bring $x$ closer to the goal, it is needed to be moved toward the left side of the minima which means the negative side. In other word, $x_t$ has to move oppositely to the derivative.  
+	
+	\[x_{t+1} = x_t + \Delta \] $\Delta$ is a quantity opposite to the derivative $f'(x)$
+	
+	\noindent	
+	The farther away $x_t$ is from x to the right, the larger $f(x_t)$ and vice versa. Therefore, delta is proportional to $-f'(x_t)$.
+	\noindent	
+	As a result, the equation is represented as following:
+	
+	\[x_{t+1} = x_t - \eta \cdot f'(x_t)\]
+	
+	Where $\eta$ is a positive number called learning rate. The minus shows that it has to move oppositely to the derivative. It is the reason why this method is called Gradient Descent (means moving backward). In conclusion, the constructing of the function above, even though it is not always reasonable for all problems, it is a foundation for lots of optimization approach in general and deep learning in particular.
+	
+	\subsubsection{Multivariate gradient descent}
+	\noindent
+	
+	Let say we need to find global minima cho the function $f(\theta)$ that $\theta$ is a vector usually used to denote the set of parameters (or weights) of the objective function. The derivative of the function at any $\theta$ is denoted as $\nabla_{\theta}f(\theta)$. It is similar to one variable function, GD for multivariate is also started at a predicted point $\theta_0$. After that, it is updated as following:
+	
+	\[\theta_{t+1} = \theta_t - \eta\nabla_{\theta}f(\theta_t) \]
+	
+	\noindent	
+	Or it is simply represented as:
+	
+	\[\theta = \theta - \eta\nabla_{\theta}f(\theta) \]
+	
+	\noindent
+	Note: Always move oppositely to the derivative.
+	
+	\subsubsection{Gradient descent variants}
+	\noindent
+	
+	In general, there are in total three variants of GD algorithm. Each of them has has a unique approach on using the amount of data to calculate the derivative of the objective function. Therefore, the amount of data used will affect directly on the convergence speed of the derivative and may cause a trade-off between the accuracy and the time on each update of the weights.
+	
+	
+	\paragraph{Batch gradient descent}
+	\noindent
+
+	The GD algorithm is mentioned from the beginning of GD section is the vanilla one - batch gradient descent. In this circumstance, the word "batch" means "all" which means all of the data $x_i$ are used whenever an update is perform on the weights $\theta = w$.
+	
+	This vanilla approach works ineffectively if there is a huge dataset. Because it has to calculate gradient and update weights for all data in the dataset after each epoch which slowdown the training process.
+	
+	\paragraph{Stochastic gradient descent}
+	\noindent
+
+	In deep learning, the objective function is usually the average of the loss functions for each example in the training dataset. By using SGD, at a time, only one data point $x_i$ is used to calculate gradient and then it updates the weights -  $\theta$. This work is executed with each data point in the whole dataset and repeated after each epoch. 
+	
+	\[\theta = \theta - \eta \nabla_{\theta} J(\theta; x_i; y_i)\]
+	
+	\noindent
+	$ J(\theta; x_i; y_i)$ is a loss function with the input is a pair data (input, label).
+	
+	With normal GD, each epoch corresponds to 1 update $\theta$, but with SGD, each epoch corresponds to $N$ update $\theta$ ($N$ is the number of data points in the dataset). Look at one hand, updating is executed on each data point may lead to a slow training epoch. Look at the other hand, SDG only requires a few epoch to complete its training process. Therefore, SGD is suitable for a huge dataset rather than the vanilla one.
+	
+	
+	\paragraph{Mini-batch gradient descent}
+	\noindent
+	
+	Similar to SGD, mini-batch GD uses $n$ data points (greater than 1 and smaller than the whole dataset). Mini-batch GD starts each training epoch by shuffle all data points and divides them into small batches. Each of them has $n$ data points (except for the last batch may have fewer if $N$ is not divisible to $n$) At each update, mini-batch GD takes one batch to calculate gradient and updates it as following.
+	
+	\[ \theta = \theta - \eta \nabla_{\theta} J(\theta; x_i; y_i) \]
+	
+%	\noindent
+%	Mini-batch GD is widely used in most Machine Learning algorithms, especially in Deep Learning.
 	
 	
 	
