@@ -1,147 +1,17 @@
 \chapter{Introduction}
-%\large
+\section{Reason for choosing topic}
 \noindent
-
-
-%\section{General Introduction}
-% \noindent
 	
 	In the modern world of medical field, ultrasound images are the most broadly used to monitor and diagnosis fetus during pregnancy. Many women prefer to use it to follow the development of fetus because it is economical, real-time monitoring, and extremely safe compared to X-rays or others types of imaging systems that use radiation based-method. Ultrasound examinations provide parents with a valuable opportunity to understand the health status of their unborn child. While ultrasound is considered to efficient and safe, it still has several disadvantages. 
 	
-	The process of ultrasound imaging depends mostly on the one who operates the system for its signature noises on image such as shadows and reverberations which makes the image extremely hard to observe and diagnose the fetus’ status. That is why ultrasound system can only use by well-trained, professional specialists, doctors, and sonographers which leads to the shortage human resources in poor and developing countries.
+	The process of ultrasound imaging depends mostly on the one who operates the system for its signature noises on image such as shadows and reverberations which makes the image extremely hard to observe and diagnose the fetus’ status. That is the reason why ultrasound system can only be used by well-trained, professional specialists, doctors, and sonographers which leads to the shortage human resources in poor and developing countries.
 	
-	In the fetal ultrasound image, ultrasound allow the visualization of some body features, possibly other parts such as fingers and toes of the fetus. Based on these important features, many biometric measurements are applied by doctors or ultrasound imaging operators. For example, the crow-rump length (CRL) and head circumference (HC) are commonly calculated to estimate the gestational age (GA) and given diagnosis about growth of the fetus. The CRL widely uses for its accuracy to estimate the GA of the fetus in the age between 8 weeks 4 days and 12 weeks.	 After 13 weeks, specialists usually use HC for its accuracy instead of CRL. The instruction of HC measurement state that HC should be measured in a transverse section of the head with a central midline echo, interrupted in the anterior third by the cavity of the septum pellucidum with the anterior and posterior horns of the lateral ventricles in view \cite{thomas}. 
+\section{Target implementation}
+\noindent
+	
+	In the fetal ultrasound image, ultrasound allow the visualization of some body features, possibly other parts such as fingers and toes of the fetus. Based on these important features, many biometric measurements are applied by doctors or ultrasound imaging operators. For example, the crow-rump length (CRL) and head circumference (HC) are commonly calculated to estimate the gestational age (GA) and given diagnosis about growth of the fetus. The CRL widely uses for its accuracy to estimate the GA of the fetus in the age between 8 weeks 4 days and 12 weeks. After 13 weeks, specialists usually use HC for its accuracy instead of CRL. The instruction of HC measurement state that HC should be measured in a transverse section of the head with a central midline echo, interrupted in the anterior third by the cavity of the septum pellucidum with the anterior and posterior horns of the lateral ventricles in view \cite{thomas}. 
 	
 	The HC measurement steps are proceeded manually which make the result unstable when being conducted by different doctors. The idea of creating an automated system is born base on the above obstacle. With the support from computer, the HC measurement result will be no longer affected by observer variability along with the shortage of sonographers.
 
     
-    % Một bước trung gian cần thiêt là biểu diễn văn bản. Các phương pháp truyền thống biểu diễn văn bản bằng các features thủ công như sparse lexical features(ví dụ: bag-of-words và n-grams) các phương pháp này có thể không biểu diễn văn bản một cách tự động.
     
-    % Đối với phân loại văn bản bằng các phương pháp học sâu, wỏd embedding dựa trên các phương pháp như aggregated word embeddings as document embeddings, jointly learned word/document and label embeddings. Xây dựng bộ biểu diễn tài liệu sau khi học các word embedding. Các phương pháp phân loại văn bản thường được dùng trong deep learning bao gồm: Convolution neural network (CNN)- dùng CNN trên từ( Word CNN) và trên ký tự( Chart CNN). Recurrent neural network( RNN)- LSTM, Bi-LSTM. Cơ chế Atttention( Attention mechanisms)- Hierarchical Attention Networks,\ldots
-
-    % GCN là một kiến trúc mạng neural trên đồ thị có thể giữ được cấu trúc chung của đồ thị trong graph embedding( Ví dụ: node, cạnh, đồ thị con, toàn bộ graph embedding). Chỉ với 2 lớp GCN với tham số khởi tạo ngẫu nhiên có thể tạo ra các features biểu diễn các node trong mạng.
-    
-    % Một đồ thị $G = (V, E)$ với $V (\left | V \right | = n)$ là tập các đỉnh của đồ thị, E là tập các cạnh của đồ thị và mỗi node tong đồ thị sẽ có cạnh với chính nó . $X \in \mathbb{R}^{n x m}$ là ma trận features của node. Ma trận kề A, bậc ma trận, $D_{ii} = \sum_{j}^{} A_{ij}$ (Indegree). $\tilde{A} = D^{-1/2}AD^{-1/2}$: normalized symmetric adjacency matrix. $W_j$ : trọng số ma trận, được huấn luyện thông qua Stochastic Gradient Descent (SGD).
-% \section{Thuật ngữ}
-% Phần này chúng tôi định nghĩa một số thuật ngữ chính yếu của công nghệ chuỗi khối của Hyperledger Fabric phiên bản 1.4.
-% \begin{itemize}
-% 	\item \textbf{Khối} (block): Một khối chứa một tập hợp các giao dịch (transaction) có thứ tự. Nó liên kết bằng mật mã đến khối phía trước và được liên kết bằng mật mã từ khối tiếp theo. Hình \ref{fig:block} minh hoạ một chuỗi khối gồm ba khối B0, B1 và B2. Khối đầu tiên của một chuỗi khối được gọi là khối khởi điểm (genesis). Các khối được tạo bởi hệ thống sắp xếp (ordering system) và xác nhận bởi các máy ngang hàng (peer). Từ giờ trở đi, để ngắn gọn, chúng tôi giữ nguyên thuật ngữ tiếng Anh \textit{peer} đề cập đến một máy ngang hàng nào đó trong mạng chuỗi khối. 
-	
-% 	\begin{figure}
-% 		\centering
-% 		\includegraphics[scale=0.45]{./hinhanh/block.png}
-% 		\caption{Khối B1 liên kết mật mã với khối B0. Khối B2 liên kết mật mã với khối B1. B0 là khối khởi đầu.}
-% 		\label{fig:block}
-% 	\end{figure}
-
-% 	\item \textbf{Chuỗi} (chain): Bao gồm các khối băm liên kết (hash-linked block). Các peer nhận các khối từ dịch vụ sắp xếp (ordering service). Mỗi peer sẽ đánh dấu các giao dịch trong khối hợp lệ hay không hợp lệ dựa vào các chính sách chứng nhận (endorsement policy) và vi phạm đồng thời (concurrency violation), sau đó nối khối vào chuỗi băm trên hệ thống tập tin của peer đó.
-	
-% 	\item \textbf{Sổ cái} (ledger): Một sổ cái bao gồm hai thành phần phân biệt: chuỗi khối và cơ sở dữ liệu trạng thái (state database). Cơ sở dữ liệu trạng thái còn được biết với tên khác là trang thái toàn cục (world state)\footnote{Trong khuôn khổ Hyperledger Fabric chúng tôi dịch là \textit{trạng thái toàn cục}, tuy nhiên với Ethereum hoặc Bitcoin thuật ngữ phù hợp là \textit{trạng thái toàn cầu}}. Chuỗi khối là bất biến (immutable), theo nghĩa là một khi một khối đã được thêm vào chuỗi, nó không thể thay đổi được. Ngược lại, trạng thái toàn cục là cơ sở dữ liệu chứa các giá trị hiện tại của các cặp \textit{key-value}. Các giá trị này có thể được chỉnh sửa hay xoá và các cặp \textit{key-value} mới cũng có thể được thêm vào bằng các giao dịch hợp lệ. Nói một cách khác, sổ cái nghi nhận tất cả các giao dịch trong quá khứ và hiện tại; một khi giao dịch đã được thêm vào các khối trong chuỗi khối thì không thể điều chỉnh được vì đặc tính cua chuỗi khối là bất biến. 
-	
-% 	\item \textbf{Kênh} (channel): Một kênh là một chuỗi khối riêng cho phép dữ liệu được cô lập và bí mật. Mỗi kênh đều gắn với một sỗ cái. Sổ cái này chỉ được chia sẻ cho các peer trong cùng kênh. Các đối tác giao dịch với kênh phải được chứng thực hợp lệ. Các kênh được định nghĩa bằng cấu hình khối (configuration block). Dữ liệu của cấu hình xác định các thành viên tham gia kênh và các chính sách liên quan đến kênh. Hình \ref{fig:channel} minh hoạ kênh C có ba thành viên. Có thể hiểu rằng có một \textit{sổ cái luận lý} cho mỗi kênh. Các sổ cái luận lý là tách rời nhau. Mỗi peer trong kênh sẽ lưu các bản sao sổ cái luận lý của các kênh mà nó là thành viên. Các bản sao của mỗi sổ cái trong các peer  luôn được giữ nhất quán bằng quá trình đồng thuận. Các sổ cái triển khai theo kiểu này được gọi là công sổ cái phân tán, hiểu theo nghĩa là cùng một sổ cái nhưng các bản sao được phân phối cho các nút mạng. 
-	
-% 	\item \textbf{Quá trình đồng thuận} là uá trình xác nhận việc lưu giữ giao dịch trên sổ cái và được đồng bộ trên mạng, để đảm bảo rằng sổ cái chỉ cập nhật giao khi dịch được chấp nhận bởi những người tham gia. Khi đó sổ cái được cập nhật với những giao dịch trong các khối theo thứ tự được gọi là đồng thuận.
-	
-% 	\begin{figure}
-% 		\centering
-% 		\includegraphics[scale=0.4]{./hinhanh/channel.png}
-% 		\caption{Ứng dụng A1, dịch vụ sắp xếp O1 và peer P2 kết nối với kênh C.}
-% 		\label{fig:channel}
-% 	\end{figure}
-	
-% 	\item \textbf{Peer} (máy ngang hàng): Một \textit{peer} là một máy ngang hàng trong mạng chuỗi khối. Mỗi peer duy trì một sổ cái (có thể nhiều hơn nếu tham gia là thành viên của các kênh) và thực thi các hợp đồng thông minh để thực thi các tác vụ đọc/ghi sổ cái. Hình \ref{fig:peer} minh hoạ các peer trong một mạng chuỗi khối, trong đó cho thấy mỗi peer đều duy trì một sổ cái và hợp đồng thông minh. 
-	
-% 	\begin{figure}
-% 		\centering
-% 		\includegraphics[scale=0.7]{./hinhanh/peer.png}
-% 		\caption{Minh hoạ các peer trong mạng chuỗi khối N.}
-% 		\label{fig:peer}
-% 	\end{figure}
-	
-	
-% 	\item \textbf{Hợp đồng thông minh} (smart constract): Hợp đồng thông minh là mã lệnh - được kích hoạt bởi các ứng dụng khách (client application) nằm ngoài mạng chuỗi khối. Trong Hyperledger Fabric, hợp đồng thông minh được đề cập đến bằng thuật ngữ \textit{chaincode}. Một khi được thực thi, các mã lệnh trong hợp đồng thông minh sẽ truy cập và điều chỉnh cơ sở dữ liệu trạng thái (trang thái toàn cục).
-	
-% 	\item Membership: Đây là nơi mà nhà cung cấp dịch vụ thành viên tham gia - xác định CA gốc và CA trung gian nào đáng tin cậy để xác định các thành viên.
-% 	\item Membership Services: Dịch vụ xác thực thành viên, uỷ quyền quản lý thông tin thành viên trên 
-% 	\item \textbf{Nhà cung cấp dịch vụ thành viên} (Membership Service Provider - MSP): Hệ thống cung cấp thông tin cho người dùng đăng nhập và tham gia vào mạng Hyperledger Fabric. Người dùng sử dụng thông tin này để xác thực giao dịch và peers sử dụng thông tin giao dịch này để xác thực kết quả giao dịch (endorsements).  
-% 	\item \textbf{Tổ chức} (organization): 
-% 	\item \textbf{Hiệp hội} (consortium):
-% 	\item Endorsement policy: 
-% 	\item Hyperledger Fabric CA: Hyperledger Fabric là thành phần của Certificate Authority, chứng nhận thành viên, tổ chức trong mạng và người dùng dựa trên PKI-based.
-% 	\item  Ordering Service: 
-
-	
-	
-% \end{itemize}
-
-
-% \section{Giới thiệu bài toán}
-% Chuỗi cung ứng là một hệ thống phức tạp, bao gồm mạng lưới các thành phần khác nhau và các quy định về bí mật thông tin (trong một giới hạn nào đó) đối với nhà cung cấp và cả đối với người tiêu dùng. Chính sự phức tạp đó đặt ra vấn đề về việc giám sát chuỗi cung ứng nhiều tầng từ nhà cung cấp đến người tiêu dùng. Việc thiếu hụt sự liên kết thông tin giữa các tầng trong chuỗi cung ứng tạo ra kẽ hở có thể che giấu nguồn gốc không rõ ràng của các thành phần trong chuỗi cung ứng (như việc sử dụng lao động trẻ em hoặc nô lệ trong sản xuất, sử dụng nguyên liệu không đảm bảo hoặc từ nguồn phi pháp, sản xuất gây ô nhiễm môi trường ...)\footnote{https://www.provenance.org/whitepaper, truy cập ngày 27 tháng 03 năm 2019}. Trong hầu hết các giao dịch hiện nay, các yếu tố này thường bị che giấu do một hoặc cả hai bên tham gia chuỗi cung ứng (nhà cung cấp, nhà vận tải) tạo ra sự bất cân xứng, thiếu minh bạch trong các thỏa thuận, hợp đồng kinh doanh.
-
-% Song song với đó, hiện nay người tiêu dùng ngày càng quan tâm hơn đến nguồn gốc xuất xứ của sản phẩm cũng như sự ảnh hưởng của môi trường vận chuyển, lưu kho đến chất lượng sản phẩm \cite{carter2008framework, svensson2009transparency}. Hiện nay, các mặt hàng, đặt biệt là hàng nhập khẩu cung cấp thông tin về nguồn gốc rất hạn chế, thông thường chỉ có thông tin nhà sản xuất (manufacturer), nước sản xuất (made in X) \cite{new2010transparent, williams2015}. 
-
-% Cho đến thời điểm hiện nay, chúng ta có rất ít thông tin về những sản phẩm và dịch vụ mà chúng ta sử dụng hàng ngày. Hàng hóa trước khi đến tay người tiêu dùng phải trải qua một loạt công đoạn từ xuất hàng, vận chuyển, lưu kho, bán lẻ... từ nhiều nhà cung cấp dịch vụ khác nhau, thông tin về hàng hóa bị chồng chéo và che giấu khiến người sử dụng và ngay cả nhà cung cấp cũng rất khó có thể tiếp cận và xác thực được những thông tin đó.
-
-% Vào những năm 2000, những thông tin hạn chế này không được nhà sản xuất và người tiêu dùng chú ý. Trong những giao dịch, người bán có lợi thế về kiến thức liên quan đến các sản phẩm và dịch vụ được yêu cầu, có thể cung cấp cho các dịch vụ chất lượng thấp với giá chất lượng cao để theo đuổi lợi nhuận tối đa. Người mua có thể trả chi phí cao cho chất lượng dịch vụ thấp do không có khả năng truy cập đến nguồn thông tin \cite{akerlof1978market}. Về cơ bản, kỳ vọng của người sử dụng không phù hợp với nhận thức của dịch vụ, ví dụ như yêu cầu và trả tiền cho vận chuyển xanh (ít gây ô nhiễm môi trường) nhưng không nhận được dịch vụ tương ứng \cite{nilsson2015controls}.
-
-% Thời gian qua, công nghệ phát triển đã mang đến cho người tiêu dùng nhiều trải nghiệm mới và nhiều sự lựa chọn hơn trong việc sử dụng sản phẩm, dịch vụ. Những thuật ngữ như kinh tế chia sẻ, thực tế ảo, tương tác thực tế, giao hàng tự động, phương tiện giao thông không người lái, máy in 3D, mua bán trực tuyến... đã trở nên quen thuộc. Bên cạnh đó, những chủ đề "nóng" luôn được dư luận quan tâm như thực phẩm sạch, sức khỏe, thực phẩm chức năng, ô nhiễm môi trường, trách nhiệm xã hội... Những yếu tố này tạo nên các hành vi tiêu dùng trong hiện tại và tương lai. Nhu cầu của người dân trong những năm gần đây có sự chuyển biến rõ rệt từ số lượng sang chất lượng hàng hóa. Vấn đề truy xuất nguồn gốc xuất xứ của hàng hóa, đặc biệt là thực phẩm, hiện ngày càng trở nên bức thiết.
-
-% Trong báo cáo nghiên cứu thị trường của công ty Nielsen Việt Nam năm 2018\footnote{Nguyễn Hương Quỳnh, Năm xu hướng định hình hành vi người tiêu dùng Việt https://doanhnhansaigon.vn/marketing-quang-cao/nam-xu-huong-dinh-hinh-hanh-vi-nguoi-tieu-dung-viet-1086040.html.} đã chỉ ra những yếu tố ảnh hưởng đến quyết định mua hàng của người Việt Nam như sau:
-
-% \begin{itemize}
-% 	\item Trong các yếu tố có thể ảnh hưởng đến quyết định mua hàng, bao gồm: nguồn gốc, chất lượng, tính năng, mùi vị, mua sắm để tặng/thưởng, bao bì, khuyến mãi, sưu tập, giá cả... đại đa số người Việt (80 - 90\%) khẳng định nguồn gốc là yếu tố then chốt ảnh hưởng đến quyết định mua hàng của họ so với các yếu tố khác;
-% 	\item Có đến 3 trong 4 người Việt đọc kỹ các thông tin về sức khỏe liên quan đến sản phẩm họ sử dụng (88\%) và tìm hiểu kỹ về các thông tin dinh dưỡng được cung cấp bởi sản phẩm họ sử dụng (74\%).
-% \end{itemize}
-
-% Sách trắng (white paper) của dự án về chủ nghĩa tự do mới (neoliberalism) Provenance.org chỉ ra sự tăng trưởng không ngừng các yêu cầu của chính phủ và người dân đối với sự minh bạch của các thương hiệu, nhà sản xuất và vận chuyển trong toàn bộ chuỗi cung ứng. Tại Anh, 30\% người tiêu dùng lo ngại về các vấn đề liên quan đến nguồn gốc sản phẩm, nhưng việc đấu tranh chỉ dừng lại ở việc thay đổi quyết định mua hàng của họ. Thị trường cho các sản phẩm có nguồn gốc đã được chứng minh đang phát triển. Trong tương lai, các quy định như chỉ thị của châu Âu về báo cáo phi tài chính hoặc Đạo luật nô lệ hiện đại của Vương quốc Anh (UK Modern Slavery Act) sẽ yêu cầu các công ty cung cấp thông tin tin cậy về các dấu vết kinh doanh (business footprint) của họ.
-
-% Rõ ràng, trong thời đại thông tin luôn được phổ biến và cập nhật liên tục chỉ với một cú nhấp chuột như hiện nay, các hoạt động marketing và truyền thông không chỉ là những lời nói suông của các doanh nghiệp mà phải là những tuyên bố, cam kết về chất lượng, nguồn gốc sản phẩm chính xác và rõ ràng. Để đảm bảo được lòng tin của khách hàng, các bên tham gia chuỗi cung ứng phải minh bạch hóa hoạt động của mình (nhưng vẫn phải đảm bảo được tính bí mật thông tin theo những chính sách của công ty), người dùng có thể truy xuất ngược lại những thông tin về sản phẩm một cách đơn giản và tin cậy.
-
-% Vấn đề quản lý chất lượng và nguồn gốc sản phẩm càng trở nên khó khăn do chuỗi cung ứng bao gồm nhiều tầng, nhiều giai đoạn. Việc minh bạch hóa thông tin là vấn đề quan trọng cần phải giải quyết để đảm bảo lòng tin của người tiêu dùng. Trong [9]các tác giả định nghĩa về sự minh bạch như sau: sự minh bạch chính là sự sẵn sàng về thông tin dành cho các bên tham gia vào giao dịch cũng như là những người quan sát bên ngoài. Mở rộng hơn nữa, sự minh bạch được thể hiện thông qua khả năng theo dấu, xuất phát từ nguồn nguyên liệu đầu vào đến sản phẩm hoặc dịch vụ đầu cuối.
-
-% Thiếu đi những thông tin về hàng hóa, dịch vụ dẫn đến việc chúng ta sử dụng các sản phẩm gây ô nhiễm môi trường, cạn kiệt tài nguyên, gây ra các vấn đề về môi trường và xã hội, ảnh hưởng xấu đến hệ sinh thái. Việc giới hạn thông tin trong chuỗi cung ứng làm giảm khả năng ngăn ngừa các vấn đề về môi trường, xã hội và sức khỏe và an toàn cho người tiêu dùng (theo Leonardo Bonanni, Người sáng lập Sourcemap).
-
-% Sự minh bạch cho phép mọi sản phẩm, dịch vụ được đi kèm với một 'hộ chiếu' kỹ thuật số chứng minh tính xác thực. Mọi thay đổi về thông tin của sản phẩm/dịch vụ đó đều được ghi lại trên một hệ thống lưu trữ tin cậy và không phụ thuộc vào bên thứ ba. Việc tìm lại những thông tin về sản phẩm (trước và sau khi thay đổi) đều phải được thực hiện một cách dễ dàng đối với tất cả mọi cá nhân (có tham gia hoặc không tham gia vào đường đi của sản phẩm, dịch vụ đó). Rõ ràng tính minh bạch đem lại lợi ích rất lớn cho nhà sản xuất và cả người tiêu dùng như: ngăn chặn được việc sản xuất và bán hàng giả, hàng kém chất lượng; ràng buộc các bên tham gia vào chuỗi cung ứng phải đảm bảo được chất lượng hàng hóa cũng như dịch vụ của mình; giảm chi phí cho việc truy xuất lại nguồn gốc, thông tin sản phẩm khi xảy ra tranh chấp...
-% Những nghiên cứu đã chỉ ra rằng có sự tương quan giữa tính minh bạch và khả năng theo dấu. Skilton và Robinson \cite{skilton2009traceability} định nghĩa theo dấu là khả năng xác định và xác minh các sự kiện theo từng bước diễn ra trong một chuỗi quá trình. Tuy nhiên tương quan giữa minh bạch và theo dấu không phải lúc nào cũng phụ thuộc tuyến tính: khi nhiều thông tin được cung cấp sẵn sàng có khả năng dẫn đến việc tăng khả năng theo dấu, tuy nhiên khả năng theo dấu tăng không có nghĩa là tính minh bạch sẽ tăng theo nếu các bên tham gia chuỗi cung ứng có mối quan hệ lỏng lẻo với nhau.
-
-% Bên cạnh đó, khả năng theo dấu càng khó hiện thực khi mạng cung ứng trở nên phức tạp. Ví dụ, có nhiều bên cung cấp và nhiều bên tiêu thụ cùng một sản phẩm cùng tham gia vào chuỗi cung ứng. Sự phức tạp của chuỗi cung ứng gây ra bởi số lượng các bên tham gia mạng cung ứng (nhà cung cấp nguyên liệu, nhà phân phối, nhà sản xuất, bán lẻ, người tiêu dùng cuối), yêu cầu đối với hệ thống cung ứng là việc bảo mật các thông tin nhạy cảm tuy nhiên vẫn phải đảm bảo tính minh bạch của toàn bộ hệ thống.
-
-% Chúng ta thấy rằng các hệ thống tập trung (centralized systems) rất khó để tạo ra môi trường minh bạch cho các giao dịch. Mặc dù đã có nhiều nỗ lực khác nhau trong việc liên kết và công khai các thông tin về sản phẩm vẫn chưa đầy đủ và khó kiểm chứng\footnote{https://hbr.org/2013/05/preventing-another-bangladesh}. Để giải quyết các vấn đề đó, các tổ chức trung lập, phi lợi nhuận đã xây dựng các hệ thống lưu trữ dữ liệu tập trung với những thông tin tin cậy \footnote{https://www.nepcon.org/newsroom/chain-custody-certification-myth}.
-
-% Một câu hỏi đặt ra về vấn đề an toàn thông tin trong chuỗi cung ứng: "Một tổ chức có thể được tin cậy để làm trung gian quản lý tất cả dữ liệu về mỗi chuỗi cung ứng không?". Rõ ràng điều này là không thể và cũng không an toàn. Việc dựa hoàn toàn vào bên thứ ba làm cho hệ thống rất kém ổn định và minh bạch. Bên cạnh đó, các công ty, tổ chức rõ ràng không muốn để lộ toàn bộ thông tin của mình ra bên ngoài. Vậy nếu chúng ta sử dụng dịch vụ trung gian của nhiều hơn một bên thứ ba, điều này lại dẫn đến vấn đề về khó khăn trong việc phân phối nền tảng cho các bên trung gian, hệ thống sẽ khó vận hành và đạt được thỏa thuận thống nhất giữa các bên tham gia chuỗi cung ứng.
-
-% Mặc dù còn tồn tại nhiều vấn đề như trên, cho đến gần đây, ý tưởng về sử dụng dịch vụ trung gian gần như là cách duy nhất để đảm bảo tính minh bạch dữ liệu dọc theo chuỗi cung ứng. Dễ dàng thấy rằng, sự minh bạch không thể nào xây dựng được khi sử dụng hệ thống tập trung (centralized system) mà phải là một hệ thống lưu trữ tin cậy, không thể giả mạo và phi tập trung (decentralized system). 
-
-% Sự ra đời của công nghệ chuỗi khối (blockchain technology), việc đảm bảo tính minh bạch được chuyển sang một cách tiếp cận hoàn toàn mới. Blockchain được ra đời là kết quả nghiên cứu trong ngành mật mã học và khoa học máy tính. Blockchain sử dụng mạng ngang hàng để xác thực và lưu trữ dữ liệu về giao dịch trên một sổ cái phân tán (distributed ledger). 
-
-% Với bản chất là chuỗi liên kết các khối và được đảm bảo an toàn, tin cậy nhờ hệ thống giao thức mã hóa và xác thực, công nghệ chuỗi khối được xem như là một giải pháp tương đối toàn diện cho vấn đề chống giả mạo thông tin và theo dấu giao dịch trong chuỗi cung ứng.
-
-% Ý tưởng ban đầu về mô hình dữ liệu được quản lý theo chuỗi đã được đưa ra vào năm 1991 bởi Stuart Haber và W. Scott Stornetta. Cho đến năm 2008, Satoshi Nakamoto đã trình bày hệ thống quản lý sổ cái chia sẻ dựa trên nền tảng Bitcoin \cite{nakamoto2008bitcoin}. Sự an toàn, tin cậy của hệ thống chuỗi cung ứng khi ứng dụng blockchain được đảm bảo thông qua cơ chế xác thực và đồng thuận (được quy định trong các giao thức của chuỗi khối). Không một cá nhân nào có thể giả mạo hoặc thay đổi dữ liệu mà không có sự đồng thuận của tất cả các node trong mạng chuỗi khối (blockchain network). Việc thêm thông tin vào sổ cái được thực hiện dựa trên cơ sở đồng thuận (consensus) giữa các thành viên tham gia vào mạng blockchain, trong đó bao gồm luôn việc xác thực thông tin, định danh các bên giao dịch... Ngoài những ứng dụng ban đầu trong ngành tài chính, ý tưởng về chuỗi khối đã được khái quát hóa và được sử dụng như một bộ quy tắc có thể lập trình mà không một cá nhân nào có thể thay đổi được. Các quy tắc giao dịch trong hợp đồng được viết dưới dạng một chương trình chạy trên các máy ảo của mạng blockchain hay còn gọi là hợp đồng thông minh (smart contract hoặc chaincode).
-
-% Trong luận văn này sẽ trình bày những vấn đề gặp phải khi xây dựng hệ thống quản lý chuỗi cung ứng cũng như cách thức vượt qua những trở ngại đó. Luận văn đề xuất mô hình chuỗi cung ứng dựa trên công nghệ chuỗi khối có phân quyền (permissioned blockchain) Hyperledger Fabric.
-
-% \section{Mục tiêu và giới hạn của đề tài}
-% Đề tài đặt mục tiêu nghiên cứu công nghệ chuỗi khối Hyperledger Fabric và ứng dụng vào truy xuất nguồn gốc xuất sứ nông sản với các nội dung như sau: 
-
-% \begin{itemize}
-% 	\item Tìm hiểu công nghệ chuỗi khối
-% 	\item Tìm hiểu công nghệ chuỗi khối Hyperledger Fabric
-% 	\item Khảo sát các nghiên cứu liên quan đến ứng dụng công nghệ chuỗi khối vào truy xuất nguồn gốc xuất sứ nông sản
-% 	\item Nghiên cứu hệ thống chuỗi cung ứng nông sản ở địa bàn tỉnh Ninh Thuận, tập trung vào hệ thống chuỗi cung ứng nho
-% 	\item Thiết kế kiến trúc hệ thống truy xuất nguồn gốc xuất sứ nông sản, áp dụng cho một loại nông sản cụ thể 
-% 	\item Xây dựng chương trình
-% \end{itemize}
-
-% Trong khuôn khổ giới hạn về mặt thời gian, chúng tôi giới hạn đề tài vào sản phẩm nho Ninh Thuận. Kết quả của đề tài, từ kiến trúc cho đế mô hình chi tiết, đều tập trung vào chuỗi cung ứng nho và truy xuất nguồn gốc xuất sứ nho Ninh Thuận trên thị trường. Mặc dù giới hạn cho một loại nông sản, chúng tôi đặt ra tiêu chí thiết kế kiến trúc hệ thống đủ tổng quát để có thể mở rộng cho các loại nông sản khác. 
-
-% \section{Cấu trúc luận văn}
-
-% Nội dung luận văn được chia thành năm chương, với nội dung tóm tắt của mỗi chương như sau:
-
-% \begin{itemize}
-% 	\item \textbf{Chương 1} trình bày một số thuật ngữ cơ bản của công nghệ Hyperledger Fabric, giới thiệu bài toán, mục tiêu và giới hạn của đề tài.
-% 	\item \textbf{Chương 2} trình bày kiến thức cơ bản cần thiết để thực hiện đề tài, bao gồm các khái niệm cơ bản của công nghệ chuỗi khối, công nghệ chuỗi khối cấp quyền Hyperledger Fabric, tình hình ứng dụng công nghệ chuỗi khối vào truy xuất nguồn gốc xuất sứ hàng hoá và hệ thống chuỗi cung ứng nho Ninh Thuận. 
-% 	\item \textbf{Chương 3} trình bày nội dung khảo sát một số kiến trúc truy xuất nguồn gốc xuất sứ nông sản liên quan đến mục tiêu nghiên cứu của đề tài. 
-% 	\item \textbf{Chương 4 }trình bày kiến trúc truy xuất nguồn gốc xuất sứ nông sản, chi tiết hoá cho nho Ninh Thuận. Chương này cũng trình bày phần hiện thực kiến trúc dùng Hyperledger Fabric.
-% 	\item \textbf{Chương 5 }trình bày các kết luận và kiến nghị các công việc cần thực hiện tiếp theo cho việc ứng dụng công nghệ chuỗi khối vào thực tiễn truy xuất nguồn gốc xuất sứ nông sản ở Việt Nam. 
-% \end{itemize}

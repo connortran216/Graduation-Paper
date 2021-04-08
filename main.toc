@@ -1,35 +1,39 @@
 \babel@toc {english}{}
-\contentsline {chapter}{List Of Abbreviations}{iii}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Reason for choosing topic}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Target implementation}{1}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Related Works}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction to traditional approaches}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Conclusion and determine the problem}{4}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Materials And Methods}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}HC18 Dataset}{5}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Description}{5}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Pre-processing}{6}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Convolutional neural network}{7}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}A brief history of CNN}{7}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}A CNN architecture}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}A CNN architecture}{10}{subsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.2.1}Convolution layer}{10}{subsubsection.3.2.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2.2}Pooling layer}{12}{subsubsection.3.2.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.2.3}Fully connected layer}{13}{subsubsection.3.2.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.2.4}Loss function}{13}{subsubsection.3.2.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.2.4}Loss function}{14}{subsubsection.3.2.2.4}%
 \contentsline {subsubsection}{\numberline {3.2.2.5}Optimization function}{15}{subsubsection.3.2.2.5}%
-\contentsline {section}{\numberline {3.3}Gradient descent}{18}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Multivariate gradient descent}{20}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Gradient descent variants}{21}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Batch gradient descent}{21}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Stochastic gradient descent}{21}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Mini-batch gradient descent}{22}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Adam optimization}{23}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Region Based Convolutional Neural Network}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}The problem of region of interest}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The original R-CNN}{24}{section.4.2}%
-\contentsline {section}{\numberline {4.3}The Improvement In Fast R-CNN And FASTER R-CNN}{25}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Region proposal network (RPNs)}{28}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Anchors}{29}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}ROI pool layer}{29}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Mask R-CNN}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The problem with Faster R-CNN}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}An extended solving the problem - Mask R-CNN}{32}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Multi-task loss}{33}{subsection.5.2.1}%
-\contentsline {chapter}{REFERENCES}{34}{subsection.5.2.1}%
+\contentsline {section}{\numberline {3.3}Gradient descent}{19}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Multivariate gradient descent}{21}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Gradient descent variants}{22}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Batch gradient descent}{22}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Stochastic gradient descent}{22}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Mini-batch gradient descent}{23}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Momentum}{24}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Adam optimization}{24}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Region Based Convolutional Neural Network}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The problem of region of interest}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The original R-CNN}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The Improvement In Fast R-CNN And FASTER R-CNN}{26}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Region proposal network (RPNs)}{29}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Anchors}{30}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}ROI pool layer}{30}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Mask R-CNN}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The problem with Faster R-CNN}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}An extended solving the problem - Mask R-CNN}{33}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Multi-task loss}{34}{subsection.5.2.1}%
+\contentsline {chapter}{REFERENCES}{35}{subsection.5.2.1}%
