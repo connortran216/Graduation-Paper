@@ -3,54 +3,56 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: ./bibliography.bib
+Warning--I didn't find a database entry for ""
 Warning--empty booktitle in backpropagation
 Warning--empty journal in fastrcnn
 Warning--empty booktitle in rcnn
+Warning--empty booktitle in resnet
 Warning--empty booktitle in fcn
 Warning--empty booktitle in fasterrcnn
 Warning--empty publisher in perceptron
 Warning--empty booktitle in dlvstradition
 Warning--empty booktitle in xorproblem
 Warning--empty publisher in dive2dl
-You've used 16 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            589 strings with 6641 characters,
-and the built_in function-call counts, 6232 in all, are:
-= -- 566
-> -- 356
-< -- 5
-+ -- 142
-- -- 124
-* -- 466
-:= -- 1025
-add.period$ -- 49
-call.type$ -- 16
-change.case$ -- 108
+            609 strings with 7461 characters,
+and the built_in function-call counts, 8186 in all, are:
+= -- 744
+> -- 472
+< -- 8
++ -- 186
+- -- 164
+* -- 602
+:= -- 1327
+add.period$ -- 62
+call.type$ -- 20
+change.case$ -- 138
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 232
-empty$ -- 451
-format.name$ -- 124
-if$ -- 1303
+cite$ -- 30
+duplicate$ -- 313
+empty$ -- 598
+format.name$ -- 164
+if$ -- 1733
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 18
-newline$ -- 84
-num.names$ -- 32
-pop$ -- 134
+int.to.str$ -- 20
+missing$ -- 22
+newline$ -- 104
+num.names$ -- 42
+pop$ -- 178
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 120
 quote$ -- 0
-skip$ -- 171
+skip$ -- 234
 stack$ -- 0
-substring$ -- 325
-swap$ -- 58
-text.length$ -- 5
+substring$ -- 425
+swap$ -- 89
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 9
-while$ -- 48
-width$ -- 18
-write$ -- 167
-(There were 9 warnings)
+type$ -- 76
+warning$ -- 10
+while$ -- 64
+width$ -- 22
+write$ -- 210
+(There were 11 warnings)

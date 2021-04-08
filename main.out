@@ -1,30 +1,29 @@
-\BOOKMARK [0][-]{chapter*.1}{LIST OF ABBREVIATIONS}{}% 1
-\BOOKMARK [0][-]{chapter*.3}{ABSTRACT}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
-\BOOKMARK [0][-]{chapter.2}{Related Works}{}% 4
-\BOOKMARK [0][-]{chapter.3}{Materials And Methods}{}% 5
-\BOOKMARK [1][-]{section.3.1}{HC18 Dataset}{chapter.3}% 6
-\BOOKMARK [2][-]{subsection.3.1.1}{Description}{section.3.1}% 7
-\BOOKMARK [2][-]{subsection.3.1.2}{Pre-processing}{section.3.1}% 8
-\BOOKMARK [1][-]{section.3.2}{Convolutional neural network}{chapter.3}% 9
-\BOOKMARK [2][-]{subsection.3.2.1}{A brief history of CNN}{section.3.2}% 10
-\BOOKMARK [2][-]{subsection.3.2.2}{A CNN architecture}{section.3.2}% 11
-\BOOKMARK [1][-]{section.3.3}{Gradient descent}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.4}{Multivariate gradient descent}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.5}{Gradient descent variants}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.5.1}{Batch gradient descent}{section.3.5}% 15
-\BOOKMARK [2][-]{subsection.3.5.2}{Stochastic gradient descent}{section.3.5}% 16
-\BOOKMARK [2][-]{subsection.3.5.3}{Mini-batch gradient descent}{section.3.5}% 17
-\BOOKMARK [1][-]{section.3.6}{Adam optimization}{chapter.3}% 18
-\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 19
-\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 24
-\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 25
-\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 26
-\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 28
-\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 29
-\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 30
+\BOOKMARK [0][-]{chapter*.1}{List Of Abbreviations}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Related Works}{}% 3
+\BOOKMARK [0][-]{chapter.3}{Materials And Methods}{}% 4
+\BOOKMARK [1][-]{section.3.1}{HC18 Dataset}{chapter.3}% 5
+\BOOKMARK [2][-]{subsection.3.1.1}{Description}{section.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.1.2}{Pre-processing}{section.3.1}% 7
+\BOOKMARK [1][-]{section.3.2}{Convolutional neural network}{chapter.3}% 8
+\BOOKMARK [2][-]{subsection.3.2.1}{A brief history of CNN}{section.3.2}% 9
+\BOOKMARK [2][-]{subsection.3.2.2}{A CNN architecture}{section.3.2}% 10
+\BOOKMARK [1][-]{section.3.3}{Gradient descent}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.4}{Multivariate gradient descent}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.5}{Gradient descent variants}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.5.1}{Batch gradient descent}{section.3.5}% 14
+\BOOKMARK [2][-]{subsection.3.5.2}{Stochastic gradient descent}{section.3.5}% 15
+\BOOKMARK [2][-]{subsection.3.5.3}{Mini-batch gradient descent}{section.3.5}% 16
+\BOOKMARK [1][-]{section.3.6}{Adam optimization}{chapter.3}% 17
+\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 18
+\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 23
+\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 24
+\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 25
+\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 27
+\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 28
+\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 29

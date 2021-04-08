@@ -23,6 +23,11 @@ Kaiming He, Georgia Gkioxari, Piotr Dollar, and Ross Girshick.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
   PP:1--1, 06 2018.
 
+\bibitem{resnet}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock pages 770--778, 06 2016.
+
 \bibitem{thomas}
 Thomas Heuvel, Dagmar de~bruijn, Chris de~Korte, and Bram Ginneken.
 \newblock Automated measurement of fetal head circumference using 2d ultrasound
@@ -33,6 +38,13 @@ Thomas Heuvel, Dagmar de~bruijn, Chris de~Korte, and Bram Ginneken.
 Salman Khan, Hossein Rahmani, Syed Shah, and Mohammed Bennamoun.
 \newblock A guide to convolutional neural networks for computer vision.
 \newblock {\em Synthesis Lectures on Computer Vision}, 8:1--207, 02 2018.
+
+\bibitem{alexnet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In F.~Pereira, C.~J.~C. Burges, L.~Bottou, and K.~Q. Weinberger,
+  editors, {\em Advances in Neural Information Processing Systems 25}, pages
+  1097--1105. Curran Associates, Inc., 2012.
 
 \bibitem{lenet}
 Yann Lecun, Leon Bottou, Y.~Bengio, and Patrick Haffner.
@@ -69,6 +81,18 @@ Frank Rosenblatt.
 \newblock {\em The Perceptron: A Probabilistic Model for Information Storage
   and Organization (1958)}, pages 183--190.
 \newblock 02 2021.
+
+\bibitem{vgg}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock In {\em International Conference on Learning Representations}, 2015.
+
+\bibitem{googlenet}
+C.~{Szegedy}, {Wei Liu}, {Yangqing Jia}, P.~{Sermanet}, S.~{Reed},
+  D.~{Anguelov}, D.~{Erhan}, V.~{Vanhoucke}, and A.~{Rabinovich}.
+\newblock Going deeper with convolutions.
+\newblock In {\em 2015 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 1--9, 2015.
 
 \bibitem{dlvstradition}
 Joseph Walsh, Niall O'~Mahony, Sean Campbell, Anderson Carvalho, Lenka
