@@ -18,8 +18,26 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@nameuse{bbl@beforestart}
+\AC@reset@newl@bel
 \providecommand \oddpage@label [2]{}
+\providecommand\@newglossary[4]{}
+\@newglossary{main}{glg}{gls}{glo}
 \babel@aux{english}{}
+\newacro{HC}[\AC@hyperlink{HC}{HC}]{Head Circumference}
+\newacro{CRL}[\AC@hyperlink{CRL}{CRL}]{Crow-Rump Length}
+\newacro{GA}[\AC@hyperlink{GA}{GA}]{Gestational Age}
+\newacro{MLP}[\AC@hyperlink{MLP}{MLP}]{Multi Layer Perceptron}
+\newacro{SVM}[\AC@hyperlink{SVM}{SVM}]{Support Vector Machine}
+\newacro{CNN}[\AC@hyperlink{CNN}{CNN}]{Convolution Neural Network}
+\newacro{GD}[\AC@hyperlink{GD}{GD}]{Gradient Descent}
+\newacro{SGD}[\AC@hyperlink{SGD}{SGD}]{Stochastic Gradient Descent}
+\newacro{R-CNN}[\AC@hyperlink{R-CNN}{R-CNN}]{Region Based Convolutional Neural Network}
+\newacro{RPN}[\AC@hyperlink{RPN}{RPN}]{Region Proposal Network}
+\newacro{FPN}[\AC@hyperlink{FPN}{FPN}]{Feature Pyramid Network}
+\newacro{IoU}[\AC@hyperlink{IoU}{IoU}]{Intersection over Union}
+\newacro{FC layer}[\AC@hyperlink{FC layer}{FC layer}]{Fully Connected layer}
+\newacro{FCN}[\AC@hyperlink{FCN}{FCN}]{Fully Convolutional Network}
+\newacro{acronym}[\AC@hyperlink{acronym}{acronym}]{full name}
 \citation{thomas}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -47,9 +65,14 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}HC18 Dataset}{5}{section.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Description}{5}{subsection.3.1.1}\protected@file@percent }
+\newlabel{subsection:data（á（aset}{{3.1.1}{5}{Description}{subsection.3.1.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces HC-18 dataset sample.\relax }}{6}{figure.caption.4}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:us_image}{{3.1}{6}{HC-18 dataset sample.\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Pre-processing}{6}{subsection.3.1.2}\protected@file@percent }
+\newlabel{subsection:preprocess}{{3.1.2}{6}{Pre-processing}{subsection.3.1.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces This annotation is made for Mask R-CNN model.\relax }}{6}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:processed_annotation}{{3.2}{6}{This annotation is made for Mask R-CNN model.\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Convolutional neural network}{7}{section.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}A brief history of CNN}{7}{subsection.3.2.1}\protected@file@percent }
 \newlabel{subsection:CNNhistory}{{3.2.1}{7}{A brief history of CNN}{subsection.3.2.1}{}}
@@ -59,74 +82,97 @@
 \citation{lenet}
 \citation{alexnet}
 \citation{vgg}
+\citation{dive2dl}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}A CNN architecture}{10}{subsection.3.2.2}\protected@file@percent }
 \newlabel{subsection:CNNarchi}{{3.2.2}{10}{A CNN architecture}{subsection.3.2.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.1}Convolution layer}{10}{subsubsection.3.2.2.1}\protected@file@percent }
 \newlabel{subsubsection:convlayer}{{3.2.2.1}{10}{Convolution layer}{subsubsection.3.2.2.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Example of convolution operation.\relax }}{10}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:conv_operation}{{3.3}{10}{Example of convolution operation.\relax }{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Missing pixels information when doing convolution.\relax }}{12}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:padding}{{3.4}{12}{Missing pixels information when doing convolution.\relax }{figure.caption.7}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Applying zero padding = 1 to the input matrix.\relax }}{12}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:zero_padding}{{3.5}{12}{Applying zero padding = 1 to the input matrix.\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.2}Pooling layer}{12}{subsubsection.3.2.2.2}\protected@file@percent }
 \newlabel{subsubsection:poolinglayer}{{3.2.2.2}{12}{Pooling layer}{subsubsection.3.2.2.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Max pooling with window shape 2x2 and stride = 1.\relax }}{13}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:max_pooling}{{3.6}{13}{Max pooling with window shape 2x2 and stride = 1.\relax }{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.3}Fully connected layer}{13}{subsubsection.3.2.2.3}\protected@file@percent }
+\newlabel{subsubsection:fclayer}{{3.2.2.3}{13}{Fully connected layer}{subsubsection.3.2.2.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.4}Loss function}{14}{subsubsection.3.2.2.4}\protected@file@percent }
 \newlabel{subsubsection:lossfunc}{{3.2.2.4}{14}{Loss function}{subsubsection.3.2.2.4}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.5}Optimization function}{15}{subsubsection.3.2.2.5}\protected@file@percent }
 \newlabel{subsubsection:optimfunc}{{3.2.2.5}{15}{Optimization function}{subsubsection.3.2.2.5}{}}
 \citation{dive2dl}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces bowl}}{17}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:bowl_shape}{{3.7}{17}{bowl}{figure.caption.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Local minima and global minima.\relax }}{18}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:global}{{3.8}{18}{Local minima and global minima.\relax }{figure.caption.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Saddle point.\relax }}{19}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:saddle}{{3.9}{19}{Saddle point.\relax }{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Gradient descent}{19}{section.3.3}\protected@file@percent }
 \newlabel{section:GD}{{3.3}{19}{Gradient descent}{section.3.3}{}}
+\citation{gdoverview}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces It is hard for GD to be converging at global minima.\relax }}{20}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:flutuate_plate}{{3.10}{20}{It is hard for GD to be converging at global minima.\relax }{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces $ f(x) = \frac  {1}{2} \cdot (x - 1)^2 -2 $.\relax }}{20}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:simple_f(x)}{{3.11}{20}{$ f(x) = \frac {1}{2} \cdot (x - 1)^2 -2 $.\relax }{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Multivariate gradient descent}{21}{section.3.4}\protected@file@percent }
+\newlabel{section:multivariateGD}{{3.4}{21}{Multivariate gradient descent}{section.3.4}{}}
+\citation{gdoverview}
+\citation{gdoverview}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Gradient descent variants}{22}{section.3.5}\protected@file@percent }
 \newlabel{section:GDvariants}{{3.5}{22}{Gradient descent variants}{section.3.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Batch gradient descent}{22}{subsection.3.5.1}\protected@file@percent }
 \newlabel{subsection:batchGD}{{3.5.1}{22}{Batch gradient descent}{subsection.3.5.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Stochastic gradient descent}{22}{subsection.3.5.2}\protected@file@percent }
 \newlabel{subsection:SGD}{{3.5.2}{22}{Stochastic gradient descent}{subsection.3.5.2}{}}
+\citation{gdoverview}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Mini-batch gradient descent}{23}{subsection.3.5.3}\protected@file@percent }
 \newlabel{subsection:minibatchGD}{{3.5.3}{23}{Mini-batch gradient descent}{subsection.3.5.3}{}}
+\citation{gdoverview}
+\citation{gdoverview}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Momentum}{24}{section.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Adam optimization}{24}{section.3.7}\protected@file@percent }
+\newlabel{section:momentum}{{3.6}{24}{Momentum}{section.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}RMSprop}{24}{section.3.7}\protected@file@percent }
+\newlabel{section:rmsprop}{{3.7}{24}{RMSprop}{section.3.7}{}}
+\citation{gdoverview}
+\citation{adam}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Adam}{25}{section.3.8}\protected@file@percent }
+\newlabel{section:adam}{{3.8}{25}{Adam}{section.3.8}{}}
 \citation{rcnn}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Region Based Convolutional Neural Network}{25}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Region Based Convolutional Neural Network}{27}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}The problem of region of interest}{25}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}The original R-CNN}{25}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}The problem of region of interest}{27}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}The original R-CNN}{27}{section.4.2}\protected@file@percent }
 \citation{rcnn}
 \citation{fastrcnn}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}The Improvement In Fast R-CNN And FASTER R-CNN}{26}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}The Improvement In Fast R-CNN And FASTER R-CNN}{28}{section.4.3}\protected@file@percent }
 \citation{fasterrcnn}
 \citation{fasterrcnn}
 \citation{fasterrcnn}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparison between CNN, R-CNN, Fast R-CNN, and Faster R-CNN\relax }}{28}{table.caption.15}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{bang1}{{4.1}{28}{Comparison between CNN, R-CNN, Fast R-CNN, and Faster R-CNN\relax }{table.caption.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Region proposal network (RPNs)}{29}{section.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Faster R-CNN architect including RPN.\relax }}{29}{figure.caption.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Anchors}{30}{subsection.4.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}ROI pool layer}{30}{subsection.4.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of RoI pooling window size 3x3 on vector 4x6.\relax }}{31}{figure.caption.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Mask R-CNN}{32}{chapter.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparison between CNN, R-CNN, Fast R-CNN, and Faster R-CNN\relax }}{30}{table.caption.15}\protected@file@percent }
+\newlabel{bang1}{{4.1}{30}{Comparison between CNN, R-CNN, Fast R-CNN, and Faster R-CNN\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Region proposal network (RPNs)}{31}{section.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Faster R-CNN architect including RPN.\relax }}{31}{figure.caption.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Anchors}{32}{subsection.4.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}ROI pool layer}{32}{subsection.4.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of RoI pooling window size 3x3 on vector 4x6.\relax }}{33}{figure.caption.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Mask R-CNN}{34}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}The problem with Faster R-CNN}{32}{section.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of quantization problem causing missing information.\relax }}{32}{figure.caption.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}An extended solving the problem - Mask R-CNN}{33}{section.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Mask R-CNN architecture including Faster R-CNN and FCN\relax }}{33}{figure.caption.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}The problem with Faster R-CNN}{34}{section.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of quantization problem causing missing information.\relax }}{34}{figure.caption.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}An extended solving the problem - Mask R-CNN}{35}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Mask R-CNN architecture including Faster R-CNN and FCN\relax }}{35}{figure.caption.19}\protected@file@percent }
 \citation{fastrcnn}
 \citation{maskrcnn}
 \citation{maskrcnn}
 \citation{maskrcnn}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Multi-task loss}{34}{subsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Multi-task loss}{36}{subsection.5.2.1}\protected@file@percent }
 \bibstyle{plain}
 \bibdata{./bibliography}
 \bibcite{backpropagation}{1}
@@ -136,18 +182,20 @@
 \bibcite{resnet}{5}
 \bibcite{thomas}{6}
 \bibcite{guidetocnn}{7}
-\bibcite{alexnet}{8}
-\@writefile{toc}{\contentsline {chapter}{REFERENCES}{35}{subsection.5.2.1}\protected@file@percent }
-\bibcite{lenet}{9}
-\bibcite{li}{10}
-\bibcite{fcn}{11}
-\bibcite{lu}{12}
-\bibcite{fasterrcnn}{13}
-\bibcite{perceptron}{14}
-\bibcite{vgg}{15}
-\bibcite{googlenet}{16}
-\bibcite{dlvstradition}{17}
-\bibcite{yamashita}{18}
-\bibcite{xorproblem}{19}
-\bibcite{dive2dl}{20}
+\bibcite{adam}{8}
+\bibcite{alexnet}{9}
+\@writefile{toc}{\contentsline {chapter}{REFERENCES}{37}{subsection.5.2.1}\protected@file@percent }
+\bibcite{lenet}{10}
+\bibcite{li}{11}
+\bibcite{fcn}{12}
+\bibcite{lu}{13}
+\bibcite{fasterrcnn}{14}
+\bibcite{perceptron}{15}
+\bibcite{gdoverview}{16}
+\bibcite{vgg}{17}
+\bibcite{googlenet}{18}
+\bibcite{dlvstradition}{19}
+\bibcite{yamashita}{20}
+\bibcite{xorproblem}{21}
+\bibcite{dive2dl}{22}
 \citation{*}

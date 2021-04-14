@@ -39,6 +39,11 @@ Salman Khan, Hossein Rahmani, Syed Shah, and Mohammed Bennamoun.
 \newblock A guide to convolutional neural networks for computer vision.
 \newblock {\em Synthesis Lectures on Computer Vision}, 8:1--207, 02 2018.
 
+\bibitem{adam}
+Diederik Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em International Conference on Learning Representations}, 12 2014.
+
 \bibitem{alexnet}
 Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
 \newblock Imagenet classification with deep convolutional neural networks.
@@ -81,6 +86,11 @@ Frank Rosenblatt.
 \newblock {\em The Perceptron: A Probabilistic Model for Information Storage
   and Organization (1958)}, pages 183--190.
 \newblock 02 2021.
+
+\bibitem{gdoverview}
+Sebastian Ruder.
+\newblock An overview of gradient descent optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1609.04747}, 2016.
 
 \bibitem{vgg}
 Karen Simonyan and Andrew Zisserman.

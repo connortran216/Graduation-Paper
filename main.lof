@@ -14,8 +14,8 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces It is hard for GD to be converging at global minima.\relax }}{20}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces $ f(x) = \frac {1}{2} \cdot (x - 1)^2 -2 $.\relax }}{20}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Faster R-CNN architect including RPN.\relax }}{29}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of RoI pooling window size 3x3 on vector 4x6.\relax }}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Faster R-CNN architect including RPN.\relax }}{31}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of RoI pooling window size 3x3 on vector 4x6.\relax }}{33}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of quantization problem causing missing information.\relax }}{32}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Mask R-CNN architecture including Faster R-CNN and FCN\relax }}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of quantization problem causing missing information.\relax }}{34}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Mask R-CNN architecture including Faster R-CNN and FCN\relax }}{35}{figure.caption.19}%

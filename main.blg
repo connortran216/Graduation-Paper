@@ -13,45 +13,45 @@ Warning--empty publisher in perceptron
 Warning--empty booktitle in dlvstradition
 Warning--empty booktitle in xorproblem
 Warning--empty publisher in dive2dl
-You've used 20 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            609 strings with 7461 characters,
-and the built_in function-call counts, 8186 in all, are:
-= -- 744
-> -- 472
+            616 strings with 7649 characters,
+and the built_in function-call counts, 8634 in all, are:
+= -- 787
+> -- 492
 < -- 8
-+ -- 186
-- -- 164
-* -- 602
-:= -- 1327
-add.period$ -- 62
-call.type$ -- 20
-change.case$ -- 138
++ -- 195
+- -- 170
+* -- 624
+:= -- 1411
+add.period$ -- 68
+call.type$ -- 22
+change.case$ -- 147
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 313
-empty$ -- 598
-format.name$ -- 164
-if$ -- 1733
+cite$ -- 32
+duplicate$ -- 333
+empty$ -- 632
+format.name$ -- 170
+if$ -- 1822
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 22
-newline$ -- 104
-num.names$ -- 42
-pop$ -- 178
+int.to.str$ -- 22
+missing$ -- 24
+newline$ -- 114
+num.names$ -- 46
+pop$ -- 187
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 127
 quote$ -- 0
-skip$ -- 234
+skip$ -- 249
 stack$ -- 0
-substring$ -- 425
-swap$ -- 89
+substring$ -- 436
+swap$ -- 91
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 84
 warning$ -- 10
-while$ -- 64
-width$ -- 22
-write$ -- 210
+while$ -- 68
+width$ -- 24
+write$ -- 230
 (There were 10 warnings)

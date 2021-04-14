@@ -18,16 +18,17 @@
 \BOOKMARK [2][-]{subsection.3.5.2}{Stochastic gradient descent}{section.3.5}% 18
 \BOOKMARK [2][-]{subsection.3.5.3}{Mini-batch gradient descent}{section.3.5}% 19
 \BOOKMARK [1][-]{section.3.6}{Momentum}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.7}{Adam optimization}{chapter.3}% 21
-\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 22
-\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 27
-\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 28
-\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 29
-\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 31
-\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 32
-\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 33
+\BOOKMARK [1][-]{section.3.7}{RMSprop}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.8}{Adam}{chapter.3}% 22
+\BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 23
+\BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Mask R-CNN}{}% 30
+\BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 33
+\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 34

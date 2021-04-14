@@ -1,6 +1,7 @@
 \chapter{Materials And Methods}
 \section{HC18 Dataset}
 \subsection{Description}
+\label{subsection:data（á（aset}
 \noindent
 
 	The collection of 1334 2D ultrasound images of fetal head were collected from the database of the Department of Obstetrics of the Radboud University Medical Center, Nijmegen, the Netherlands. All of the fetal head ultrasound images for this challenge were captured in the standard plane which is the specifically used to measure the HC \cite{thomas}.
@@ -14,10 +15,12 @@
 		\subcaptionbox{An annotation  created by sonographers.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap3/ori_annotation.png}}%
 		\hfill % <-- Seperation
 		\caption{HC-18 dataset sample.}
+		\label{fig:us_image}
 	\end{figure}
 
 	
 \subsection{Pre-processing}
+\label{subsection:preprocess}
 \noindent
 
 	During each examination, the sonographer manually draws an ellipse which best fit the fetal head and save it as annotation of the ultrasound image. And based on these annotations, we apply a few image processing to extract the ellipse coordinates and created a dataset in COCO format for further training methods.
@@ -26,6 +29,7 @@
 		\centering
 		\subcaptionbox{a processed annotation}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap3/processed_annotation.png}}
 		\caption{This annotation is made for Mask R-CNN model.}
+		\label{fig:processed_annotation}
 	\end{figure}
 	
 	And then we save it in json file - ”annotations.json” with the information structure including images, categories, and annotations.
@@ -44,7 +48,6 @@
 
 	\textbf{Annotations:}
 \begin{itemize}
-	
 	\item Segmentation: coordinates of annotated pixels (contour).
 	\item Area: ground true binary mask.
 	\item Is crowd: one or multiple objects in the image.
@@ -92,7 +95,7 @@
 \label{subsubsection:convlayer}
 \noindent
 
-	In the context of CNN, a convolution is a linear operation that involves the multiplication a set of weights with the input. The multiplication is performed between an input array and a weights array called filter or kernel. Let’s say every image’s pixel is a value in a 2D matrix. Convolution layer are the major building blocks used in neural network. Each of convolution layer has a specific number of filters which slide over the image to extract its features by execute the dot product. A dot product is the element-wise multiplication between the filter-sized patch of the input and filter, which is then summed, always resulting in a single value. Because it results in a single value, the operation is often referred to as the “scalar product“. [citation Dive into DL]
+	In the context of CNN, a convolution is a linear operation that involves the multiplication a set of weights with the input. The multiplication is performed between an input array and a weights array called filter or kernel. Let’s say every image’s pixel is a value in a 2D matrix. Convolution layer are the major building blocks used in neural network. Each of convolution layer has a specific number of filters which slide over the image to extract its features by execute the dot product. A dot product is the element-wise multiplication between the filter-sized patch of the input and filter, which is then summed, always resulting in a single value. Because it results in a single value, the operation is often referred to as the “scalar product“ \cite{dive2dl}.
 	
 	For example:
 
@@ -100,6 +103,7 @@
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap3/conv_operation.png}}
 		\caption{Example of convolution operation.}
+		\label{fig:conv_operation}
 	\end{figure}
 	
 	Calculation step as below:
@@ -118,12 +122,13 @@
 		\item Padding and Stride attributes in convolution operations.
 	\end{itemize}
 
-	Padding and Stride are the crucial technique in convolution. Let’s take a look at the previous example in Figure 1. We calculated the feature map by sliding the filter on the input data by one pixel for each convolution operation, we refer to the number of rows and columns traversed per slide as the stride. The smaller step we define in filters, the more information we can extract from it, but it is a trade-off which affect the training time. One tricky issue when applying convolution layers is that we tend to lose pixel information on the perimeter of input data.
+	Padding and Stride are the crucial technique in convolution. Let’s take a look at the previous example in \ref{fig:conv_operation}. We calculated the feature map by sliding the filter on the input data by one pixel for each convolution operation, we refer to the number of rows and columns traversed per slide as the stride. The smaller step we define in filters, the more information we can extract from it, but it is a trade-off which affect the training time. One tricky issue when applying convolution layers is that we tend to lose pixel information on the perimeter of input data.
 	
 	\begin{figure}[H]
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap3/padding.png}}
 		\caption{Missing pixels information when doing convolution.}
+		\label{fig:padding}
 	\end{figure}
 
 	This problem happens when we slide the filter on input data, our filters only do convolution operation on pixels at the edge of matrix fewer than pixels which are close to the center of the matrix. Even though, it is just a few pixels, we use lots of convolution layers, it will add up and cause missing information. That is why the term “Padding” comes up, a direct solution for this is to add a “barrier” of zero pixels surrounding the input matrix which increases the effective size of the input matrix.
@@ -132,6 +137,7 @@
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap3/zero_padding.png}}
 		\caption{Applying zero padding = 1 to the input matrix.}
+		\label{fig:zero_padding}
 	\end{figure}
 	
 \subsubsection{Pooling layer}
@@ -146,9 +152,11 @@
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap3/max_pooling.png}}
 		\caption{Max pooling with window shape 2x2 and stride = 1.}
+		\label{fig:max_pooling}
 	\end{figure}
 	
 \subsubsection{Fully connected layer}
+\label{subsubsection:fclayer}
 \noindent
 
 	Fully-connected (FC) layers connect every neuron in one layer to every neuron in another layer. It is the similar to a traditional multi-layer perceptron neural network (MLP). After we extract feature maps from convolutional layers, we flatten these maps to one dimension vector and then feed it to the FC layer for the model to learn how to classify the data. However, FC layers can be seen as a brute force approach whereas there are approaches like the convolutional layer which reduces the input to concerned features only. That is the reason why CNN models are often built with few FC layers (one or two layers).	
@@ -207,22 +215,24 @@
 	
 	There lots of problems when we try to optimize loss function of a deep learning model. Therefore, in this section, we will focus on several controversial issues such as local minima, saddle point, gradient exploding and gradient vanishing.
 	
-	As mentioned in loss function section, gradient-base method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at figure 3.7.
+	As mentioned in loss function section, gradient-base method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at \ref{fig:bowl_shape}.
 	
 	\begin{figure}[H]
 		\centering
 		{\includegraphics[width=0.7\textwidth]{./hinhanh/chap3/bowl_shape.png}}
 		\caption[bowl]{Bowl shape function - $ \ {x^2} + {y^2} \ $.}
+		\label{fig:bowl_shape}
 	\end{figure}
 	
 	Assuming this cup-shaped plane is the equation f (x), its minimum point will be in the center of the cup. If we jump into this plane, of course we will slip straight to its minimum point. So when a function converges at its minimum, it optimizes as much as possible in the ability to classify the data. This is the fundamental goal of training: to continue modifying weights until the global minimum has been reached.
 	
-	However, not all functions are cup-shaped. Let's take a look at figure 3.8 below for easier visualization.
+	However, not all functions are cup-shaped. Let's take a look at \ref{fig:global} below for easier visualization.
 	
 	\begin{figure}[H]
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap3/global.png}}
 		\caption{Local minima and global minima.}
+		\label{fig:global}
 	\end{figure}
 	
 	A function of the deep learning model usually takes the same form for many local minima points. Then, the function is susceptible to convergence at local minima points because it can only optimize the function of the model locally. This causes the gradients to be zero early and adversely affects the model's training and its results.
@@ -233,23 +243,25 @@
 		\centering
 		{\includegraphics[width=0.9\textwidth]{./hinhanh/chap3/saddle.png}}
 		\caption{Saddle point.}
+		\label{fig:saddle}
 	\end{figure}
 	
 	
 \section{Gradient descent}
-	\label{section:GD}
-	\noindent
+\label{section:GD}
+\noindent
 	
 	In deep learning in particular and optimization math in general, we often have to find the smallest value of a function. However, finding the global minima of loss functions in deep learning is very complicated or even impossible. Instead, people often try to find the local minima points, and to a certain extent, consider it the solution to be found in the problem.
 	
 	The local minima points are the solutions of the derivative equation equal to 0. If it is possible to find the whole (finite) minimum points, we can replace each of those local minimum points into the objective function and then find the point making it the smallest value. 
 	
-	Yet, in most cases it is not possible to solve zero derivative equations. The cause can come from the complexity of the derivative form, from the fact that the data points have a large number of dimensions (Look at figure bla bla for more detail).
+	Yet, in most cases it is not possible to solve zero derivative equations. The cause can come from the complexity of the derivative form, from the fact that the data points have a large number of dimensions (Look at \ref{fig:flutuate_plate} for more detail).
 	
 	\begin{figure}[H]
 		\centering
 		{\includegraphics[width=0.5\textwidth]{./hinhanh/chap3/flutuate_plate.jpg}}
 		\caption{It is hard for GD to be converging at global minima.}
+		\label{fig:flutuate_plate}
 	\end{figure}
 	
 %	\begin{figure}[H]
@@ -263,7 +275,7 @@
 %		\caption{Gradient descent versus Gradient descent with momentum.}
 %	\end{figure}
 	
-	The most typical approach is to start from a point that we consider to be close to the global minima, then use an iteration to move closer to the desired point. Gradient Descent (GD) and its variations are among the most popular methods.
+	The most typical approach is to start from a point that we consider to be close to the global minima, then use an iteration to move closer to the desired point. Gradient Descent \cite{gdoverview} and its variations are among the most popular methods.
 	
 	In this part, we will take gradient descent in one dimension as a simple example to explain it functional mechanism. Let assume we have a function as follow.
 	
@@ -275,6 +287,7 @@
 		\centering
 		{\includegraphics[width=0.3\textwidth]{./hinhanh/chap3/simple_f(x).png}}
 		\caption{$ f(x) = \frac{1}{2} \cdot (x - 1)^2 -2 $.}
+		\label{fig:simple_f(x)}
 	\end{figure}
 	
 	Look at the plot of the objective function. It is noticeable that if the derivative of the objective function at $x_t$ is greater than zero, $x_t$ will stay on the right compared to the global minima and contrast. Therefore, to bring $x$ closer to the goal, it is needed to be moved toward the left side of the minima which means the negative side. In other word, $x_t$ has to move oppositely to the derivative.  
@@ -290,10 +303,11 @@
 	
 	Where $\eta$ is a positive number called learning rate. The minus shows that it has to move oppositely to the derivative. It is the reason why this method is called Gradient Descent (means moving backward). In conclusion, the constructing of the function above, even though it is not always reasonable for all problems, it is a foundation for lots of optimization approach in general and deep learning in particular.
 	
-	\section{Multivariate gradient descent}
-	\noindent
+\section{Multivariate gradient descent}
+\label{section:multivariateGD}
+\noindent
 	
-	Let say we need to find global minima cho the function $f(\theta)$ that $\theta$ is a vector usually used to denote the set of parameters (or weights) of the objective function. The derivative of the function at any $\theta$ is denoted as $\nabla_{\theta}f(\theta)$. It is similar to one variable function, GD for multivariate is also started at a predicted point $\theta_0$. After that, it is updated as following:
+	Let say we need to find global minima for the function $f(\theta)$ that $\theta$ is a vector usually used to denote the set of parameters (or weights) of the objective function. The derivative of the function at any $\theta$ is denoted as $\nabla_{\theta}f(\theta)$. It is similar to one variable function, GD for multivariate is also started at a predicted point $\theta_0$. After that, it is updated as following:
 	
 	\[\theta_{t+1} = \theta_t - \eta\nabla_{\theta}f(\theta_t) \]
 	
@@ -316,7 +330,7 @@
 	\label{subsection:batchGD}
 	\noindent
 
-	The GD algorithm is mentioned from the beginning of GD section is the vanilla one - batch gradient descent. In this circumstance, the word "batch" means "all" which means all of the data $x_i$ are used whenever an update is perform on the weights $\theta = w$. Therefore, this technique shows that computation in training process is effectively due to no update required after each training sample.
+	The GD algorithm is mentioned from the beginning of GD section is the vanilla one - batch gradient descent \cite{gdoverview}. In this circumstance, the word "batch" means "all" which means all of the data $x_i$ are used whenever an update is perform on the weights $\theta = w$. Therefore, this technique shows that computation in training process is effectively due to no update required after each training sample.
 	
 	This vanilla approach works ineffectively if there is a huge dataset. Because it has to calculate gradient and update weights for all data in the dataset after each epoch which slowdown the training process.
 	
@@ -324,7 +338,7 @@
 	\label{subsection:SGD}
 	\noindent
 
-	In deep learning, the objective function is usually the average of the loss functions for each example in the training dataset. By using SGD, at a time, only one data point $x_i$ is used to calculate gradient and then it updates the weights -  $\theta$. This work is executed with each data point in the whole dataset and repeated after each epoch. 
+	In deep learning, the objective function is usually the average of the loss functions for each example in the training dataset. By using SGD \cite{gdoverview}, at a time, only one data point $x_i$ is used to calculate gradient and then it updates the weights -  $\theta$. This work is executed with each data point in the whole dataset and repeated after each epoch. 
 	
 	\[\theta = \theta - \eta \nabla_{\theta} J(\theta; x_i; y_i)\]
 	
@@ -340,7 +354,7 @@
 	\label{subsection:minibatchGD}
 	\noindent
 	
-	Similar to SGD, mini-batch GD uses $n$ data points (greater than 1 and smaller than the whole dataset). Mini-batch GD starts each training epoch by shuffle all data points and divides them into small batches. Each of them has $n$ data points (except for the last batch may have fewer if $N$ is not divisible to $n$) At each update, mini-batch GD takes one batch to calculate gradient and updates it as following.
+	Similar to SGD, mini-batch GD \cite{gdoverview} uses $n$ data points (greater than 1 and smaller than the whole dataset). Mini-batch GD starts each training epoch by shuffle all data points and divides them into small batches. Each of them has $n$ data points (except for the last batch may have fewer if $N$ is not divisible to $n$) At each update, mini-batch GD takes one batch to calculate gradient and updates it as following.
 	
 	\[ \theta = \theta - \eta \nabla_{\theta} J(\theta; x_i; y_i) \]
 	
@@ -349,10 +363,12 @@
 	
 	As a result, mini-batch GD has been applied widely in machine learning field, especially in deep learning.
 
+
 \section{Momentum}
+\label{section:momentum}
 \noindent
 	
-	In section ~\ref{subsection:SGD}, SGD illustrates that in the optimization process, noisy gradients may lead to convergence suspend or even fail to converge at a good minima. In this section, we will introduce a effective technique that can help us overcome the problem in practice.
+	In section ~\ref{subsection:SGD}, SGD illustrates that in the optimization process, noisy gradients may lead to convergence suspend or even fail to converge at a good minima. In this section, we will introduce a effective technique that can help us overcome the problem in practice - momentum \cite{gdoverview}.
 	
 	The gradient descent algorithm sometimes is compared to the effect of gravity on a ball on a surface as figure..., so eventually the ball will settle at the global minima. However, with the surface as figure..., the question is how the ball can overcome the local minima to settle at the global minima. The answer is quite simple if we solve this problem more physics-ly.
 	
@@ -360,7 +376,37 @@
 	
 	\[ v_t = \gamma v_{t-1} + \eta\nabla_{\theta}f(\theta)\] 
 	
-\section{Adam optimization}
+	Therefore, the ball has a chance to overcome the local minima and move forward by utilizing the momentum quantity.
+
+\section{RMSprop}
+\label{section:rmsprop}
+\noindent
+
+	Unlike previous discussed optimization algorithms that their learning rate $\alpha$ stay unchanged in the training process (learning rate is a constant). RMSprop \cite{gdoverview} is an unpublished approach proposed by Geoffrey Hinton et al in a course on Coursera. The author considers learning rate as a parameter that can change throughout the training process after each time $t$. It is demonstrated as following formula:
 	
+	\[ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}}g_t \]
+	
+	RMSprop optimization divides the learning rate by the exponentially decreasing mean of the squared gradients. Hinton suggests $\gamma$ is set to 0.9, while a good default for learning rate $\eta$ is 0.001.
+	
+\section{Adam}
+\label{section:adam}
+\noindent
+	
+	Adaptive moment estimation called Adam \cite{gdoverview} \cite{adam} is an adaptive learning rate optimization algorithm that has been developed specifically for training a deep learning neural network. It was designed in 2014 and introduced at ICLR 2015. Adam is a combination between RMSprop (Geoffrey Hinton at el) and SGD with momentum. Specifically, Adam calculates adaptive learning rate for each parameters individually and store the exponentially decay average of past squared gradients $v_t$ and $m_t$ like RMSprop and momentum, respectively.
+	
+	\[ m_t = \beta_1 m_{t-1} + (1 - \beta_1)g_t \]
+	
+	\[ v_t = \beta_2 v_{t-1} + (1 - \beta_2)g^2_t \]
+	
+	
+	As illustrated, Adam uses the squared gradients to scale down the learning rate like RMSprop and takes the advantage of momentum by using the average of gradient instead of gradient itself like SGD. $m_t$ and $v_t$ are estimated the value of the mean and the uncentered variance (meaning it does not subtract the mean during variance calculation). 
+	
+	To execute the estimation, Adam utilizes the exponentially moving averages using the gradient that evaluated on the current mini-batch where $m$ and $v$ are the moving averages, and g is the gradient on present mini-batch.
+	
+	Adam update rule is shown as following.
+	
+	\[ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t \]
+	
+	The good default value for $\beta_1$ is $0.9$ and $\beta_2$ is $0.999$, and $10^{-8}$ for $\epsilon$ proposed by the author himself.
 	
 	
