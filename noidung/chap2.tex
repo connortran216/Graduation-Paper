@@ -1,5 +1,6 @@
 \chapter{Related Works}
 \section{Introduction to traditional approaches}
+\label{section:traditional_approaches}
 \noindent
 
 	In the past decades, many systems for automatic HC measurement have been introduced with various traditional approaches. In 2005, Wei Lu et al presented a system that used a low-pass filter to reduce noise in ultrasound images and a transformation filter to increase contrast between skull and background (this process method is based on the signature of bones on ultrasound image that usually brighter than the background). And they optimized K-mean algorithm and morphologic binary area opening operation to achieved skull segment. After that, Wei Lu et al assumed the skull was elliptical shape and then applied an iterative randomized Hough transform to predict the offset value of the ellipse. Their result was quite remarkable with the differences between sonographers and the system only 0.52\% while predicting HC \cite{lu}.
@@ -10,6 +11,7 @@
 	
 
 \section{Conclusion and determine the problem}
+\label{section:determine_problem}
 \noindent
 	
 	Many systems for automatic HC measurement have been introduced with various traditional approaches using Hough transform, Haar-like features, ellipse fitting, etc. giving promising results. However, variations on the dataset are high due to noise, format, screening parameters configurations, etc. Therefore, traditional methods which based on hand-crafted features are not robust to all the variations of the images. 

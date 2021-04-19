@@ -23,7 +23,7 @@
 \BOOKMARK [0][-]{chapter.4}{Region Based Convolutional Neural Network}{}% 23
 \BOOKMARK [1][-]{section.4.1}{The problem of region of interest}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.2}{The original R-CNN}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{The Improvement In Fast R-CNN And FASTER R-CNN}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{The improvement in Fast R-CNN and Faster R-CNN}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.4}{Region proposal network \(RPNs\)}{chapter.4}% 27
 \BOOKMARK [2][-]{subsection.4.4.1}{Anchors}{section.4.4}% 28
 \BOOKMARK [2][-]{subsection.4.4.2}{ROI pool layer}{section.4.4}% 29
@@ -31,4 +31,6 @@
 \BOOKMARK [1][-]{section.5.1}{The problem with Faster R-CNN}{chapter.5}% 31
 \BOOKMARK [1][-]{section.5.2}{An extended solving the problem - Mask R-CNN}{chapter.5}% 32
 \BOOKMARK [2][-]{subsection.5.2.1}{Multi-task loss}{section.5.2}% 33
-\BOOKMARK [0][-]{subsection.5.2.1}{REFERENCES}{}% 34
+\BOOKMARK [2][-]{subsection.5.2.2}{Mask representation}{section.5.2}% 34
+\BOOKMARK [2][-]{subsection.5.2.3}{RoI align}{section.5.2}% 35
+\BOOKMARK [0][-]{subsection.5.2.3}{REFERENCES}{}% 36

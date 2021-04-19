@@ -1,9 +1,11 @@
 \chapter{Region Based Convolutional Neural Network}
 \section{The problem of region of interest}
+\label{section:problemofROI}
 \noindent
 	Computer vision is a large field that has been attracted lots of researchers, scientists in the recent years (after AlexNet’s milestone). Beside image classification problem, another research trend of computer vision is object detection. The difference between two types of problem is that classification problem wants to know the label or labels of the image, while detection problem try to locate a bounding box surrounding the object inside the image. The challenge is there could be many bounding boxes representing different objects and we do not how many beforehand. The major reason why typical CNN models as we describe in section 2 cannot solve this problem is that the length of the output layer is not constant (unknown number of objects). A naive approach for this is that we can take different region of interest (RoI) and apply CNN model to check whether the RoI has object. Yet, this approach also has a huge problem is that the RoIs may have different spatial locations in the image, therefore, it will cost an expensive computational resource because of a huge number of RoIs.
 	
 \section{The original R-CNN}
+\label{section:rcnn}
 \noindent
 
 	In 2014, a new model had been proposed named region based convolutional neural network. The model has a remarkable record on PASCAL VOC 2010 with the mean average precision (mAP) of 53.7\% and mAP of 31.4\% on ILSVR2013 detection dataset \cite{rcnn}.
@@ -21,7 +23,8 @@
 		\item The selective search algorithm is a fixed algorithm. Therefore, no learning is happening at that stage. This could lead to the generation of bad candidate region proposals.
 	\end{itemize}
 
-\section{The Improvement In Fast R-CNN And FASTER R-CNN}
+\section{The improvement in Fast R-CNN and Faster R-CNN}
+\label{section:fastandfasterrcnn}
 \noindent
 	
 	Next year, in 2015, Ross Girshick et al again proposed a new model called Fast R-CNN which solved the drawbacks of their previous model. This model architecture looks similar to the original R-CNN but instead of feeding the RoIs to CNN, an input image and multiple regions of interest (RoIs) are input into a CNN. Each RoI is pooled into a fixed-size feature map and then mapped to a feature vector by fully connected layers (FCs). The network has two output vectors per RoI: softmax probabilitiesand per-class bounding-box regression offsets. The architecture is trained end-to-end with a multi-task loss \cite{fastrcnn}.
@@ -61,7 +64,7 @@
 			\hline
 		\end{tabularx}
 		\caption{Comparison between CNN, R-CNN, Fast R-CNN, and Faster R-CNN}
-		\label{bang1}
+		\label{table:comparisonofrcnns}
 	
 	\end{table}
 %	\begin{table}[!htp]
@@ -78,6 +81,7 @@
 	
 	
 \section{Region proposal network (RPNs)}
+\label{section:rpns}
 \noindent	
 
 	In object detection using region based technique, RPN is a one true backbone which takes an image as the input and outs a set of rectangular RoIs. Although the RPN can process a whole image, the ultimate goal of the author is to share computation with the Fast R-CNN. As the result, the RPN is modified to be a small network that works as the second stage in the model architecture and it take the convolutional feature map output by the last shared convolutional layer of Faster R-CNN object detection network as the input. And then, this small network slide a n x n spatial window over the feature map to map it from high dimensional feature to lower one. This feature then is fed to two siblings fully-connected layers - a box-regression layer and a box-classification layer \cite{fasterrcnn}.
@@ -89,6 +93,7 @@
 	\end{figure}
 	
 \subsection{Anchors}
+\label{subsection:anchors}
 \noindent		
 
 	At each sliding window position, we predict simultaneously lots of proposals with k is denoted as the maximum number of proposals at each location. According to the paper, the regression layer has 4k predicted coordinates of k boxes and classification layer has 2k predicted probability outputs of object or not object for each proposals. Therefore, the k value helps the authors parameterize the unknown number of boxes to k boxes and they called them anchors. 
@@ -100,6 +105,7 @@
 	\end{itemize}
 	
 \subsection{ROI pool layer}
+\label{subsection:roi_pool}
 \noindent	
 	
 	For each object proposal, RoI pooling layer extracts a fixed length of feature vector from the feature map so that it can be fed into the classifier and regressor in the final FC layer. More explicitly, the RoI pooling can be described in three steps:
@@ -113,9 +119,10 @@
 		\centering
 		{\includegraphics[width=0.8\textwidth]{./hinhanh/chap4/roi_quantization.png}}
 		\caption{An example of RoI pooling window size 3x3 on vector 4x6.}
+		\label{fig:roi_quantization}
 	\end{figure}
 	
-	As we can see on Figure 7, RoI pooling only take 1x2 vector to map its maximum value to a fixed length vector because quantization process (4/3 $\sim$ 1.3333 = 1, 6/3 = 2). Therefore, the entire bottom row does not take in to account causing missing information of the feature map. This process will directly affect the result accuracy.
+	As we can see on \ref{fig:roi_quantization}, RoI pooling only take 1x2 vector to map its maximum value to a fixed length vector because quantization process (4/3 $\sim$ 1.3333 = 1, 6/3 = 2). Therefore, the entire bottom row does not take in to account causing missing information of the feature map. This process will directly affect the result accuracy.
 	
 	
 	
