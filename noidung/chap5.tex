@@ -61,6 +61,37 @@
 	
 	To address the problem, Kaiming He and his partners proposed a method called RoI align that erase the harassment of quantization from RoI pool technique. The change is minor but it works significantly effective on segmentation task. By taking advantage of bi-linear interpolation, the whole quantization issue is solved. Similar to RoI pool method, the RoI is divided into pre-fixed number of smaller regions. Within each smaller regions, 4 points are sampled. To be more specific, the calculation does not fall on a specific pixel, and the nearest pixel is used to perform bilinear interpolation on this \textit{virtual pixel} to obtain the pixel value and then max or average operation is executed to get the final result \cite{maskrcnn}.
 
+\subsection{Mask R-CNN architecture}
+\label{subsection:architecture}
+\noindent
 
-
-
+	According to the original paper, the architecture of Mask R-CNN is divided into 2 parts which are the backbone and the head.	
+	\begin{itemize}
+		\item The backbone is a convolutional network used for extracting feature maps from the input image. 
+		\item The head is the part that includes three parallel branches for object detection, bounding box regression, and mask generation.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		{\includegraphics[width=0.7\textwidth]{./hinhanh/chap5/architecture_mrcnn.png}}
+		\caption{The head and the backbone of Mask R-CNN architecture}
+		\label{fig:architecture_mrcnn}
+	\end{figure}
+	
+	In our work, we train and evaluate ResNet network of depth 50 and 101 layers \cite{resnet} combine with Feature Pyramid Network proposed by the authors of Mask R-CNN. By taking advantage of two state of the art networks, we not only can extract the feature that is more robust on the dataset, but we also can extract them in different levels according to the FPS scale \cite{maskrcnn}.
+	
+	For the network head, a fully convolutional mask prediction branch is added in parallel with two branches of the Faster R-CNN's head. Moreover, the authors also optimize Mask R-CNN with fewer filters when using FPN which already includes the the res5 backbone. Look at 
+	
+	\begin{figure}[H]
+		\centering
+		{\includegraphics[width=0.9\textwidth]{./hinhanh/chap5/fpn_res5.png}}
+		\caption{Head architecture of ResNet compares to FPN}
+		\label{fig:fpn_res5}
+	\end{figure}
+	
+	
+	
+	
+	
+	
+	

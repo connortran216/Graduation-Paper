@@ -39,4 +39,5 @@
 \contentsline {subsection}{\numberline {5.2.1}Multi-task loss}{36}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Mask representation}{37}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}RoI align}{37}{subsection.5.2.3}%
-\contentsline {chapter}{REFERENCES}{39}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Mask R-CNN architecture}{38}{subsection.5.2.4}%
+\contentsline {chapter}{REFERENCES}{40}{figure.caption.21}%
