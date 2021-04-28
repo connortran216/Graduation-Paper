@@ -80,16 +80,17 @@
 	
 	In our work, we train and evaluate ResNet network of depth 50 and 101 layers \cite{resnet} combine with Feature Pyramid Network proposed by the authors of Mask R-CNN. By taking advantage of two state of the art networks, we not only can extract the feature that is more robust on the dataset, but we also can extract them in different levels according to the FPS scale \cite{maskrcnn}.
 	
-	For the network head, a fully convolutional mask prediction branch is added in parallel with two branches of the Faster R-CNN's head. Moreover, the authors also optimize Mask R-CNN with fewer filters when using FPN which already includes the the res5 backbone. Look at 
+	For the network head, a fully convolutional mask prediction branch is added in parallel with two branches of the Faster R-CNN's head. Moreover, the authors also optimize Mask R-CNN with fewer filters when using FPN which already includes the the res5 backbone. Look at Figure \ref{fig:fpn_res5} for more details.
 	
 	\begin{figure}[H]
 		\centering
 		{\includegraphics[width=0.9\textwidth]{./hinhanh/chap5/fpn_res5.png}}
-		\caption{Head architecture of ResNet compares to FPN}
+		\caption{Head architecture of ResNet (left) compares to FPN (right)}
 		\label{fig:fpn_res5}
 	\end{figure}
-	
-	
+
+\noindent	
+	For further information of Mask R-CNN's architecture, we recommend readers to \cite{maskrcnn}.
 	
 	
 	

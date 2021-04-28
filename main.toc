@@ -40,4 +40,6 @@
 \contentsline {subsection}{\numberline {5.2.2}Mask representation}{37}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}RoI align}{37}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}Mask R-CNN architecture}{38}{subsection.5.2.4}%
-\contentsline {chapter}{REFERENCES}{40}{figure.caption.21}%
+\contentsline {chapter}{\numberline {6}Implementation details}{40}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Training process}{40}{section.6.1}%
+\contentsline {chapter}{REFERENCES}{41}{section.6.1}%
