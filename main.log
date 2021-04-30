@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.15)  29 APR 2021 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.15)  30 APR 2021 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1064,7 +1064,7 @@ Package: acronym 2019/11/11 v1.42 Support for acronyms (Tobias Oetiker)
 Package: suffix 2006/07/15 1.5a Variant command support
 )
 \AC@clearlist=\toks48
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/02/13 v4.45 (NLCT)
 
@@ -1219,8 +1219,7 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2020/02/13 v4.45 (NLCT)
 \glstreeindent=\skip111
-))
-(./caidat/configuration.tex
+))) (./caidat/configuration.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
@@ -1591,12 +1590,12 @@ Chapter 2.
 
 ]) (./noidung/chap3.tex [4]
 Chapter 3.
-<./hinhanh/chap3/us_image.png, id=351, 166.221pt x 112.0185pt>
+<./hinhanh/chap3/us_image.png, id=354, 166.221pt x 112.0185pt>
 File: ./hinhanh/chap3/us_image.png Graphic file (type png)
 <use ./hinhanh/chap3/us_image.png>
 Package pdftex.def Info: ./hinhanh/chap3/us_image.png  used on input line 13.
 (pdftex.def)             Requested size: 206.01077pt x 138.83481pt.
-<./hinhanh/chap3/ori_annotation.png, id=352, 803.0pt x 542.025pt>
+<./hinhanh/chap3/ori_annotation.png, id=355, 803.0pt x 542.025pt>
 File: ./hinhanh/chap3/ori_annotation.png Graphic file (type png)
 <use ./hinhanh/chap3/ori_annotation.png>
 Package pdftex.def Info: ./hinhanh/chap3/ori_annotation.png  used on input line
@@ -1605,7 +1604,7 @@ Package pdftex.def Info: ./hinhanh/chap3/ori_annotation.png  used on input line
 [5
 
 ]
-<./hinhanh/chap3/processed_annotation.png, id=357, 166.221pt x 112.6755pt>
+<./hinhanh/chap3/processed_annotation.png, id=360, 166.221pt x 112.6755pt>
 File: ./hinhanh/chap3/processed_annotation.png Graphic file (type png)
 <use ./hinhanh/chap3/processed_annotation.png>
 Package pdftex.def Info: ./hinhanh/chap3/processed_annotation.png  used on inpu
@@ -1619,60 +1618,60 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [7] [8] [9]
-<./hinhanh/chap3/conv_operation.png, id=392, 444.91219pt x 92.59593pt>
+<./hinhanh/chap3/conv_operation.png, id=395, 444.91219pt x 92.59593pt>
 File: ./hinhanh/chap3/conv_operation.png Graphic file (type png)
 <use ./hinhanh/chap3/conv_operation.png>
 Package pdftex.def Info: ./hinhanh/chap3/conv_operation.png  used on input line
  104.
 (pdftex.def)             Requested size: 366.24527pt x 76.22443pt.
  [10 <./hinhanh/chap3/conv_operation.png>]
-<./hinhanh/chap3/padding.png, id=402, 448.67625pt x 164.11313pt>
+<./hinhanh/chap3/padding.png, id=405, 448.67625pt x 164.11313pt>
 File: ./hinhanh/chap3/padding.png Graphic file (type png)
 <use ./hinhanh/chap3/padding.png>
 Package pdftex.def Info: ./hinhanh/chap3/padding.png  used on input line 129.
 (pdftex.def)             Requested size: 366.24527pt x 133.96762pt.
  [11]
-<./hinhanh/chap3/zero_padding.png, id=407, 434.37282pt x 184.43906pt>
+<./hinhanh/chap3/zero_padding.png, id=410, 434.37282pt x 184.43906pt>
 File: ./hinhanh/chap3/zero_padding.png Graphic file (type png)
 <use ./hinhanh/chap3/zero_padding.png>
 Package pdftex.def Info: ./hinhanh/chap3/zero_padding.png  used on input line 1
 38.
 (pdftex.def)             Requested size: 366.24527pt x 155.51874pt.
  [12 <./hinhanh/chap3/padding.png> <./hinhanh/chap3/zero_padding.png>]
-<./hinhanh/chap3/max_pooling.png, id=415, 450.18187pt x 97.86563pt>
+<./hinhanh/chap3/max_pooling.png, id=418, 450.18187pt x 97.86563pt>
 File: ./hinhanh/chap3/max_pooling.png Graphic file (type png)
 <use ./hinhanh/chap3/max_pooling.png>
 Package pdftex.def Info: ./hinhanh/chap3/max_pooling.png  used on input line 15
 3.
 (pdftex.def)             Requested size: 366.24527pt x 79.62163pt.
  [13 <./hinhanh/chap3/max_pooling.png>] [14] [15]
-<./hinhanh/chap3/bowl_shape.png, id=437, 562.1pt x 421.575pt>
+<./hinhanh/chap3/bowl_shape.png, id=440, 562.1pt x 421.575pt>
 File: ./hinhanh/chap3/bowl_shape.png Graphic file (type png)
 <use ./hinhanh/chap3/bowl_shape.png>
 Package pdftex.def Info: ./hinhanh/chap3/bowl_shape.png  used on input line 222
 .
 (pdftex.def)             Requested size: 320.46199pt x 240.34526pt.
  [16]
-<./hinhanh/chap3/global.png, id=443, 562.1pt x 421.575pt>
+<./hinhanh/chap3/global.png, id=446, 562.1pt x 421.575pt>
 File: ./hinhanh/chap3/global.png Graphic file (type png)
 <use ./hinhanh/chap3/global.png>
 Package pdftex.def Info: ./hinhanh/chap3/global.png  used on input line 233.
 (pdftex.def)             Requested size: 366.24527pt x 274.68306pt.
  [17 <./hinhanh/chap3/bowl_shape.png>]
-<./hinhanh/chap3/saddle.png, id=449, 853.1875pt x 345.29pt>
+<./hinhanh/chap3/saddle.png, id=452, 853.1875pt x 345.29pt>
 File: ./hinhanh/chap3/saddle.png Graphic file (type png)
 <use ./hinhanh/chap3/saddle.png>
 Package pdftex.def Info: ./hinhanh/chap3/saddle.png  used on input line 244.
 (pdftex.def)             Requested size: 412.02156pt x 166.74889pt.
  [18 <./hinhanh/chap3/global.png>]
-<./hinhanh/chap3/flutuate_plate.jpg, id=456, 280.04625pt x 181.67876pt>
+<./hinhanh/chap3/flutuate_plate.jpg, id=459, 280.04625pt x 181.67876pt>
 File: ./hinhanh/chap3/flutuate_plate.jpg Graphic file (type jpg)
 <use ./hinhanh/chap3/flutuate_plate.jpg>
 Package pdftex.def Info: ./hinhanh/chap3/flutuate_plate.jpg  used on input line
  262.
 (pdftex.def)             Requested size: 228.90242pt x 148.50626pt.
  [19 <./hinhanh/chap3/saddle.png>]
-<./hinhanh/chap3/simple_f(x).png, id=463, 170.13562pt x 181.42781pt>
+<./hinhanh/chap3/simple_f(x).png, id=466, 170.13562pt x 181.42781pt>
 File: ./hinhanh/chap3/simple_f(x).png Graphic file (type png)
 <use ./hinhanh/chap3/simple_f(x).png>
 Package pdftex.def Info: ./hinhanh/chap3/simple_f(x).png  used on input line 28
@@ -1688,14 +1687,14 @@ Chapter 4.
 LaTeX Warning: Float too large for page by 11.37279pt on input line 69.
 
 [29] [30]
-<./hinhanh/chap4/faster_rcnn.png, id=532, 520.19344pt x 520.94624pt>
+<./hinhanh/chap4/faster_rcnn.png, id=535, 520.19344pt x 520.94624pt>
 File: ./hinhanh/chap4/faster_rcnn.png Graphic file (type png)
 <use ./hinhanh/chap4/faster_rcnn.png>
 Package pdftex.def Info: ./hinhanh/chap4/faster_rcnn.png  used on input line 91
 .
 (pdftex.def)             Requested size: 320.46199pt x 320.92455pt.
  [31 <./hinhanh/chap4/faster_rcnn.png>]
-<./hinhanh/chap4/roi_quantization.png, id=538, 334.24875pt x 124.96687pt>
+<./hinhanh/chap4/roi_quantization.png, id=541, 334.24875pt x 124.96687pt>
 File: ./hinhanh/chap4/roi_quantization.png Graphic file (type png)
 <use ./hinhanh/chap4/roi_quantization.png>
 Package pdftex.def Info: ./hinhanh/chap4/roi_quantization.png  used on input li
@@ -1704,7 +1703,7 @@ ne 120.
  [32]) (./noidung/chap5.tex
 [33 <./hinhanh/chap4/roi_quantization.png>]
 Chapter 5.
-<./hinhanh/chap5/problem.png, id=551, 451.6875pt x 456.20438pt>
+<./hinhanh/chap5/problem.png, id=554, 451.6875pt x 456.20438pt>
 File: ./hinhanh/chap5/problem.png Graphic file (type png)
 <use ./hinhanh/chap5/problem.png>
 Package pdftex.def Info: ./hinhanh/chap5/problem.png  used on input line 14.
@@ -1712,7 +1711,7 @@ Package pdftex.def Info: ./hinhanh/chap5/problem.png  used on input line 14.
 [34
 
  <./hinhanh/chap5/problem.png>]
-<./hinhanh/chap5/mask_rcnn.png, id=560, 443.40656pt x 243.91125pt>
+<./hinhanh/chap5/mask_rcnn.png, id=563, 443.40656pt x 243.91125pt>
 File: ./hinhanh/chap5/mask_rcnn.png Graphic file (type png)
 <use ./hinhanh/chap5/mask_rcnn.png>
 Package pdftex.def Info: ./hinhanh/chap5/mask_rcnn.png  used on input line 29.
@@ -1722,14 +1721,14 @@ Package pdftex.def Info: ./hinhanh/chap5/mask_rcnn.png  used on input line 29.
 LaTeX Warning: Command \L invalid in math mode on input line 42.
 
 [36] [37]
-<./hinhanh/chap5/architecture_mrcnn.png, id=584, 1011.78pt x 720.6925pt>
+<./hinhanh/chap5/architecture_mrcnn.png, id=587, 1011.78pt x 720.6925pt>
 File: ./hinhanh/chap5/architecture_mrcnn.png Graphic file (type png)
 <use ./hinhanh/chap5/architecture_mrcnn.png>
 Package pdftex.def Info: ./hinhanh/chap5/architecture_mrcnn.png  used on input 
 line 76.
 (pdftex.def)             Requested size: 320.46199pt x 228.26198pt.
  [38 <./hinhanh/chap5/architecture_mrcnn.png>]
-<./hinhanh/chap5/fpn_res5.png, id=594, 870.25125pt x 290.08376pt>
+<./hinhanh/chap5/fpn_res5.png, id=597, 870.25125pt x 290.08376pt>
 File: ./hinhanh/chap5/fpn_res5.png Graphic file (type png)
 <use ./hinhanh/chap5/fpn_res5.png>
 Package pdftex.def Info: ./hinhanh/chap5/fpn_res5.png  used on input line 87.
@@ -1737,7 +1736,7 @@ Package pdftex.def Info: ./hinhanh/chap5/fpn_res5.png  used on input line 87.
 ) (./noidung/chap6.tex
 [39 <./hinhanh/chap5/fpn_res5.png (PNG copy)>]
 Chapter 6.
-<./hinhanh/chap6/hc_system.png, id=601, 892.33376pt x 543.02875pt>
+<./hinhanh/chap6/hc_system.png, id=604, 892.33376pt x 543.02875pt>
 File: ./hinhanh/chap6/hc_system.png Graphic file (type png)
 <use ./hinhanh/chap6/hc_system.png>
 Package pdftex.def Info: ./hinhanh/chap6/hc_system.png  used on input line 8.
@@ -1749,23 +1748,43 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [40
 
  <./hinhanh/chap6/hc_system.png>] [41] [42]
-Overfull \hbox (2621.27725pt too wide) in alignment at lines 90--93
+Overfull \hbox (905.68561pt too wide) in alignment at lines 92--95
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2621.27725pt too wide) in alignment at lines 93--97
+Overfull \hbox (905.68561pt too wide) in alignment at lines 95--99
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2621.27725pt too wide) in alignment at lines 97--114
+Overfull \hbox (905.68561pt too wide) in alignment at lines 99--120
  [] [] [] [] [] [] 
  []
 
-[43]) (./khac/tailieuthamkhao.tex [44] (./main.bbl [45
 
-] [46]) [47])
+Overfull \hbox (905.68561pt too wide) in alignment at lines 120--125
+ [] [] [] [] [] [] 
+ []
+
+[43]
+Overfull \hbox (388.35017pt too wide) in alignment at lines 132--135
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (388.35017pt too wide) in alignment at lines 135--156
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (388.35017pt too wide) in alignment at lines 156--161
+ [] [] [] [] [] [] 
+ []
+
+[44]) (./khac/tailieuthamkhao.tex [45] (./main.bbl [46
+
+] [47]) [48])
 No file main.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
@@ -1773,17 +1792,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1C664BFC194E6A46434FB5491E7D1480;2802.
+(rerunfilecheck)             Checksum: F6DAE26468DEA25D37B406BF386A4125;2809.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
  ) 
 Here is how much of TeX's memory you used:
- 33091 strings out of 481239
- 598300 string characters out of 5920377
- 1221304 words of memory out of 5000000
- 47424 multiletter control sequences out of 15000+600000
+ 33096 strings out of 481239
+ 598348 string characters out of 5920377
+ 1228304 words of memory out of 5000000
+ 47427 multiletter control sequences out of 15000+600000
  605699 words of font info for 71 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 67i,11n,87p,1148b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,11n,90p,1148b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr
 /share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips
@@ -1796,10 +1815,10 @@ public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (58 pages, 1171058 bytes).
+Output written on main.pdf (59 pages, 1174591 bytes).
 PDF statistics:
- 732 PDF objects out of 1000 (max. 8388607)
- 618 compressed objects within 7 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 743 PDF objects out of 1000 (max. 8388607)
+ 628 compressed objects within 7 object streams
+ 162 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

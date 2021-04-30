@@ -34,8 +34,8 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{Mask representation}{section.5.2}% 34
 \BOOKMARK [2][-]{subsection.5.2.3}{RoI align}{section.5.2}% 35
 \BOOKMARK [2][-]{subsection.5.2.4}{Mask R-CNN architecture}{section.5.2}% 36
-\BOOKMARK [0][-]{chapter.6}{Implementation details}{}% 37
+\BOOKMARK [0][-]{chapter.6}{Implementation and Evaluation}{}% 37
 \BOOKMARK [1][-]{section.6.1}{Training Mask R-CNN}{chapter.6}% 38
 \BOOKMARK [2][-]{subsection.6.1.1}{Configuration setting}{section.6.1}% 39
 \BOOKMARK [2][-]{subsection.6.1.2}{Training}{section.6.1}% 40
-\BOOKMARK [0][-]{table.6.2}{REFERENCES}{}% 41
+\BOOKMARK [0][-]{table.6.3}{REFERENCES}{}% 41
