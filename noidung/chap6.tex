@@ -1,24 +1,15 @@
 \chapter{Implementation and Evaluation}
-\noindent
-
-	In this chapter, we will introduce our proposed system that includes five core components processing HC images and estimate the perimeter of the fetus' head. Each of the components is an restful API which works on specific task (inspired from micro service design). Therefore, in the future, we can easily scale up the number of workers (API) to speed up the process and manage them more conveniently in the deployment phrase. For more details, the system's design is shown in \ref{fig:hc_system}.
-	
-	\begin{figure}[H]
-		\centering
-		{\includegraphics[width=0.9\textwidth]{./hinhanh/chap6/hc_system.png}}
-		\caption{Proposed demo HC estimator system.}
-		\label{fig:hc_system}
-	\end{figure}
-
 \section{Training Mask R-CNN}
 \noindent
 	
 	In this research, we take advantage of a pre-trained model of Mask R-CNN and fine-tune it to for our problem instead of training the whole architecture of Mask R-CNN from scratch due to the lack of time and resources. Although Facebook's researchers published the official source code in 2018, we prefer using the unofficial one from Matterport Inc which was published in 2017 due to the majority of deep learning practitioner community (5k3 fork times compared to 9k6 ones, respectively). Further information, you can access the source code via this link \url{https://github.com/matterport/Mask_RCNN}.
 	
+	In addition, the whole training process was executed on Google's CoLab to take advantages of GPU power (which we did not have). Besides, the training loss and the validation loss, we also calculated mAP and mAR to evaluate the models more precisely.
+	
 \subsection{Configuration setting}
 \noindent
 
-	In the training phrase, focused on fine-tune several hyper-parameters that affected strongly for transfer learning technique. According to \cite{maskrcnn}, The default configuration was set based on Faster R-CNN due to its robustness on not only on detection task but also segmentation one. Look at Table \ref{table:hyperparameters} for more details about hyper-parameters.
+	In the training phrase, focused on fine-tune several hyper-parameters that affected strongly for transfer learning technique. According to \cite{maskrcnn}, the default configuration was set based on Faster R-CNN due to its robustness on not only on detection task but also segmentation one. Look at Table \ref{table:hyperparameters} for more details about hyper-parameters.
 	
 	\begin{table}[H]
 		\begin{tabularx}{1\textwidth} {
@@ -68,6 +59,7 @@
 	In Table \ref{table:hyperparameters}, we only list several hyper-parameters that are important in the fine-tune process. In addition, for more information of hyper-parameters, we recommend reader to read at \url{https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/config.py}.
 	
 \subsection{Training}
+\label{subsection:mrcnn_training}
 \noindent
 
 	As mentioned before, we used transfer learning technique to train Mask R-CNN. The dataset we used was described in \ref{subsection:dataset}. With a small pre-processing, we changed the annotation images and exported annotation's information (COCO's format) from it to fit Mask R-CNN's input requirement. In addition, we also applied data augmentation to increase the dataset size in order to avoid over-fitting problem. To be more precise, we created more images by:
@@ -79,7 +71,7 @@
 		\item Blurring images using a gaussian kernel with a random standard deviation sampled uniformly (per image) from the interval [0.0, 5.0].
 	\end{itemize}
 	
-	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE
+	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE. Because we only trained the head of the network, we decided to use 20-30 epochs
 	
 	
 	The result is illustrated in Table \ref{table:exp1}, \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
@@ -160,9 +152,120 @@
 	\label{table:exp2}
 	\end{longtable}
 	
-	Firstly, we started our training process with "Test 1" and "Test 2" in order to find out which optimizer was better than the other. In general, it is noticeable that Adam optimizer converged faster than SGD one. Moreover, model with Adam optimizer showed a much better mAP and mAR compared to model with SGD. 
+	Firstly, we started our training process with "Test 1" and "Test 2" in order to find out which optimizer was better than the other. In general, it is noticeable that Adam optimizer converged slightly faster than SGD one. Moreover, model with Adam optimizer showed a much better mAP and mAR compared to model with SGD. Yet, the total loss, especially the mask loss was still high (more than 0.4 and 0.2, respectively). Let's look at Figure \ref{fig:loss_12} and \ref{fig:mask_loss_12} for more details.
 	
- 	In "Test 3, 4", we change the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going deeper? And the results were quite significant. In "Test 3", with ResNet101, we improved the model mAP and mAR from ~0.5 to 0.97777 which was the highest score in lots of experiments we had proceeded. However, loss value of "Test 4" went to NaN due to the high learning rate which showed Adam optimizer was quite sensitive to the high learning rate. Therefore, in "Test 5" we decreased the learning rate to 0.0001, as the result, the model showed a better result (yet, its mAP and mAR were still low). Consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively.
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{Total loss in Test 1.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/loss_t1.png}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{Total loss in Test 2.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/loss_t2.png}}%
+		\hfill % <-- Seperation
+		\caption{Comparison between Test 1 and Test 2 loss.}
+		\label{fig:loss_12}
+	\end{figure}
 	
-	Although, Adam optimizer with ResNet50 backbone showed a remarkable result, SGD optimizer with ResNet101 backbone illustrated the highest results in "Test 3" and "Test 9" with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively.
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{Mask loss in Test 1.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/mask_loss_t1.png}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{Mask loss in Test 2.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/mask_loss_t2.png}}%
+		\hfill % <-- Seperation
+		\caption{Comparison between Test 1 and Test 2  mask loss.}
+		\label{fig:mask_loss_12}
+	\end{figure}
+
+\noindent	
+	\textbf{Noted:} In training phrase, we were mostly paid attention for the mask loss due to the characteristic of the problem which was instance segmentation. Therefore, we altered the weight balance with the ratio was 1.0 - 1.0 - 3.0 (for classification loss, detection loss, and segmentation loss, respectively) in order to calculate the perimeter of HC with the minimum error using the generated mask.
+	
+ 	In next the experiments, we change the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going \textit{deeper}? And the results were quite significant. In "Test 3", with ResNet101, we improved the model mAP and mAR from ~0.5 to 0.97777 which was the highest score in lots of experiments we had proceeded. However, the total loss of "Test 4" went to NaN due to the high learning rate which showed Adam optimizer was quite sensitive to the high learning rate (overshooting problem). Therefore, in "Test 5" we decreased the learning rate to 0.0001, consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively.
+	
+	Although, Adam optimizer with ResNet101 backbone also showed a remarkable result (Test7, 10), SGD optimizer with ResNet101 backbone illustrated the improvement in results of "Test 3" and "Test 9" with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively.
+	
+\subsection{Inference}
+\label{subsection:mrcnn_inference}
+\noindent
+	
+	The testing phrase was executed on the PC with hardwares as following:
+	
+	\begin{itemize}
+		\item CPU AMD Ryzen 5 1600.
+		\item GPU Nvidia GTX 1050TI.
+		\item RAM 8GB.
+	\end{itemize}
+	
+	Even with this minimum system, Mask R-CNN could generate mask with around 1~2 second for each testing image. The result was shown in Figure \ref{fig:train_test_result}.
+	
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{Generated mask on training sample.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/training_result.png}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{Generated mask on testing sample.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/testing_result.png}}%
+		\hfill % <-- Seperation
+		\caption{We can see that segmentation part on testing sample were not perfect as training one. Therefore, the perimeter was estimated from this mask would be affected.}
+		\label{fig:train_test_result}
+	\end{figure}
+	
+	As we can see from Figure \ref{fig:train_test_result}, the generated mask was fit perfectly on the fetus' head. Yet, the model was not robust enough on the testing image (we can still see the white part of the skull that had not covered yet by the mask)
+	
+\section{Building the Restful API}
+\noindent
+
+	In this section, we will introduce our proposed system that includes five core components processing HC images and estimate the perimeter of the fetus' head. Each of the components is an restful API which works on specific task (inspired from micro service design). Therefore, in the future, we can easily scale up the number of workers (API) to speed up the process and manage them more conveniently in the deployment phrase. For more details, the system's design is shown in \ref{fig:hc_system}.
+	
+	\begin{figure}[H]
+		\centering
+		{\includegraphics[width=0.9\textwidth]{./hinhanh/chap6/hc_system.png}}
+		\caption{Proposed demo HC estimator system.}
+		\label{fig:hc_system}
+	\end{figure}
+
+\subsection{Service Gateway}
+\noindent
+
+	Briefly, service gateway is an API that receives fetus' head from multiple sources such as images, video, or even streaming form. We decided to separate it to be standalone in order to process multiple transfer types more conveniently. However, in this thesis, this system is simply a demo so it only supports image transfer which is sent through a HTTP request.
+	
+	More precisely, the input data for Service Gateway are pixel size (to calculate the perimeter) and image of fetus' head in RGB color channel.
+	
+\subsection{Center Processing}
+\noindent
+
+	This API, in short, it is like a CPU that sends data and receives result to/from others APIs. To be more specific:
+	
+	\begin{itemize}
+		\item Firstly, it sends a image to Mask Generator, and then receive a binary mask.
+		\item Secondly, it sends the binary mask and the image to
+		\item RAM 8GB.
+	\end{itemize}
+	
+	Besides, it works as a manager to monitor, report, etc.. the process of others APIs. Moreover, because we plan to increase the number of workers for specific task as in Figure \ref{fig:hc_system}, it is necessary to have a center processing to control the work flow of the system.
+
+\subsection{Mask Generator}
+
+
+
+\noindent
+
+	After generating mask for the fetus' head, the ellipse fitting algorithm was applied to adjust the polygon shape of the mask to the ellipse shape as in Figure \ref{fig:post_process}.
+	
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{The binary mask.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/crop_mask.jpg}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{The ellipse boundary on the fetus' head.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/ellipse_on_crop_mask.jpg}}%
+		\hfill % <-- Seperation
+		\caption{Combine finding contour algorithm with ellipse fitting one to  it an ellipse on the image.}
+		\label{fig:post_process}
+	\end{figure}
+
+	In the next step, the ellipse's information such as:
+	
+	\begin{itemize}
+		\item (x, y): center x, center y.
+		\item (MA, ma): semi axes a, semi axes b.
+		\item Angle radian
+	\end{itemize}
+	
+\noindent
+		
+	
 	
