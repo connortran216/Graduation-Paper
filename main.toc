@@ -48,4 +48,6 @@
 \contentsline {section}{\numberline {6.2}Building the Restful API}{47}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Service Gateway}{48}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Center Processing}{48}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Mask Generator}{48}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Ellipse Fitter}{49}{subsection.6.2.4}%
 \contentsline {chapter}{REFERENCES}{50}{figure.caption.27}%

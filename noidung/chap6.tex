@@ -188,9 +188,8 @@
 	The testing phrase was executed on the PC with hardwares as following:
 	
 	\begin{itemize}
-		\item CPU AMD Ryzen 5 1600.
-		\item GPU Nvidia GTX 1050TI.
-		\item RAM 8GB.
+		\item CPU Intel Core i5 8th.
+		\item RAM 12GB.
 	\end{itemize}
 	
 	Even with this minimum system, Mask R-CNN could generate mask with around 1~2 second for each testing image. The result was shown in Figure \ref{fig:train_test_result}.
@@ -233,19 +232,23 @@
 	
 	\begin{itemize}
 		\item Firstly, it sends a image to Mask Generator, and then receive a binary mask.
-		\item Secondly, it sends the binary mask and the image to
-		\item RAM 8GB.
+		\item Secondly, it sends the binary mask and the image to Ellipse Fitter, and then receive an ellipse that fits on the mask.
+		\item Finally, the ellipse's information is processed by Perimeter estimator to calculate the circumference of the ellipse (which is the fetus' head).
 	\end{itemize}
 	
 	Besides, it works as a manager to monitor, report, etc.. the process of others APIs. Moreover, because we plan to increase the number of workers for specific task as in Figure \ref{fig:hc_system}, it is necessary to have a center processing to control the work flow of the system.
 
 \subsection{Mask Generator}
-
-
-
+\noindent
+	
+	As the first processing stage, Mask Generator receive a request from Center Processing to segment the fetus's head in an RGB image and return a binary mask for it. Base on previous experiments, we decided to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
+	
+	Even though the whole generating process was working on a non-GPU computer, it still maintain the processing speed at 1~2s per image. Therefore, with a better hardware, the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
+	
+\subsection{Ellipse Fitter}
 \noindent
 
-	After generating mask for the fetus' head, the ellipse fitting algorithm was applied to adjust the polygon shape of the mask to the ellipse shape as in Figure \ref{fig:post_process}.
+	After generating mask for the fetus' head, the Hough transform algorithm was applied to adjust the polygon shape of the mask to the ellipse shape as in Figure \ref{fig:post_process}.
 	
 	\begin{figure}[H]
 		\centering
