@@ -6,6 +6,12 @@ Luiz Camargo, Hegler Tissot, and Aurora Pozo.
   training mlps.
 \newblock pages 78--86, 11 2012.
 
+\bibitem{direct_ellipse}
+A.~Fitzgibbon, M.~Pilu, and Robert~B. Fisher.
+\newblock Direct least squares fitting of ellipses.
+\newblock {\em Proceedings of 13th International Conference on Pattern
+  Recognition}, 1:253--257 vol.1, 1996.
+
 \bibitem{fastrcnn}
 Ross Girshick.
 \newblock Fast r-cnn.
@@ -97,12 +103,24 @@ Karen Simonyan and Andrew Zisserman.
 \newblock Very deep convolutional networks for large-scale image recognition.
 \newblock In {\em International Conference on Learning Representations}, 2015.
 
+\bibitem{findContours}
+Satoshi Suzuki and Keiichi Abe.
+\newblock Topological structural analysis of digitized binary images by border
+  following.
+\newblock {\em Computer Vision, Graphics, and Image Processing}, 30(1):32--46,
+  1985.
+
 \bibitem{googlenet}
 C.~{Szegedy}, {Wei Liu}, {Yangqing Jia}, P.~{Sermanet}, S.~{Reed},
   D.~{Anguelov}, D.~{Erhan}, V.~{Vanhoucke}, and A.~{Rabinovich}.
 \newblock Going deeper with convolutions.
 \newblock In {\em 2015 IEEE Conference on Computer Vision and Pattern
   Recognition (CVPR)}, pages 1--9, 2015.
+
+\bibitem{perimeter}
+Mark Villarino.
+\newblock Ramanujan's perimeter of an ellipse.
+\newblock 07 2005.
 
 \bibitem{dlvstradition}
 Joseph Walsh, Niall O'~Mahony, Sean Campbell, Anderson Carvalho, Lenka

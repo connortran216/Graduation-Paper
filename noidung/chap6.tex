@@ -71,7 +71,7 @@
 		\item Blurring images using a gaussian kernel with a random standard deviation sampled uniformly (per image) from the interval [0.0, 5.0].
 	\end{itemize}
 	
-	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE. Because we only trained the head of the network, we decided to use 20-30 epochs
+	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE. Because we only trained the head of the network, we decided to use 20-30 epochs.
 	
 	
 	The result is illustrated in Table \ref{table:exp1}, \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
@@ -175,7 +175,7 @@
 	\end{figure}
 
 \noindent	
-	\textbf{Noted:} In training phrase, we were mostly paid attention for the mask loss due to the characteristic of the problem which was instance segmentation. Therefore, we altered the weight balance with the ratio was 1.0 - 1.0 - 3.0 (for classification loss, detection loss, and segmentation loss, respectively) in order to calculate the perimeter of HC with the minimum error using the generated mask.
+	\textbf{Noted:} In training phrase, we mostly paid attention for the mask loss due to the characteristic of the problem which was instance segmentation. Therefore, we altered the weight balance with the ratio was 1.0 - 1.0 - 3.0 (for classification loss, detection loss, and segmentation loss, respectively) in order to calculate the perimeter of HC with the minimum error using the generated mask.
 	
  	In next the experiments, we change the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going \textit{deeper}? And the results were quite significant. In "Test 3", with ResNet101, we improved the model mAP and mAR from ~0.5 to 0.97777 which was the highest score in lots of experiments we had proceeded. However, the total loss of "Test 4" went to NaN due to the high learning rate which showed Adam optimizer was quite sensitive to the high learning rate (overshooting problem). Therefore, in "Test 5" we decreased the learning rate to 0.0001, consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively.
 	
@@ -204,12 +204,12 @@
 		\label{fig:train_test_result}
 	\end{figure}
 	
-	As we can see from Figure \ref{fig:train_test_result}, the generated mask was fit perfectly on the fetus' head. Yet, the model was not robust enough on the testing image (we can still see the white part of the skull that had not covered yet by the mask)
+	As we can see from Figure \ref{fig:train_test_result}, the generated mask was fit perfectly on the fetus' head. Yet, the model was not robust enough on the testing image (we can still see the white part of the skull that had not covered yet by the mask).
 	
 \section{Building the Restful API}
 \noindent
 
-	In this section, we will introduce our proposed system that includes five core components processing HC images and estimate the perimeter of the fetus' head. Each of the components is an restful API which works on specific task (inspired from micro service design). Therefore, in the future, we can easily scale up the number of workers (API) to speed up the process and manage them more conveniently in the deployment phrase. For more details, the system's design is shown in \ref{fig:hc_system}.
+	In this section, we will introduce our proposed system that includes five components includes 2 parts to transfer and manage the input, and 3 parts to process HC images and estimate the perimeter of the fetus' head. Each of the components is an restful API which works on specific task (inspired from micro service design). Therefore, in the future, we can easily scale up the number of workers (API) to speed up the process and manage them more conveniently in the deployment phrase. For more details, the system's design is shown in \ref{fig:hc_system}.
 	
 	\begin{figure}[H]
 		\centering
@@ -223,7 +223,7 @@
 
 	Briefly, service gateway is an API that receives fetus' head from multiple sources such as images, video, or even streaming form. We decided to separate it to be standalone in order to process multiple transfer types more conveniently. However, in this thesis, this system is simply a demo so it only supports image transfer which is sent through a HTTP request.
 	
-	More precisely, the input data for Service Gateway are pixel size (to calculate the perimeter) and image of fetus' head in RGB color channel.
+	More precisely, the input data for Service Gateway are pixel size (to calculate the perimeter) and image of fetus' head in RGB color channel \ref{subsection:dataset}, .
 	
 \subsection{Center Processing}
 \noindent
@@ -241,14 +241,14 @@
 \subsection{Mask Generator}
 \noindent
 	
-	As the first processing stage, Mask Generator receive a request from Center Processing to segment the fetus's head in an RGB image and return a binary mask for it. Base on previous experiments, we decided to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
+	As the first processing stage, Mask Generator receives a request from Center Processing to segment the fetus's head in an RGB image and returns a binary mask for it. Base on previous experiments, we decide to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
 	
-	Even though the whole generating process was working on a non-GPU computer, it still maintain the processing speed at 1~2s per image. Therefore, with a better hardware, the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
+	Even though the whole mask generating process is worked on a non-GPU computer, it still maintains the processing speed at 1~2s per image. Therefore, with a better hardware, we believe that the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
 	
 \subsection{Ellipse Fitter}
 \noindent
 
-	After generating mask for the fetus' head, the Hough transform algorithm was applied to adjust the polygon shape of the mask to the ellipse shape as in Figure \ref{fig:post_process}.
+	After generating mask for the fetus' head, the Contour-finding and the Ellipse-specific algorithms are applied to adjust the polygon shape of the mask to the ellipse shape as in Figure \ref{fig:post_process}.
 	
 	\begin{figure}[H]
 		\centering
@@ -260,7 +260,10 @@
 		\label{fig:post_process}
 	\end{figure}
 
-	In the next step, the ellipse's information such as:
+	Precisely, a curve joining of all continuous points (along the boundary of the binary mask) is found by using algorithm from \cite{findContours}. Despite this method is simple to implement through OpenCV, it works quite efficiently on our binary mask.
+	
+	
+	For an ellipse, its function requires a set $ \chi = (x^2, xy, y^2, x, y, 1)\ $. However, we only need five parameters to define an ellipse on 2D space. 
 	
 	\begin{itemize}
 		\item (x, y): center x, center y.
@@ -268,7 +271,20 @@
 		\item Angle radian
 	\end{itemize}
 	
+	To achieve this goal, we fit the ellipse around this set of 2D points by employing the Direct Least Square approach from \cite{direct_ellipse}.
+	
+\subsection{Perimeter Estimator}
 \noindent
+	
+	After receiving the ellipse's coordinates from Ellipse Fitter API, we estimate the ellipse's perimeter by employing Ramanujan’s formula \cite{perimeter}. The approximation of Ramanujan is demonstrated as in Equation \eqref{eq:perimeter}:
+	
+	\[ h = \frac{(a-b)^2}{(a+b)^2} \]
+	
+	\[ p \approx \pi (a+b) (1 + \frac{3h}{(10 + \sqrt{4 - 3h})} ) \label{eq:perimeter} \]
+
+\noindent
+	Then we multiply the $p$ with the pixel size to scale the result to the extract measure.
+
 		
 	
 	
