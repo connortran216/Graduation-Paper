@@ -27,3 +27,4 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces We can see that segmentation part on testing sample were not perfect as training one. Therefore, the perimeter was estimated from this mask would be affected.\relax }}{46}{figure.caption.25}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Proposed demo HC estimator system.\relax }}{47}{figure.caption.26}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Combine finding contour algorithm with ellipse fitting one to it an ellipse on the image.\relax }}{49}{figure.caption.27}%
+\addvspace {10\p@ }
