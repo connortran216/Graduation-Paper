@@ -81,13 +81,13 @@
 	% \usepackage{longtable}
 	% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 
-	\begin{longtable}[c]{|c|l|l|l|l|l|}
+	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
 		\hline
 		& \multicolumn{1}{c|}{\textbf{Test 1}} & \multicolumn{1}{c|}{\textbf{Test 2}} & \multicolumn{1}{c|}{\textbf{Test 3}} & \multicolumn{1}{c|}{\textbf{Test 4}} & \multicolumn{1}{c|}{\textbf{Test 5}} \\ \hline
 		\endfirsthead
 		%
 		\multicolumn{6}{c}%
-		{{\bfseries Table \thetable\ continued from previous page}} \\
+		{{\bfseries Table \thetable\ continued from previous page}}
 		\endhead
 		%
 		\textbf{Backbone} & Resnet50 & Resnet50 & Resnet101 & Resnet101 & Resnet101 \\ \hline
@@ -99,21 +99,22 @@
 		\textbf{Train - Val step} & 150 - 50 & 150 - 50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
 		\textbf{Detection min confidence} & 0 & 0 & 0.9 & 0.9 & 0.9 \\ \hline
 		\textbf{Detection NMS threshold} & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
-		\multirow{2}{*}{\textbf{RPN anchor scale}} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} \\
-		&  &  &  &  &  \\ \hline
+		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
 		\textbf{Resize mode} & square & square & square & square & square \\ \hline
 		\multirow{6}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-6} 
 		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-6} 
 		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-6} 
+		
 		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-6} 
-		& \multirow{2}{*}{mrcnn mask loss: 3.0} & \multirow{2}{*}{mrcnn mask loss: 3.0} & \multirow{2}{*}{mrcnn mask loss: 3.0} & \multirow{2}{*}{mrcnn mask loss: 3.0} & \multirow{2}{*}{mrcnn mask loss: 3.0} \\
-		&  &  &  &  &  \\ \hline
+		
+		& mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 \\ \hline
+		
 		\textbf{mAP} & 0.511111 & 0.822222222 & 0.977777777 & 0.0 & 0.9419753 \\ \hline
 		\textbf{mAR} & 0.533333 & 0.837037037 & 0.977777777 & 0.0 & 0.9703703 \\ \hline
 		\textbf{NOTE} & SGD train faster but trade off accuracy & Adam shows better much results but training time is slower than SGD & SGD shows it is better in using resnet101 & Training loss went NaN value because lr is high &  \\ \hline
-	
-	\caption{Experiment results}
-	\label{table:exp1}
+		
+		\caption{Experiment results}
+		\label{table:exp1}
 	\end{longtable}
 
 	
@@ -121,7 +122,7 @@
 	% \usepackage{multirow}
 	% \usepackage{longtable}
 	% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-	\begin{longtable}[c]{|c|l|l|l|l|l|}
+	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
 		\hline
 		& \multicolumn{1}{c|}{\textbf{Test 6}} & \multicolumn{1}{c|}{\textbf{Test 7}} & \multicolumn{1}{c|}{\textbf{Test 8}} & \multicolumn{1}{c|}{\textbf{Test 9}} & \multicolumn{1}{c|}{\textbf{Test 10}} \\ \hline
 		\endhead
@@ -135,17 +136,17 @@
 		\textbf{Train - Val step} & 150 - 50 & 150-50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
 		\textbf{Detection min confidence} & 0.7 & 0.7 & 0.7 & 0.7 & 0.9 \\ \hline
 		\textbf{Detection NMS threshold} & 0.7 & 0.7 & 0.7 & 0.7 & 0.9 \\ \hline
-		\multirow{2}{*}{\textbf{RPN anchor scale}} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} & \multirow{2}{*}{16, 32, 64, 128, 256} \\
-		&  &  &  &  &  \\ \hline
+		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
 		\textbf{Resize mode} & square & square & square & square & square \\ \hline
+		
 		\multirow{6}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-6} 
 		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-6} 
 		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-6} 
 		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-6} 
-		& \multirow{2}{*}{mrcnn mask loss: 1.0} & \multirow{2}{*}{mrcnn mask loss: 1.0} & \multirow{2}{*}{mrcnn mask loss: 1.0} & \multirow{2}{*}{mrcnn mask loss: 1.0} & \multirow{2}{*}{mrcnn mask loss: 1.0} \\
-		&  &  &  &  &  \\ \hline
-		\textbf{mAP} & 0.43703703703 & 0.955555555556 & 0.16296296298 & 0.9407407408 &  \\ \hline
-		\textbf{mAR} & 0.62222222222 & 0.970370370370 & 0.16296296298 & 0.9851851852 &  \\ \hline
+		& mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 \\  \hline
+		
+		\textbf{mAP} & 0.43703703 & 0.955555556 & 0.16296298 & 0.9407408 &  \\ \hline
+		\textbf{mAR} & 0.622222222 & 0.970370370 & 0.16296298 & 0.9851852 &  \\ \hline
 		\textbf{NOTE} & ??? & ??? & SGD not works well with resnet50 &  &  \\ \hline
 	
 	\caption{Experiment results}
@@ -481,5 +482,7 @@
 		\item "mean": 12.041447934609026,
 		\item "count": 47.0
 	\end{itemize}
+	
+	
 	
 	

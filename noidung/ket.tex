@@ -1,3 +1,39 @@
 \chapter{Conclusion}
+\section{Achieved result}
 \noindent
-	hahahahahah
+	
+	With the goal of the thesis is to design a system that can detect the fetus head and estimate its circumference with the minimum error rate, the thesis has achieved the following results:
+	
+	\begin{itemize}
+		\item Investigate the drawbacks of the traditional methods, and determine the main challenge in the system is the instance segmentation between the fetus head and the background on ultra sound images.
+		
+		\item Investigate the HC18 dataset, and modify it to fit the segmentation task.
+		
+		\item Survey the related works, the deep learning models on detection tasks and segmentation ones, as a reference basis to design the HC system.
+		
+		\item Research and learn the basis of convolution neural network, loss function, optimization function, etc..
+		
+		\item Analyze and evaluate several deep learning models (R-CNNs) which are famous for the instance segmentation task. 
+		
+		\item Apply transfer learning on Mask R-CNN and training the model on a modified HC18 dataset.
+		
+		\item Evaluate different models with different configuration base on mAP, mAR, and F1 score metrics.
+		
+		\item Design and build the whole system as APIs base on micro service design.
+		
+		\item Submit the result on Grand Challenge and rank at 1078th position with $7.15 \pm 4.33$ of mean absolute difference (mm) $\pm$std.
+	\end{itemize}
+
+\section{Future development direction}
+\noindent
+	
+	Although the result is quite good, it still does not reach the necessary requirement standard due to the high mean absolute difference (mm) $\pm$std. Moreover, it is still our first step in developing and designing the medical image processing system base on deep learning. Therefore, it is definitely more approaches that we have to try and we have determined a few as below:
+	
+	\begin{itemize}
+		\item Apply others models for segmentation task such as UNet and it variances. In reality, UNets are widely used to execute the segmentation task in the medical field for its outstanding robustness on small object segmentation.
+		
+		\item Improve the accuracy on estimated head circumference by modeling the ellipse fitting and perimeter estimating phrases.
+		
+		\item Change the system design to micro service instead of APIs and adopt Apache kafka message broker. Therefore, it will be easier to scale up the process of each phrase and improve the processing speed to achieve real-time standard.
+	\end{itemize}
+	
