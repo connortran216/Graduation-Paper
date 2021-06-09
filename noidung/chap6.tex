@@ -202,13 +202,13 @@
 		\label{fig:mask_loss_12}
 	\end{figure}
 
-	\textbf{Noted:} In training phrase, we did not pay much attention on training speed due to its similarity. However, the only thing that we can conclude from these test is that the training speed using configuration employing Resnet101 as backbone is a little longer than the one employing Resnet50 (around 60 minutes compared to 1 hour and 10 minutes). Last but not least, the type of optimizer, learning rate, and weight decay also affect the training speed but not not worth considering.
+	\textbf{Noted:} In training phrase, we did not pay much attention on training speed due to its similarity. However, the only thing that we can conclude from these tests is that the training speed of the test employing Resnet101 as backbone is a little longer than the one employing Resnet50 (around 60 minutes compared to around 70 minutes). Last but not least, the type of optimizer, learning rate, and weight decay also affect the training speed but not not worth considering.
 	
 \subsection{Inference}
 \label{subsection:mrcnn_inference}
 \noindent
 	
-	The testing phrase was executed on the PC with hardwares as following:
+	The testing phrase was executed on the PC with hardware as following:
 	
 	\begin{itemize}
 		\item CPU Intel Core i5 8th.
@@ -311,19 +311,15 @@
 \subsection{Result}
 \noindent
 
-	To evaluation the whole system, we tested it with 335 ultrasound images and then we submitted the result to  \href{https://hc18.grand-challenge.org/}{Grand Challenge}. As the result, we were ranked at 1077 position with several metrics as follow:
+	To evaluation the whole system, we tested it with 335 ultrasound images and then we submitted the result to  \href{https://hc18.grand-challenge.org/}{Grand Challenge}. As the result, we were ranked at 1077 position with several metrics.
 	
-%	\textbf{DICE:}
-%	\begin{itemize}
-%		\item "max": 27.589732124216823,
-%		\item "min": 76.75946495249799,
-%		\item "std": 3.7815463871178943,
-%		\item "25pc": 83.50825381011883,
-%		\item "50pc": 85.81469956490609,
-%		\item "75pc": 88.01129094018415,
-%		\item "mean": 86.09170119968213,
-%		\item "count": 335.0
-%	\end{itemize}
+	\textbf{Metrics to evaluate the system:}
+	\begin{itemize}
+		\item "DICE": Also called F1 score, it is 2 * the Area of Overlap divided by the total number of pixels in both images (it is similar to IoU).
+		\item "Difference": Similar to loss function, it is described as $x - y$.
+		\item "Absolute Difference": It is difference metric but in absolute value.
+		\item "Hausdorff Distance": Calculate the distance between 2 subsets of a metric space are from each other.
+	\end{itemize}
 %
 %	\textbf{Difference:}
 %	\begin{itemize}
@@ -504,8 +500,9 @@
 %		\item "mean": 12.041447934609026,
 %		\item "count": 47.0
 %	\end{itemize}
-	
-	
+
+
+
 \begin{longtable}[c]{|p{0.08\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
 	\hline
 	& \multicolumn{1}{c|}{\textbf{DICE}} & \multicolumn{1}{c|}{\textbf{DICE T1}} & \multicolumn{1}{c|}{\textbf{DICE T2}} & \multicolumn{1}{c|}{\textbf{DICE T3}} \\ \hline
