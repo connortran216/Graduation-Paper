@@ -4,9 +4,13 @@
 \label{subsection:dataset}
 \noindent
 
-	The collection of 1334 2D ultrasound images of fetal head were collected from the database of the Department of Obstetrics of the Radboud University Medical Center, Nijmegen, the Netherlands. All of the fetal head ultrasound images for this challenge were captured in the standard plane which is the specifically used to measure the HC \cite{thomas}.
-
-	The data is divided into a training set of 999 images and a test set of 335 images. The size of each 2D ultrasound image is 800x540 pixel with a pixel size ranging from 0.052 to 0.326 mm. The information of pixel of each image can be found in the CSV files: ‘training-set-pixel-size-and-HC.csv’ and ‘test-set-pixel-size.csv’. The variability of pixel size was resulted from the adjustment of sonographers during examinations which led to a different shape and size of the fetal heads. In addition, in the training set, come along with each ultrasound image is a manual annotation in millimeters. All of the image file-names start with a number. However, the file-names only set to 805 because some images were come from the same examination (different frame during monitoring), therefore they have a similar appearance \cite{thomas}.
+	The collection of 1334 2D ultrasound images of fetal head were collected from the database of the Department of Obstetrics of the Radboud University Medical Center, Nijmegen, the Netherlands. All of the fetal head ultrasound images for this challenge were captured on the standard plane which is the specifically used to measure the HC \cite{thomas}.
+	
+	The data is split-off into two different subsets. The first one is the training set (including 999 images) which is used for training and validating the model. The other one (including 335 images) is used for separate testing in order to eliminate the over-fitting problem.
+	
+	The size of each 2D ultrasound image is 800x540 pixels with a pixel size ranging from 0.052 to 0.326 mm. The information about the pixel of each image can be found in the CSV format files: ‘training-set-pixel-size-and-HC.csv’ and ‘test-set-pixel-size.csv’. The variability of pixel size resulted from the adjustment of sonographers during examinations which led to a different shape and size of the fetal heads. 
+	
+	In addition, each ultrasound image in the training set is accompanied by a manual annotation image. All of the image file-names start with a number. However, the file name only sets up to 805 because some images come from the same examination (different frame during monitoring), therefore they have a similar appearance \cite{thomas}.
 	
 	\begin{figure}[H]
 		\centering
@@ -23,7 +27,7 @@
 \label{subsection:preprocess}
 \noindent
 
-	During each examination, the sonographer manually draws an ellipse which best fit the fetal head and save it as annotation of the ultrasound image. And based on these annotations, we apply a few image processing to extract the ellipse coordinates and created a dataset in COCO format for further training methods.
+	During each examination, the sonographer manually drew an ellipse which best fit the fetal head and saved it as an annotation of the ultrasound image. And based on these annotations, we applied a little image processing to extract the ellipse coordinates and created a dataset in COCO format for further training methods.
 	
 	\begin{figure}[H]
 		\centering
@@ -83,13 +87,13 @@
 	
 	In the same year of 2015, another model call GoogLeNet was proposed and also archived result as good as VGG16. In this paper, the author introduced a brand new concept - inception block. It is a dense structure module that includes a few convolution kernel of size 1x1, 3x3, and 5x5 which helps reduce the computational power. Therefore, it enables the model to be deeper than any counterparts before.
 	
-	Base on these state of the art models, plenty more architectures have been proposed to solve problems from many different fields. They are not only getting more and more accurate and lighter, but they are also optimized to execute multi-tasks on real-time processing (which is hardly to achieve in the past) and solve a vast majority works of human.
+	Based on these state of the art models, plenty more architectures have been proposed to solve problems from many different fields. They are not only getting more and more accurate and lighter, but they are also optimized to execute multi-tasks on real-time processing (which is hardly to achieve in the past) and solve a vast majority works of human.
 
 \subsection{A CNN architecture}
 \label{subsection:CNNarchi}
 \noindent
 
-	In the previous section, we introduce briefly about CNN history, so what exactly is it? A typical CNN architecture consists of 3 types layers which are the input layer, the hidden layers, and the output layer. Unlike the traditional neural networks which only have layers of fully-connected neurons following by activation functions, CNNs also have layers that perform convolution, pooling layer to down size the feature map, and then the fully-connected layers.
+	In the previous section, we have introduced briefly about CNN history, so what exactly is it? A typical CNN architecture consists of 3 types layers which are the input layer, the hidden layers, and the output layer. Unlike the traditional neural networks which only have layers of fully-connected neurons following by activation functions, CNNs also have layers that perform convolution, pooling layer to down size the feature map, and then the fully-connected layers.
 	
 \subsubsection{Convolution layer}
 \label{subsubsection:convlayer}
@@ -167,7 +171,7 @@
 
 	In the training process, a CNN model learns to map a set of inputs to a set of outputs. By using gradient-based training method, the mapping process cannot be calculated perfectly in one step due to convergence process. Therefore, the model has to feed the inputs from the dataset over and over again to improve the mapping result. As a result, the problem of learning is explore as optimization problem. 
 	
-	Base on this idea, loss function (or cost function) is defined as the difference of the dataset output and the predicted output of the model. It is like a form of getting the model to pay a penalty after a wrong prediction, and loss function output is proportional to the severity of the error. In supervised learning problem, the goal is to minimize this loss as low as possible (In the ideal condition, loss function returns 0).
+	Based on this idea, loss function (or cost function) is defined as the difference of the dataset output and the predicted output of the model. It is like a form of getting the model to pay a penalty after a wrong prediction, and loss function output is proportional to the severity of the error. In supervised learning problem, the goal is to minimize this loss as low as possible (In the ideal condition, loss function returns 0).
 	
 	A general loss function is expressed as below:
 	\[
@@ -215,7 +219,7 @@
 	
 	There lots of problems when we try to optimize loss function of a deep learning model. Therefore, in this section, we will focus on several controversial issues such as local minima, saddle point, gradient exploding and gradient vanishing.
 	
-	As mentioned in loss function section, gradient-base method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at \ref{fig:bowl_shape}.
+	As mentioned in loss function section, gradient-based method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at \ref{fig:bowl_shape}.
 	
 	\begin{figure}[H]
 		\centering

@@ -22,9 +22,11 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The head and the backbone of Mask R-CNN architecture\relax }}{38}{figure.caption.20}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Head architecture of ResNet (left) compares to FPN (right)\relax }}{39}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison between Test 1 and Test 2 loss.\relax }}{46}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Comparison between Test 1 and Test 2 mask loss.\relax }}{46}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces We can see that segmentation part on testing sample were not perfect as training one. Therefore, the perimeter was estimated from this mask would be affected.\relax }}{47}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Proposed demo HC estimator system.\relax }}{48}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Combine finding contour algorithm with ellipse fitting one to it an ellipse on the image.\relax }}{50}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison between Test 1 and Test 2 training loss.\relax }}{46}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Comparison between Test 1 and Test 2 training mask loss.\relax }}{46}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Comparison between Test 3 and Test 10 training loss.\relax }}{47}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Comparison between Test 3 and Test 10 training mask loss.\relax }}{47}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces We can see that segmentation part on testing sample were not perfect as training one. Therefore, the perimeter was estimated from this mask would be affected.\relax }}{48}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Proposed demo HC estimator system.\relax }}{49}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Combine finding contour algorithm with ellipse fitting one to it an ellipse on the image.\relax }}{51}{figure.caption.29}%
 \addvspace {10\p@ }

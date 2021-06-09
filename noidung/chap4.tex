@@ -97,7 +97,7 @@
 \noindent		
 
 	At each sliding window position, we predict simultaneously lots of proposals with k is denoted as the maximum number of proposals at each location. According to the paper, the regression layer has 4k predicted coordinates of k boxes and classification layer has 2k predicted probability outputs of object or not object for each proposals. Therefore, the k value helps the authors parameterize the unknown number of boxes to k boxes and they called them anchors. 
-	An anchor is defined as the centered boxes of each sliding window. Base on the paper, the authors used 1 square, 2 rectangles with 3 scales and 3 aspect ratio to create 9 anchors (so k = 3 x 3 = 9). Therefore, with a feature map of the size W x H there are WHk anchors in total. These anchors are labeled with positive or negative base on the area that overlap with the ground truth box as the following rule:
+	An anchor is defined as the centered boxes of each sliding window. Based on the paper, the authors used 1 square, 2 rectangles with 3 scales and 3 aspect ratio to create 9 anchors (so k = 3 x 3 = 9). Therefore, with a feature map of the size W x H there are WHk anchors in total. These anchors are labeled with positive or negative based on the area that overlap with the ground truth box as the following rule:
 	\begin{itemize}
 		\item The anchor is positive when it is the maximum value of intersection over union (IoU) and it is bigger than 0.7.
 		\item The anchor is negative when it is smaller than 0.3.

@@ -44,15 +44,15 @@
 \contentsline {section}{\numberline {6.1}Training Mask R-CNN}{40}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Configuration setting}{40}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}Training}{41}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Inference}{47}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Building the Restful API}{48}{section.6.2}%
+\contentsline {subsection}{\numberline {6.1.3}Inference}{48}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Building the Restful API}{49}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Service Gateway}{49}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Center Processing}{49}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Mask Generator}{49}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Ellipse Fitter}{50}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Perimeter Estimator}{51}{subsection.6.2.5}%
-\contentsline {subsection}{\numberline {6.2.6}Result}{51}{subsection.6.2.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{59}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Achieved result}{59}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future development direction}{60}{section.7.2}%
-\contentsline {chapter}{REFERENCES}{61}{section.7.2}%
+\contentsline {subsection}{\numberline {6.2.2}Center Processing}{50}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Mask Generator}{50}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Ellipse Fitter}{51}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Perimeter Estimator}{52}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Result}{52}{subsection.6.2.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{55}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Achieved result}{55}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future development direction}{56}{section.7.2}%
+\contentsline {chapter}{REFERENCES}{57}{section.7.2}%

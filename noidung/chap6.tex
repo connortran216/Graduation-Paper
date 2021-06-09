@@ -111,7 +111,7 @@
 		
 		\textbf{mAP} & 0.511111 & 0.822222222 & 0.977777777 & 0.0 & 0.9419753 \\ \hline
 		\textbf{mAR} & 0.533333 & 0.837037037 & 0.977777777 & 0.0 & 0.9703703 \\ \hline
-		\textbf{NOTE} & SGD train faster but trade off accuracy & Adam shows better much results but training time is slower than SGD & SGD shows it is better in using resnet101 & Training loss went NaN value because lr is high &  \\ \hline
+		\textbf{NOTE} & loss weight balance helps improving the result & Adam shows better much results but training time is slower than SGD & SGD shows it is better in using resnet101 & Training loss went NaN value because lr is high &  \\ \hline
 		
 		\caption{Experiment results}
 		\label{table:exp1}
@@ -134,7 +134,7 @@
 		\textbf{Momentum} & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
 		\textbf{Epoch} & 30 & 30 & 30 & 30 & 30 \\ \hline
 		\textbf{Train - Val step} & 150 - 50 & 150-50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
-		\textbf{Detection min confidence} & 0.7 & 0.7 & 0.7 & 0.7 & 0.9 \\ \hline
+		\textbf{Detection min confidence} & 0.7 & 0.7 & 0.7 & 0.7 & 0 \\ \hline
 		\textbf{Detection NMS threshold} & 0.7 & 0.7 & 0.7 & 0.7 & 0.9 \\ \hline
 		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
 		\textbf{Resize mode} & square & square & square & square & square \\ \hline
@@ -143,10 +143,10 @@
 		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-6} 
 		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-6} 
 		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-6} 
-		& mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 \\  \hline
+		& mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 3.0 \\  \hline
 		
-		\textbf{mAP} & 0.43703703 & 0.955555556 & 0.16296298 & 0.9407408 &  \\ \hline
-		\textbf{mAR} & 0.622222222 & 0.970370370 & 0.16296298 & 0.9851852 &  \\ \hline
+		\textbf{mAP} & 0.43703703 & 0.955555556 & 0.16296298 & 0.9407408 & 0.9629629629 \\ \hline
+		\textbf{mAR} & 0.622222222 & 0.970370370 & 0.16296298 & 0.9851852 & 0.9703703703 \\ \hline
 		\textbf{NOTE} & ??? & ??? & SGD not works well with resnet50 &  &  \\ \hline
 	
 	\caption{Experiment results}
@@ -161,7 +161,7 @@
 		\hfill % <-- Seperation
 		\subcaptionbox{Total loss in Test 2.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/loss_t2.png}}%
 		\hfill % <-- Seperation
-		\caption{Comparison between Test 1 and Test 2 loss.}
+		\caption{Comparison between Test 1 and Test 2 training loss.}
 		\label{fig:loss_12}
 	\end{figure}
 	
@@ -171,7 +171,7 @@
 		\hfill % <-- Seperation
 		\subcaptionbox{Mask loss in Test 2.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/mask_loss_t2.png}}%
 		\hfill % <-- Seperation
-		\caption{Comparison between Test 1 and Test 2  mask loss.}
+		\caption{Comparison between Test 1 and Test 2 training mask loss.}
 		\label{fig:mask_loss_12}
 	\end{figure}
 
@@ -180,7 +180,29 @@
 	
  	In next the experiments, we change the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going \textit{deeper}? And the results were quite significant. In "Test 3", with ResNet101, we improved the model mAP and mAR from ~0.5 to 0.97777 which was the highest score in lots of experiments we had proceeded. However, the total loss of "Test 4" went to NaN due to the high learning rate which showed Adam optimizer was quite sensitive to the high learning rate (overshooting problem). Therefore, in "Test 5" we decreased the learning rate to 0.0001, consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively.
 	
-	Although, Adam optimizer with ResNet101 backbone also showed a remarkable result (Test7, 10), SGD optimizer with ResNet101 backbone illustrated the improvement in results of "Test 3" and "Test 9" with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively.
+	Although, Adam optimizer with ResNet101/Resnet50 backbone also showed a remarkable result (Test7, 10), SGD optimizer with ResNet101 backbone illustrated the improvement in results of "Test 3" and "Test 9" with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively.
+	
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{Total loss in Test 3.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/loss_t3.png}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{Total loss in Test 10.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/loss_t10.png}}%
+		\hfill % <-- Seperation
+		\caption{Comparison between Test 3 and Test 10 training loss.}
+		\label{fig:loss_12}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{Mask loss in Test 3.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/mask_loss_t3.png}}%
+		\hfill % <-- Seperation
+		\subcaptionbox{Mask loss in Test 10.}{\includegraphics[width=0.45\textwidth]{./hinhanh/chap6/mask_loss_t10.png}}%
+		\hfill % <-- Seperation
+		\caption{Comparison between Test 3 and Test 10 training mask loss.}
+		\label{fig:mask_loss_12}
+	\end{figure}
+
+	\textbf{Noted:} In training phrase, we did not pay much attention on training speed due to its similarity. However, the only thing that we can conclude from these test is that the training speed using configuration employing Resnet101 as backbone is a little longer than the one employing Resnet50 (around 60 minutes compared to 1 hour and 10 minutes). Last but not least, the type of optimizer, learning rate, and weight decay also affect the training speed but not not worth considering.
 	
 \subsection{Inference}
 \label{subsection:mrcnn_inference}
@@ -242,7 +264,7 @@
 \subsection{Mask Generator}
 \noindent
 	
-	As the first processing stage, Mask Generator receives a request from Center Processing to segment the fetus's head in an RGB image and returns a binary mask for it. Base on previous experiments, we decide to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
+	As the first processing stage, Mask Generator receives a request from Center Processing to segment the fetus's head in an RGB image and returns a binary mask for it. Based on previous experiments, we decide to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
 	
 	Even though the whole mask generating process is worked on a non-GPU computer, it still maintains the processing speed at 1~2s per image. Therefore, with a better hardware, we believe that the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
 	
@@ -291,198 +313,269 @@
 
 	To evaluation the whole system, we tested it with 335 ultrasound images and then we submitted the result to  \href{https://hc18.grand-challenge.org/}{Grand Challenge}. As the result, we were ranked at 1077 position with several metrics as follow:
 	
-	\textbf{DICE:}
-	\begin{itemize}
-		\item "max": 27.589732124216823,
-		\item "min": 76.75946495249799,
-		\item "std": 3.7815463871178943,
-		\item "25pc": 83.50825381011883,
-		\item "50pc": 85.81469956490609,
-		\item "75pc": 88.01129094018415,
-		\item "mean": 86.09170119968213,
-		\item "count": 335.0
-	\end{itemize}
-
-	\textbf{Difference:}
-	\begin{itemize}
-		\item "max": 27.589732124216823,
-		\item "min": -0.6480596018764686,
-		\item "std": 4.33538798698353,
-		\item "25pc": 4.394918205609386,
-		\item "50pc": 6.114941307429092,
-		\item "75pc": 8.74297314561646,
-		\item "mean": 7.147501055171521,
-		\item "count": 335.0
-	\end{itemize}
+%	\textbf{DICE:}
+%	\begin{itemize}
+%		\item "max": 27.589732124216823,
+%		\item "min": 76.75946495249799,
+%		\item "std": 3.7815463871178943,
+%		\item "25pc": 83.50825381011883,
+%		\item "50pc": 85.81469956490609,
+%		\item "75pc": 88.01129094018415,
+%		\item "mean": 86.09170119968213,
+%		\item "count": 335.0
+%	\end{itemize}
+%
+%	\textbf{Difference:}
+%	\begin{itemize}
+%		\item "max": 27.589732124216823,
+%		\item "min": -0.6480596018764686,
+%		\item "std": 4.33538798698353,
+%		\item "25pc": 4.394918205609386,
+%		\item "50pc": 6.114941307429092,
+%		\item "75pc": 8.74297314561646,
+%		\item "mean": 7.147501055171521,
+%		\item "count": 335.0
+%	\end{itemize}
+%	
+%	\textbf{DICE trimester 1:}
+%	\begin{itemize}
+%		\item "max": 97.13935203256567,
+%		\item "min": 76.75946495249799,
+%		\item "std": 4.762801395468964,
+%		\item "25pc": 85.62838488544139,
+%		\item "50pc": 88.8016218891177,
+%		\item "75pc": 92.7723271301243,
+%		\item "mean": 88.74547608698568,
+%		\item "count": 55.0
+%	\end{itemize}
+%
+%	\textbf{DICE trimester 2:}
+%	\begin{itemize}
+%		\item "max": 97.0691841623221,
+%		\item "min": 77.47039916485811,
+%		\item "std": 3.3353566574286297,
+%		\item "25pc": 83.26670659930204,
+%		\item "50pc": 85.55823051459525,
+%		\item "75pc": 87.29931334288395,
+%		\item "mean": 85.63891977747174,
+%		\item "count": 233.0
+%	\end{itemize}
+%
+%	\textbf{DICE trimester 3:}
+%	\begin{itemize}
+%		\item "max": 90.40598274885838,
+%		\item "min": 78.04261888610793,
+%		\item "std": 3.298341158642274,
+%		\item "25pc": 83.15553019467893,
+%		\item "50pc": 85.53754670022215,
+%		\item "75pc": 87.85791957902292,
+%		\item "mean": 85.23085976507201,
+%		\item "count": 47.0
+%	\end{itemize}
+%
+%	\textbf{Hausdorff distance:}
+%	\begin{itemize}
+%		\item "max": 20.589144777463485,
+%		\item "min": 0.7724761587361798,
+%		\item "std": 3.583340499351782,
+%		\item "25pc": 5.516364786956328,
+%		\item "50pc": 7.548516888575833,
+%		\item "75pc": 9.419397962500073,
+%		\item "mean": 7.581017919690942,
+%		\item "count": 335.0
+%	\end{itemize}
+%
+%	\textbf{Absolute difference:}
+%	\begin{itemize}
+%		\item "max": 27.589732124216823,
+%		\item "min": 0.6480596018764686,
+%		\item "std": 4.3289838125839815,
+%		\item "25pc": 4.394918205609386,
+%		\item "50pc": 6.114941307429092,
+%		\item "75pc": 8.74297314561646,
+%		\item "mean": 7.151370067720037,
+%		\item "count": 335.0
+%	\end{itemize}
+%
+%	\textbf{Difference trimester 1:}
+%	\begin{itemize}
+%		\item "max": 15.111908868158608,
+%		\item "min": 1.2812882510039572,
+%		\item "std": 2.9241650358535636,
+%		\item "25pc": 3.134473332958102,
+%		\item "50pc": 4.602075402152096,
+%		\item "75pc": 6.087198198104765,
+%		\item "mean": 5.135097830934518,
+%		\item "count": 55.0
+%	\end{itemize}
+%
+%	\textbf{Difference trimester 2:}
+%	\begin{itemize}
+%		\item "max": 24.749099690650667,
+%		\item "min": -0.6480596018764686,
+%		\item "std": 3.579054028927821,
+%		\item "25pc": 4.464146812138978,
+%		\item "50pc": 6.026485291046242,
+%		\item "75pc": 7.730095196420621,
+%		\item "mean": 6.635340857744364,
+%		\item "count": 233.0
+%	\end{itemize}
+%
+%	\textbf{Difference trimester 3:}
+%	\begin{itemize}
+%		\item "max": 27.589732124216823,
+%		\item "min": 0.6867050791128122,
+%		\item "std": 5.584556464260941,
+%		\item "25pc": 9.190157286174411,
+%		\item "50pc": 11.662282500140009,
+%		\item "75pc": 14.501014051515938,
+%		\item "mean": 12.041447934609026,
+%		\item "count": 47.0
+%	\end{itemize}
+%
+%	\textbf{Hausdorff distance trimester 1:}
+%	\begin{itemize}
+%		\item "max": 6.097752780066,
+%		\item "min": 0.7724761587361798,
+%		\item "std": 1.1635430749332072,
+%		\item "25pc": 1.98026176953945,
+%		\item "50pc": 2.7580496387675,
+%		\item "75pc": 3.6799445304227216,
+%		\item "mean": 2.8235145949238367,
+%		\item "count": 55.0
+%	\end{itemize}
+%
+%	\textbf{Hausdorff distance trimester 2:}
+%	\begin{itemize}
+%		\item "max": 14.658116046154605,
+%		\item "min": 1.0214043471768,
+%		\item "std": 2.045828977818262,
+%		\item "25pc": 6.316217417726442,
+%		\item "50pc": 7.616355581727,
+%		\item "75pc": 8.87503939518,
+%		\item "mean": 7.535175687838671,
+%		\item "count": 233.0
+%	\end{itemize}
+%
+%	\textbf{Hausdorff distance trimester 3:}
+%	\begin{itemize}
+%		\item "max": 20.589144777463485,
+%		\item "min": 8.011363070117723,
+%		\item "std": 3.0255606034609572,
+%		\item "25pc": 11.575047545355172,
+%		\item "50pc": 12.37692592766892,
+%		\item "75pc": 15.573101160804221,
+%		\item "mean": 13.37556947040946,
+%		\item "count": 47.0
+%	\end{itemize}
+%
+%	\textbf{Absolute difference trimester 1:}
+%	\begin{itemize}
+%		\item "max": 15.111908868158608,
+%		\item "min": 1.2812882510039572,
+%		\item "std": 2.9241650358535636,
+%		\item "25pc": 3.134473332958102,
+%		\item "50pc": 4.602075402152096,
+%		\item "75pc": 6.087198198104765,
+%		\item "mean": 5.135097830934518,
+%		\item "count": 55.0
+%	\end{itemize}
+%
+%	\textbf{Absolute difference trimester 2:}
+%	\begin{itemize}
+%		\item "max": 24.749099690650667,
+%		\item "min": 0.6480596018764686,
+%		\item "std": 3.5686772160242395,
+%		\item "25pc": 4.464146812138978,
+%		\item "50pc": 6.026485291046242,
+%		\item "75pc": 7.730095196420621,
+%		\item "mean": 6.64090360110811,
+%		\item "count": 233.0
+%	\end{itemize}
+%
+%	\textbf{Absolute difference trimester 3:}
+%	\begin{itemize}
+%		\item "max": 27.589732124216823,
+%		\item "min": 0.6867050791128122,
+%		\item "std": 5.584556464260941,
+%		\item "25pc": 9.190157286174411,
+%		\item "50pc": 11.662282500140009,
+%		\item "75pc": 14.501014051515938,
+%		\item "mean": 12.041447934609026,
+%		\item "count": 47.0
+%	\end{itemize}
 	
-	\textbf{DICE trimester 1:}
-	\begin{itemize}
-		\item "max": 97.13935203256567,
-		\item "min": 76.75946495249799,
-		\item "std": 4.762801395468964,
-		\item "25pc": 85.62838488544139,
-		\item "50pc": 88.8016218891177,
-		\item "75pc": 92.7723271301243,
-		\item "mean": 88.74547608698568,
-		\item "count": 55.0
-	\end{itemize}
-
-	\textbf{DICE trimester 2:}
-	\begin{itemize}
-		\item "max": 97.0691841623221,
-		\item "min": 77.47039916485811,
-		\item "std": 3.3353566574286297,
-		\item "25pc": 83.26670659930204,
-		\item "50pc": 85.55823051459525,
-		\item "75pc": 87.29931334288395,
-		\item "mean": 85.63891977747174,
-		\item "count": 233.0
-	\end{itemize}
-
-	\textbf{DICE trimester 3:}
-	\begin{itemize}
-		\item "max": 90.40598274885838,
-		\item "min": 78.04261888610793,
-		\item "std": 3.298341158642274,
-		\item "25pc": 83.15553019467893,
-		\item "50pc": 85.53754670022215,
-		\item "75pc": 87.85791957902292,
-		\item "mean": 85.23085976507201,
-		\item "count": 47.0
-	\end{itemize}
-
-	\textbf{Hausdorff distance:}
-	\begin{itemize}
-		\item "max": 20.589144777463485,
-		\item "min": 0.7724761587361798,
-		\item "std": 3.583340499351782,
-		\item "25pc": 5.516364786956328,
-		\item "50pc": 7.548516888575833,
-		\item "75pc": 9.419397962500073,
-		\item "mean": 7.581017919690942,
-		\item "count": 335.0
-	\end{itemize}
-
-	\textbf{Absolute difference:}
-	\begin{itemize}
-		\item "max": 27.589732124216823,
-		\item "min": 0.6480596018764686,
-		\item "std": 4.3289838125839815,
-		\item "25pc": 4.394918205609386,
-		\item "50pc": 6.114941307429092,
-		\item "75pc": 8.74297314561646,
-		\item "mean": 7.151370067720037,
-		\item "count": 335.0
-	\end{itemize}
-
-	\textbf{Difference trimester 1:}
-	\begin{itemize}
-		\item "max": 15.111908868158608,
-		\item "min": 1.2812882510039572,
-		\item "std": 2.9241650358535636,
-		\item "25pc": 3.134473332958102,
-		\item "50pc": 4.602075402152096,
-		\item "75pc": 6.087198198104765,
-		\item "mean": 5.135097830934518,
-		\item "count": 55.0
-	\end{itemize}
-
-	\textbf{Difference trimester 2:}
-	\begin{itemize}
-		\item "max": 24.749099690650667,
-		\item "min": -0.6480596018764686,
-		\item "std": 3.579054028927821,
-		\item "25pc": 4.464146812138978,
-		\item "50pc": 6.026485291046242,
-		\item "75pc": 7.730095196420621,
-		\item "mean": 6.635340857744364,
-		\item "count": 233.0
-	\end{itemize}
-
-	\textbf{Difference trimester 3:}
-	\begin{itemize}
-		\item "max": 27.589732124216823,
-		\item "min": 0.6867050791128122,
-		\item "std": 5.584556464260941,
-		\item "25pc": 9.190157286174411,
-		\item "50pc": 11.662282500140009,
-		\item "75pc": 14.501014051515938,
-		\item "mean": 12.041447934609026,
-		\item "count": 47.0
-	\end{itemize}
-
-	\textbf{Hausdorff distance trimester 1:}
-	\begin{itemize}
-		\item "max": 6.097752780066,
-		\item "min": 0.7724761587361798,
-		\item "std": 1.1635430749332072,
-		\item "25pc": 1.98026176953945,
-		\item "50pc": 2.7580496387675,
-		\item "75pc": 3.6799445304227216,
-		\item "mean": 2.8235145949238367,
-		\item "count": 55.0
-	\end{itemize}
-
-	\textbf{Hausdorff distance trimester 2:}
-	\begin{itemize}
-		\item "max": 14.658116046154605,
-		\item "min": 1.0214043471768,
-		\item "std": 2.045828977818262,
-		\item "25pc": 6.316217417726442,
-		\item "50pc": 7.616355581727,
-		\item "75pc": 8.87503939518,
-		\item "mean": 7.535175687838671,
-		\item "count": 233.0
-	\end{itemize}
-
-	\textbf{Hausdorff distance trimester 3:}
-	\begin{itemize}
-		\item "max": 20.589144777463485,
-		\item "min": 8.011363070117723,
-		\item "std": 3.0255606034609572,
-		\item "25pc": 11.575047545355172,
-		\item "50pc": 12.37692592766892,
-		\item "75pc": 15.573101160804221,
-		\item "mean": 13.37556947040946,
-		\item "count": 47.0
-	\end{itemize}
-
-	\textbf{Absolute difference trimester 1:}
-	\begin{itemize}
-		\item "max": 15.111908868158608,
-		\item "min": 1.2812882510039572,
-		\item "std": 2.9241650358535636,
-		\item "25pc": 3.134473332958102,
-		\item "50pc": 4.602075402152096,
-		\item "75pc": 6.087198198104765,
-		\item "mean": 5.135097830934518,
-		\item "count": 55.0
-	\end{itemize}
-
-	\textbf{Absolute difference trimester 2:}
-	\begin{itemize}
-		\item "max": 24.749099690650667,
-		\item "min": 0.6480596018764686,
-		\item "std": 3.5686772160242395,
-		\item "25pc": 4.464146812138978,
-		\item "50pc": 6.026485291046242,
-		\item "75pc": 7.730095196420621,
-		\item "mean": 6.64090360110811,
-		\item "count": 233.0
-	\end{itemize}
-
-	\textbf{Absolute difference trimester 3:}
-	\begin{itemize}
-		\item "max": 27.589732124216823,
-		\item "min": 0.6867050791128122,
-		\item "std": 5.584556464260941,
-		\item "25pc": 9.190157286174411,
-		\item "50pc": 11.662282500140009,
-		\item "75pc": 14.501014051515938,
-		\item "mean": 12.041447934609026,
-		\item "count": 47.0
-	\end{itemize}
+	
+\begin{longtable}[c]{|p{0.08\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+	\hline
+	& \multicolumn{1}{c|}{\textbf{DICE}} & \multicolumn{1}{c|}{\textbf{DICE T1}} & \multicolumn{1}{c|}{\textbf{DICE T2}} & \multicolumn{1}{c|}{\textbf{DICE T3}} \\ \hline
+	\endhead
+	\textbf{Max} & 27.589732124216823 & 27.589732124216823 & 97.0691841623221 & 90.40598274885838 \\ \hline
+	\textbf{Min} & 76.75946495249799 & 76.75946495249799 & 77.47039916485811 & 78.04261888610793 \\ \hline
+	\textbf{Std} & 3.7815463871178943 & 4.762801395468964 & 3.3353566574286297 & 3.298341158642274 \\ \hline
+	\textbf{25pc} & 83.50825381011883 & 85.62838488544139 & 83.26670659930204 & 83.15553019467893 \\ \hline
+	\textbf{50pc} & 85.81469956490609 & 88.8016218891177 & 85.55823051459525 & 85.53754670022215 \\ \hline
+	\textbf{75pc} & 88.01129094018415 & 92.7723271301243 & 87.29931334288395 & 87.85791957902292 \\ \hline
+	\textbf{Mean} & 86.09170119968213 & 88.74547608698568 & 85.63891977747174 & 85.23085976507201 \\ \hline
+	\textbf{Count} & 335 & 55 & 233 & 47 \\ \hline
 	
 	
+	\caption{DICE metrics}
+	\label{table:dice}
+\end{longtable}
+
+
+\begin{longtable}[c]{|p{0.08\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+	\hline
+	& \multicolumn{1}{c|}{\textbf{Difference}} & \multicolumn{1}{c|}{\textbf{Difference T1}} & \multicolumn{1}{c|}{\textbf{Difference T2}} & \multicolumn{1}{c|}{\textbf{Difference T3}} \\ \hline
+	\endhead
+	\textbf{Max} & 27.589732124216823 & 15.111908868158608 & 24.749099690650667 & 27.589732124216823 \\ \hline
+	\textbf{Min} & -0.64805960187646 & 1.2812882510039572 & -0.64805960187646 & 0.6867050791128122 \\ \hline
+	\textbf{Std} & 4.33538798698353 & 2.9241650358535636 & 3.579054028927821 & 5.584556464260941 \\ \hline
+	\textbf{25pc} & 4.394918205609386 & 3.134473332958102 & 4.464146812138978 & 9.190157286174411 \\ \hline
+	\textbf{50pc} & 6.114941307429092 & 4.602075402152096 & 6.026485291046242 & 11.662282500140009 \\ \hline
+	\textbf{75pc} & 8.74297314561646 & 6.087198198104765 & 7.730095196420621 & 14.501014051515938 \\ \hline
+	\textbf{Mean} & 7.147501055171521 & 5.135097830934518 & 6.635340857744364 & 12.041447934609026 \\ \hline
+	\textbf{Count} & 355 & 55 & 233 & 47 \\ \hline
 	
+	
+	\caption{Difference metrics}
+	\label{table:difference}
+\end{longtable}
+
+\begin{longtable}[c]{|p{0.08\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+	\hline
+	& \multicolumn{1}{c|}{\textbf{Abs diff}} & \multicolumn{1}{c|}{\textbf{Abs diff T1}} & \multicolumn{1}{c|}{\textbf{Abs diff T2}} & \multicolumn{1}{c|}{\textbf{Abs diff T3}} \\ \hline
+	\endhead
+	\textbf{Max} & 27.589732124216823 & 15.111908868158608 & 24.749099690650667 & 27.589732124216823 \\ \hline
+	\textbf{Min} & 0.6480596018764686 & 1.2812882510039572 & 0.6480596018764686 & 0.6867050791128122 \\ \hline
+	\textbf{Std} & 4.3289838125839815 & 2.9241650358535636 & 3.5686772160242395 & 5.584556464260941 \\ \hline
+	\textbf{25pc} & 4.394918205609386 & 3.134473332958102 & 4.464146812138978 & 9.190157286174411 \\ \hline
+	\textbf{50pc} & 6.114941307429092 & 4.602075402152096 & 6.026485291046242 & 11.662282500140009 \\ \hline
+	\textbf{75pc} & 8.74297314561646 & 6.087198198104765 & 7.730095196420621 & 14.501014051515938 \\ \hline
+	\textbf{Mean} & 7.151370067720037 & 5.135097830934518 & 6.64090360110811 & 12.041447934609026 \\ \hline
+	\textbf{Count} & 355 & 55 & 233 & 47 \\ \hline
+	
+	
+	\caption{Absolute difference metrics}
+	\label{table:abs_diff}
+\end{longtable}
+
+\begin{longtable}[c]{|p{0.08\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+	\hline
+	& \multicolumn{1}{c|}{\textbf{Hausdorff dis}} & \multicolumn{1}{c|}{\textbf{Hausdorff dis T1}} & \multicolumn{1}{c|}{\textbf{Hausdorff dis T2}} & \multicolumn{1}{c|}{\textbf{Hausdorff dis T3}} \\ \hline
+	\endhead
+	\textbf{Max} & 20.589144777463485 & 6.097752780066 & 14.658116046154605 & 20.589144777463485 \\ \hline
+	\textbf{Min} & 0.7724761587361798 & 0.7724761587361798 & 1.0214043471768 & 8.011363070117723 \\ \hline
+	\textbf{Std} & 3.583340499351782 & 1.1635430749332072 & 2.045828977818262 & 3.0255606034609572 \\ \hline
+	\textbf{25pc} & 5.516364786956328 & 1.98026176953945 & 6.316217417726442 & 11.575047545355172 \\ \hline
+	\textbf{50pc} & 7.548516888575833 & 2.7580496387675 & 7.616355581727 & 12.37692592766892 \\ \hline
+	\textbf{75pc} & 9.419397962500073 & 3.6799445304227216 & 8.87503939518 & 15.573101160804221 \\ \hline
+	\textbf{Mean} & 7.581017919690942 & 2.8235145949238367 & 7.535175687838671 & 13.37556947040946 \\ \hline
+	\textbf{Count} & 355 & 55 & 233 & 47 \\ \hline
+	
+	
+	\caption{Difference metrics}
+	\label{table:difference}
+\end{longtable}
 	
