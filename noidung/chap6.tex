@@ -2,7 +2,9 @@
 \section{Training Mask R-CNN}
 \noindent
 	
-	In this research, we take advantage of a pre-trained model of Mask R-CNN and fine-tune it to for our problem instead of training the whole architecture of Mask R-CNN from scratch due to the lack of time and resources. Although Facebook's researchers published the official source code in 2018, we prefer using the unofficial one from Matterport Inc which was published in 2017 due to the majority of deep learning practitioner community (5k3 fork times compared to 9k6 ones, respectively). Further information, you can access the source code via this link \url{https://github.com/matterport/Mask_RCNN}.
+	In this research, we take advantage of a pre-trained model of Mask R-CNN and fine-tune it to for our problem instead of training the whole architecture of Mask R-CNN from scratch due to the lack of time and resources. 
+	
+	Although Facebook's researchers published the official source code in 2018, we prefer using the unofficial one from Matterport Inc which was published in 2017 due to the majority of deep learning practitioner community (5k3 fork times compared to 9k6 ones, respectively). Further information, you can access the source code via this link \url{https://github.com/matterport/Mask_RCNN}.
 	
 	In addition, the whole training process was executed on Google's CoLab to take advantages of GPU power (which we did not have). Besides, the training loss and the validation loss, we also calculated mAP and mAR to evaluate the models more precisely.
 	
@@ -76,10 +78,6 @@
 	
 	The result is illustrated in Table \ref{table:exp1}, \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
 	
-	% Please add the following required packages to your document preamble:
-	% \usepackage{multirow}
-	% \usepackage{longtable}
-	% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 
 	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
 		\hline

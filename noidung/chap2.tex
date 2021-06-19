@@ -1,16 +1,30 @@
 \chapter{Related Works}
-\section{Introduction to traditional approaches}
+\section{Introduction To Traditional Approaches}
 \label{section:traditional_approaches}
 \noindent
 
-	In the past decades, many systems for automatic HC measurement have been introduced with various traditional approaches. In 2005, Wei Lu et al presented a system that used a low-pass filter to reduce noise in ultrasound images and a transformation filter to increase contrast between skull and background (this process method is based on the signature of bones on an ultrasound image that is usually brighter than the background). And they optimized the K-mean algorithm and morphologic binary area opening operation to achieve skull segment. After that, Wei Lu et al assumed the skull had an elliptical shape and then applied an iterative randomized Hough transform to predict the offset value of the ellipse. Their result was quite remarkable, with the differences between sonographers and the system only 0.52\% while predicting HC \cite{lu}.
+	In the past decades, many systems for automatic HC measurement have been introduced with various traditional approaches such as randomized Hough transform \cite{lu}, \cite{espinoza}, semi-supervised patch based graphs \cite{ciurte}, Haar-Like features \cite{thomas}, active contouring \cite{perez}, etc..
+	
+	In 2005, Wei Lu et al presented a system that used a low-pass filter to reduce noise in ultrasound images and a transformation filter to increase contrast between skull and background (this process method is based on the signature of bones on an ultrasound image that is usually brighter than the background). And they optimized the K-mean algorithm and morphologic binary area opening operation to achieve skull segment. After that, Wei Lu et al assumed the skull had an elliptical shape and then applied an iterative randomized Hough transform to predict the offset value of the ellipse. Their result was quite remarkable, with the differences between sonographers and the system only 0.52\% while predicting HC \cite{lu}.
 	
 	In 2017, Jing li et al was inspired by ellipse fitting methods, and proposed a system that employed a random forest algorithm to locate the fetal head. Then, they used a phrase symmetry algorithm to detect the ellipse center and applied a non-iterative ellipse fitting method to efficiently fit the ellipse on the fetal head. As a result, their method archived an average measurement error of 1.7 mm and outperformed traditional methods \cite{li}.
 	
 	In the next year, Thomas L. A. van den Heuvel et al introduced a method that included three systems that measure the HC in all trimesters of pregnancy. Each system architecture has a different number of pipelines that employ a random forest algorithm to extract Haarlike features and a set of Hough transform, dynamic program, ellipse fitting algorithm to measure the HC. Therefore, by focusing on the nature of each trimester, this system 3 showed not only the feasibility but also the robustness of fetal heads of each trimester \cite{thomas}.
-	
 
-\section{Conclusion and determine the problem}
+\section{Others Modern Approaches}	
+\label{secction:modern_appoarches}
+\noindent
+	
+	Recently, besides traditional method, there is the whole new technique that adopts CNN into medical field \cite{litjens}. To be more specific, lots of neural networks have been applied to estimate the fetus head automatically \cite{mt_linknet}, \cite{casFCN}, \cite{casFCN_mtloss}, \cite{rueda}, \cite{shahin}, \cite{cerrolaza}.
+	
+	For instance, in 2017, Lingyun Wu et al represented a framework called casFCN. This FCN model generates a mask on the fetus' head by a multi-stages prediction system. At the first stage, the system generates a boundary map using the ultrasound image. In the next two stages, the system enhance this map by executing the summation between the ultrasound image with the map at previous stage. And then, the mask is fully generated at the last stage. As a result, the system significantly achieved the Dice coefficient and Jaccard scores at 0.9618 and 0.9628, respectively \cite{casFCN}.
+	
+	In 2018, another cascaded-based U-Net network \cite{unet} was introduced by Matthew Sinclair et al to solve a similar problem (detect and generate mask for fetus abdominal ultrasound images). The system measures the abdominal circumference by presuming the abdominal shape is elliptical, and it employs a multitask deep CNN in a cascaded model framework (which is similar to \cite{casFCN}). By taking advantages of multitask loss, the system can synchronously improve the generated mask and ellipse's parameters regression. Consequently, the system achieved the Dice score from regressed parameters at 0.963 and Dice score from generated contours at 0.967 \cite{casFCN_mtloss}.
+	
+	As it shows efficiency in mask segmentation, in 2019, Zahra Sobhaninia et al proposed a network called Multi-Task LinkNet with multi-scale inputs. Specifically, the system includes two parts: a mask generating network and a Ellipse parameters regression module. The multi-task loss function is designed quite alike to the one in \cite{casFCN_mtloss}. Unlike other networks, Multitask LinkNet paid attention to multi-scale structure by concatenating first and second feature maps of the network with a half down-scale version of the input, which produces more accurate results. Notably, to estimate the ellipse parameters more accurately, the authors take out the rich feature map at the end of the encoder part in the mask generating network. And then, they fed it into three FC layers to contribute to mask generating performance by refining the feature layers to symbolize an ellipse shape. Therefore, the generated elliptical mask is more accurate with the Dice similarity coefficient score is 0.97 ± 0.028 and difference score is 0.6 ± 4.3 \cite{mt_linknet}.
+
+
+\section{Conclusion And Determine The Problem}
 \label{section:determine_problem}
 \noindent
 	

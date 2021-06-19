@@ -1,10 +1,10 @@
 \chapter{Region Based Convolutional Neural Network}
-\section{The problem of region of interest}
+\section{The Problem Of Region Of Interest}
 \label{section:problemofROI}
 \noindent
 	Computer vision is a large field that has been attracted lots of researchers, scientists in the recent years (after AlexNet’s milestone). Beside image classification problem, another research trend of computer vision is object detection. The difference between two types of problem is that classification problem wants to know the label or labels of the image, while detection problem try to locate a bounding box surrounding the object inside the image. The challenge is there could be many bounding boxes representing different objects and we do not how many beforehand. The major reason why typical CNN models as we describe in section 2 cannot solve this problem is that the length of the output layer is not constant (unknown number of objects). A naive approach for this is that we can take different region of interest (RoI) and apply CNN model to check whether the RoI has object. Yet, this approach also has a huge problem is that the RoIs may have different spatial locations in the image, therefore, it will cost an expensive computational resource because of a huge number of RoIs.
 	
-\section{The original R-CNN}
+\section{The Original R-CNN}
 \label{section:rcnn}
 \noindent
 
@@ -23,7 +23,7 @@
 		\item The selective search algorithm is a fixed algorithm. Therefore, no learning is happening at that stage. This could lead to the generation of bad candidate region proposals.
 	\end{itemize}
 
-\section{The improvement in Fast R-CNN and Faster R-CNN}
+\section{The Improvement In Fast R-CNN And Faster R-CNN}
 \label{section:fastandfasterrcnn}
 \noindent
 	
@@ -80,7 +80,7 @@
 %	\end{table}
 	
 	
-\section{Region proposal network (RPNs)}
+\section{Region Proposal Network (RPNs)}
 \label{section:rpns}
 \noindent	
 
@@ -104,7 +104,7 @@
 		\item The anchor that neither positive nor negative does not consider to be the training objective.
 	\end{itemize}
 	
-\subsection{ROI pool layer}
+\subsection{ROI Pool Layer}
 \label{subsection:roi_pool}
 \noindent	
 	

@@ -6,6 +6,32 @@ Luiz Camargo, Hegler Tissot, and Aurora Pozo.
   training mlps.
 \newblock pages 78--86, 11 2012.
 
+\bibitem{cerrolaza}
+Juan~J. Cerrolaza, Matthew Sinclair, Yuanwei Li, Alberto Gomez, Enzo Ferrante,
+  Jaqueline Matthew, Chandni Gupta, Caroline~L. Knight, and Daniel Rueckert.
+\newblock Deep learning with ultrasound physics for fetal skull segmentation.
+\newblock In {\em 2018 IEEE 15th International Symposium on Biomedical Imaging
+  (ISBI 2018)}, pages 564--567, 2018.
+
+\bibitem{ciurte}
+Anca Ciurte, Xavier Bresson, Olivier Cuisenaire, Nawal Houhou, Sergiu
+  Nedevschi, Jean-Philippe Thiran, and Meritxell~Bach Cuadra.
+\newblock Semi-supervised segmentation of ultrasound images based on patch
+  representation and continuous min cut.
+\newblock {\em PLOS ONE}, 9(7):1--14, 07 2014.
+
+\bibitem{svm}
+Nello Cristianini and Elisa Ricci.
+\newblock {\em Support Vector Machines}, pages 928--932.
+\newblock Springer US, Boston, MA, 2008.
+
+\bibitem{espinoza}
+Jimmy Espinoza, Sara Good, Evie Russell, and Wesley Lee.
+\newblock Does the use of automated fetal biometry improve clinical work flow
+  efficiency?
+\newblock {\em Journal of ultrasound in medicine : official journal of the
+  American Institute of Ultrasound in Medicine}, 32:847--50, 05 2013.
+
 \bibitem{direct_ellipse}
 A.~Fitzgibbon, M.~Pilu, and Robert~B. Fisher.
 \newblock Direct least squares fitting of ellipses.
@@ -70,6 +96,13 @@ Jing Li, Yi~Wang, Baiying Lei, Jie-Zhi Cheng, Jing Qin, Tianfu Wang, Shenli Li,
 \newblock {\em IEEE Journal of Biomedical and Health Informatics}, PP:1--1, 05
   2017.
 
+\bibitem{litjens}
+Geert Litjens, Thijs Kooi, Babak~Ehteshami Bejnordi, Arnaud Arindra~Adiyoso
+  Setio, Francesco Ciompi, Mohsen Ghafoorian, Jeroen~A.W.M. van~der Laak, Bram
+  van Ginneken, and Clara~I. Sánchez.
+\newblock A survey on deep learning in medical image analysis.
+\newblock {\em Medical Image Analysis}, 42:60–88, Dec 2017.
+
 \bibitem{fcn}
 Jonathan Long, Evan Shelhamer, and Trevor Darrell.
 \newblock Fully convolutional networks for semantic segmentation.
@@ -81,11 +114,28 @@ Wei Lu, Jinglu Tan, and Randall Floyd.
   iterative randomized hough transform.
 \newblock {\em Ultrasound in medicine \& biology}, 31:929--36, 08 2005.
 
+\bibitem{perez}
+Jorge Perez-Gonzalez, Juan Bello-Munoz, M.C. Porras, Fernando Cosío, and
+  Veronica Medina.
+\newblock Automatic fetal head measurements from ultrasound images using
+  optimal ellipse detection and texture maps.
+\newblock volume~49, 10 2014.
+
 \bibitem{fasterrcnn}
 Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
 \newblock Faster r-cnn: Towards real-time object detection with region proposal
   networks.
 \newblock pages 1--10, 01 2016.
+
+\bibitem{unet}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In Nassir Navab, Joachim Hornegger, William M.~Wells III, and
+  Alejandro~F. Frangi, editors, {\em Medical Image Computing and
+  Computer-Assisted Intervention - {MICCAI} 2015 - 18th International
+  Conference Munich, Germany, October 5 - 9, 2015, Proceedings, Part {III}},
+  volume 9351 of {\em Lecture Notes in Computer Science}, pages 234--241.
+  Springer, 2015.
 
 \bibitem{perceptron}
 Frank Rosenblatt.
@@ -98,10 +148,44 @@ Sebastian Ruder.
 \newblock An overview of gradient descent optimization algorithms.
 \newblock {\em arXiv preprint arXiv:1609.04747}, 2016.
 
+\bibitem{rueda}
+Sylvia Rueda, Sana Fathima, Caroline~L. Knight, Mohammad Yaqub, Aris~T.
+  Papageorghiou, Bahbibi Rahmatullah, Alessandro Foi, Matteo Maggioni,
+  Antonietta Pepe, Jussi Tohka, Richard~V. Stebbing, John~E. McManigle, Anca
+  Ciurte, Xavier Bresson, Meritxell~Bach Cuadra, Changming Sun, Gennady~V.
+  Ponomarev, Mikhail~S. Gelfand, Marat~D. Kazanov, Ching-Wei Wang, Hsiang-Chou
+  Chen, Chun-Wei Peng, Chu-Mei Hung, and J.~Alison Noble.
+\newblock Evaluation and comparison of current fetal ultrasound image
+  segmentation methods for biometric measurements: A grand challenge.
+\newblock {\em IEEE Transactions on Medical Imaging}, 33(4):797--813, 2014.
+
+\bibitem{shahin}
+Muhammad Shahin~Uddin, Kalyan Halder, Murat Tahtali, Andrew Lambert, Mark
+  Pickering, and Margaret Marchese.
+\newblock Intelligent estimation of noise and blur variances using ann for the
+  restoration of ultrasound images.
+\newblock {\em Applied Optics}, 55:8905, 11 2016.
+
 \bibitem{vgg}
 Karen Simonyan and Andrew Zisserman.
 \newblock Very deep convolutional networks for large-scale image recognition.
 \newblock In {\em International Conference on Learning Representations}, 2015.
+
+\bibitem{casFCN_mtloss}
+Matthew Sinclair, Juan Martinez, Emily Skelton, Yuanwei Li, Christian
+  Baumgartner, Wenjia Bai, Jacqueline Matthew, Caroline Knight, Sandra Smith,
+  Jo~Hajnal, Andrew King, Bernhard Kainz, and Daniel Rueckert.
+\newblock Cascaded transforming multi-task networks for abdominal biometric
+  estimation from ultrasound.
+\newblock 05 2018.
+
+\bibitem{mt_linknet}
+Zahra Sobhaninia, Shima Rafiei, Ali Emami, Nader Karimi, Kayvan Najarian,
+  Shadrokh Samavi, and S.~M. Reza~Soroushmehr.
+\newblock Fetal ultrasound image segmentation for measuring biometric
+  parameters using multi-task deep learning.
+\newblock In {\em 2019 41st Annual International Conference of the IEEE
+  Engineering in Medicine and Biology Society (EMBC)}, pages 6545--6548, 2019.
 
 \bibitem{findContours}
 Satoshi Suzuki and Keiichi Abe.
@@ -128,6 +212,13 @@ Joseph Walsh, Niall O'~Mahony, Sean Campbell, Anderson Carvalho, Lenka
   Riordan.
 \newblock Deep learning vs. traditional computer vision.
 \newblock 04 2019.
+
+\bibitem{casFCN}
+Lingyun Wu, Yang Xin, Shengli Li, Tianfu Wang, Pheng-Ann Heng, and Dong Ni.
+\newblock Cascaded fully convolutional networks for automatic prenatal
+  ultrasound image segmentation.
+\newblock In {\em 2017 IEEE 14th International Symposium on Biomedical Imaging
+  (ISBI 2017)}, pages 663--666, 2017.
 
 \bibitem{yamashita}
 Rikiya Yamashita, Mizuho Nishio, Richard Do, and Kaori Togashi.

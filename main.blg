@@ -4,55 +4,58 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: ./bibliography.bib
 Warning--empty booktitle in backpropagation
+Warning--can't use both author and editor fields in svm
 Warning--empty journal in fastrcnn
 Warning--empty booktitle in rcnn
 Warning--empty booktitle in resnet
 Warning--empty booktitle in fcn
+Warning--empty booktitle in perez
 Warning--empty booktitle in fasterrcnn
 Warning--empty publisher in perceptron
+Warning--empty booktitle in casFCN_mtloss
 Warning--empty journal in perimeter
 Warning--empty booktitle in dlvstradition
 Warning--empty booktitle in xorproblem
 Warning--empty publisher in dive2dl
-You've used 25 entries,
+You've used 37 entries,
             2118 wiz_defined-function locations,
-            634 strings with 8087 characters,
-and the built_in function-call counts, 9547 in all, are:
-= -- 876
-> -- 530
-< -- 8
-+ -- 210
-- -- 182
-* -- 690
-:= -- 1567
-add.period$ -- 77
-call.type$ -- 25
-change.case$ -- 162
+            711 strings with 12024 characters,
+and the built_in function-call counts, 16192 in all, are:
+= -- 1452
+> -- 1055
+< -- 15
++ -- 417
+- -- 376
+* -- 1273
+:= -- 2671
+add.period$ -- 114
+call.type$ -- 37
+change.case$ -- 292
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 365
-empty$ -- 706
-format.name$ -- 182
-if$ -- 2010
+cite$ -- 51
+duplicate$ -- 563
+empty$ -- 1090
+format.name$ -- 376
+if$ -- 3355
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 27
-newline$ -- 129
-num.names$ -- 52
-pop$ -- 200
+int.to.str$ -- 37
+missing$ -- 40
+newline$ -- 189
+num.names$ -- 78
+pop$ -- 343
 preamble$ -- 1
-purify$ -- 139
+purify$ -- 258
 quote$ -- 0
-skip$ -- 271
+skip$ -- 422
 stack$ -- 0
-substring$ -- 505
-swap$ -- 93
-text.length$ -- 8
+substring$ -- 806
+swap$ -- 160
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
-warning$ -- 11
-while$ -- 76
-width$ -- 27
-write$ -- 261
-(There were 11 warnings)
+type$ -- 142
+warning$ -- 14
+while$ -- 118
+width$ -- 39
+write$ -- 393
+(There were 14 warnings)
