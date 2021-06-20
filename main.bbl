@@ -66,6 +66,12 @@ Thomas Heuvel, Dagmar de~bruijn, Chris de~Korte, and Bram Ginneken.
   images.
 \newblock {\em PLOS ONE}, 13:e0200412, 08 2018.
 
+\bibitem{mlcoban}
+Tiep~Vu Huu.
+\newblock {\em Machine Learning co ban}.
+\newblock 2017.
+\newblock \url{https://machinelearningcoban.com}.
+
 \bibitem{guidetocnn}
 Salman Khan, Hossein Rahmani, Syed Shah, and Mohammed Bennamoun.
 \newblock A guide to convolutional neural networks for computer vision.

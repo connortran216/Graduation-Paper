@@ -5,7 +5,7 @@
 
 	In the age of information and technology, the hardware resources have made some extraordinary breakthrough which enhances the parallel calculation power of both CPU and GPU. Based on these success, artificial intelligence field is back to the race after decades being hold back because of the limitation of hardware.
 
-	In the recent year, \textbf{\textit{Deep Learning}} has become the most popular keywords in artificial intelligence field. However, its history was date back to the late 1950s with the invention of perceptron architecture. Being influenced by the capability of biological system on perceptual \textit{recognition}, \textit{generalization}, \textit{recall}, and \textit{thinking}, F. Rosenblatt et al tried to reconstruct a brain behavior by focusing his research on the smallest element of the brain - neurons. 
+	In the recent year, \textbf{\textit{Deep Learning}} has become the most popular keyword in artificial intelligence field. However, its history was date back to the late 1950s with the invention of perceptron architecture. Being influenced by the capability of biological system on perceptual \textit{recognition}, \textit{generalization}, \textit{recall}, and \textit{thinking}, F. Rosenblatt et al tried to reconstruct a brain behavior by focusing his research on the smallest element of the brain - neurons. 
 	
 	The author claimed that perceptron’s design could simulate several signature features of the intelligence systems at an acceptable standard - a better-than-chance probability without applying multiple techniques to create a special environment of a specific biological creature. As a result, Rosenblatt believed that the fundamental laws of all physical system and humans could eventually be understood \cite{perceptron}.
 	
@@ -64,7 +64,7 @@
 		\item Padding and Stride attributes in convolution operations.
 	\end{itemize}
 
-	Padding and Stride are the crucial technique in convolution. Let’s take a look at the previous example in \ref{fig:conv_operation}. We calculated the feature map by sliding the filter on the input data by one pixel for each convolution operation, we refer to the number of rows and columns traversed per slide as the stride. The smaller step we define in filters, the more information we can extract from it, but it is a trade-off which affect the training time. One tricky issue when applying convolution layers is that we tend to lose pixel information on the perimeter of input data.
+	Padding and Stride are the crucial technique in convolution. Let’s take a look at the previous example in Figure \ref{fig:conv_operation}. We calculated the feature map by sliding the filter on the input data by one pixel for each convolution operation, we refer to the number of rows and columns traversed per slide as the stride. The smaller step we define in filters, the more information we can extract from it, but it is a trade-off which affect the training time. One tricky issue when applying convolution layers is that we tend to lose pixel information on the perimeter of input data.
 	
 	\begin{figure}[H]
 		\centering
@@ -86,9 +86,9 @@
 \label{subsection:poolinglayer}
 \noindent
 
-	As described in previous section, the convolutional layer output is a feature maps, as it can be regarded as the learned representations (features) in the spatial dimensions (e.g., width and height) to the subsequent layer. Usually, as we process an image, we want to reduce the spatial resolution of our feature maps, select information so that it can be more robust or sensitive when we go deeper in the network.  By gradually aggregating information, yielding coarser and coarser maps, our model can accomplish a global representation for the feeding dataset.
+	As described in Subsection \ref{subsection:convlayer}, the convolutional layer output is a feature maps, as it can be regarded as the learned representations (features) in the spatial dimensions (e.g., width and height) to the subsequent layer. Usually, as we process an image, we want to reduce the spatial resolution of our feature maps, select information so that it can be more robust or sensitive when we go deeper in the network.  By gradually aggregating information, yielding coarser and coarser maps, our model can accomplish a global representation for the feeding dataset \cite{dive2dl}.
 	
-	Like convolution, pooling operator consists of a fixed-shape window that slide all over on the output feature map according to its stride setting. However, unlike sliding window of convolutional layer, sliding window of pooling layer does not have any parameters (no kernel). Instead of calculating the feature map, pooling layer simply calculate either the maximum or average value of the pixels inside its sliding window. These operations are called maximum pooling and average pooling, respectively. Another characteristic of  pooling layer is that it also can alter padding and stride settings to prevent model from missing information. 	
+	Similar to convolution, pooling operator consists of a fixed-shape window that slide all over on the output feature map according to its stride setting. However, unlike sliding window of convolutional layer, sliding window of pooling layer does not have any parameters (no kernel). Instead of calculating the feature map, pooling layer simply calculate either the maximum or average value of the pixels inside its sliding window. These operations are called maximum pooling and average pooling, respectively. Another characteristic of  pooling layer is that it also can alter padding and stride settings to prevent model from missing information. 	
 	
 	\begin{figure}[H]
 		\centering
@@ -101,7 +101,7 @@
 \label{subsection:fclayer}
 \noindent
 
-	Fully-connected (FC) layers connect every neuron in one layer to every neuron in another layer. It is the similar to a traditional multi-layer perceptron neural network (MLP). After we extract feature maps from convolutional layers, we flatten these maps to one dimension vector and then feed it to the FC layer for the model to learn how to classify the data. However, FC layers can be seen as a brute force approach whereas there are approaches like the convolutional layer which reduces the input to concerned features only. That is the reason why CNN models are often built with few FC layers (one or two layers).	
+	Fully-connected (FC) layers connect every neuron in one layer to every neuron in another layer. It is the similar to a traditional multi-layer perceptron neural network (MLP). After we extract feature maps from convolutional layers, we flatten these maps to one dimension vector and then feed it to the FC layer for the model to learn how to classify the data. However, FC layers can be seen as a brute force approach whereas there are approaches like the convolutional layer which reduces the input to concerned features only \cite{dive2dl}. That is the reason why CNN models are often built with few FC layers (one or two layers).	
 	
 \subsection{Loss Function}
 \label{subsection:lossfunc}
@@ -157,7 +157,7 @@
 	
 	There lots of problems when we try to optimize loss function of a deep learning model. Therefore, in this section, we will focus on several controversial issues such as local minima, saddle point, gradient exploding and gradient vanishing.
 	
-	As mentioned in loss function section, gradient-based method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at \ref{fig:bowl_shape}.
+	As mentioned in loss function section, gradient-based method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at Figure \ref{fig:bowl_shape}.
 	
 	\begin{figure}[H]
 		\centering
@@ -168,7 +168,7 @@
 	
 	Assuming this cup-shaped plane is the equation f (x), its minimum point will be in the center of the cup. If we jump into this plane, of course we will slip straight to its minimum point. So when a function converges at its minimum, it optimizes as much as possible in the ability to classify the data. This is the fundamental goal of training: to continue modifying weights until the global minimum has been reached.
 	
-	However, not all functions are cup-shaped. Let's take a look at \ref{fig:global} below for easier visualization.
+	However, not all functions are cup-shaped. Let's take a look at Figure \ref{fig:global} below for easier visualization.
 	
 	\begin{figure}[H]
 		\centering
@@ -197,7 +197,7 @@
 	
 	The local minima points are the solutions of the derivative equation equal to 0. If it is possible to find the whole (finite) minimum points, we can replace each of those local minimum points into the objective function and then find the point making it the smallest value. 
 	
-	Yet, in most cases it is not possible to solve zero derivative equations. The cause can come from the complexity of the derivative form, from the fact that the data points have a large number of dimensions (Look at \ref{fig:flutuate_plate} for more detail).
+	Yet, in most cases it is not possible to solve zero derivative equations. The cause can come from the complexity of the derivative form, from the fact that the data points have a large number of dimensions (Look at Figure \ref{fig:flutuate_plate} for more detail).
 	
 	\begin{figure}[H]
 		\centering
@@ -217,7 +217,7 @@
 %		\caption{Gradient descent versus Gradient descent with momentum.}
 %	\end{figure}
 	
-	The most typical approach is to start from a point that we consider to be close to the global minima, then use an iteration to move closer to the desired point. Gradient Descent \cite{gdoverview} and its variations are among the most popular methods.
+	The most typical approach is to start from a point that we consider to be close to the global minima, then use an iteration to move closer to the desired point. Gradient Descent \cite{gdoverview}, \cite{dive2dl} and its variations are among the most popular methods.
 	
 	In this part, we will take gradient descent in one dimension as a simple example to explain it functional mechanism. Let assume we have a function as follow.
 	
@@ -249,7 +249,7 @@
 \label{section:multivariateGD}
 \noindent
 	
-	Let say we need to find global minima for the function $f(\theta)$ that $\theta$ is a vector usually used to denote the set of parameters (or weights) of the objective function. The derivative of the function at any $\theta$ is denoted as $\nabla_{\theta}f(\theta)$. It is similar to one variable function, GD for multivariate is also started at a predicted point $\theta_0$. After that, it is updated as following:
+	Let say we need to find global minima for the function $f(\theta)$ that $\theta$ is a vector usually used to denote the set of parameters (or weights) of the objective function. The derivative of the function at any $\theta$ is denoted as $\nabla_{\theta}f(\theta)$. It is similar to one variable function, GD for multivariate is also started at a predicted point $\theta_0$ \cite{mlcoban}. After that, it is updated as following:
 	
 	\[\theta_{t+1} = \theta_t - \eta\nabla_{\theta}f(\theta_t) \]
 	
@@ -310,7 +310,7 @@
 \label{section:momentum}
 \noindent
 	
-	In section ~\ref{subsection:SGD}, SGD illustrates that in the optimization process, noisy gradients may lead to convergence suspend or even fail to converge at a good minima. In this section, we will introduce a effective technique that can help us overcome the problem in practice - momentum \cite{gdoverview}.
+	In section ~\ref{subsection:SGD}, SGD illustrates that in the optimization process, noisy gradients may lead to convergence suspend or even fail to converge at a good minima. In this section, we will introduce a effective technique that can help us overcome the problem in practice - momentum \cite{gdoverview}, \cite{dive2dl}.
 	
 	The gradient descent algorithm sometimes is compared to the effect of gravity on a ball on a surface as figure..., so eventually the ball will settle at the global minima. However, with the surface as figure..., the question is how the ball can overcome the local minima to settle at the global minima. The answer is quite simple if we solve this problem more physics-ly.
 	
@@ -324,7 +324,7 @@
 \label{section:rmsprop}
 \noindent
 
-	Unlike previous discussed optimization algorithms that their learning rate $\alpha$ stay unchanged in the training process (learning rate is a constant). RMSprop \cite{gdoverview} is an unpublished approach proposed by Geoffrey Hinton et al in a course on Coursera. The author considers learning rate as a parameter that can change throughout the training process after each time $t$. It is demonstrated as following formula:
+	Unlike previous discussed optimization algorithms that their learning rate $\alpha$ stay unchanged in the training process (learning rate is a constant). RMSprop \cite{gdoverview}, \cite{dive2dl} is an unpublished approach proposed by Geoffrey Hinton et al in a course on Coursera. The author considers learning rate as a parameter that can change throughout the training process after each time $t$. It is demonstrated as following formula:
 	
 	\[ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}}g_t \]
 	
@@ -334,7 +334,7 @@
 \label{section:adam}
 \noindent
 	
-	Adaptive moment estimation called Adam \cite{gdoverview} \cite{adam} is an adaptive learning rate optimization algorithm that has been developed specifically for training a deep learning neural network. It was designed in 2014 and introduced at ICLR 2015. Adam is a combination between RMSprop (Geoffrey Hinton at el) and SGD with momentum. Specifically, Adam calculates adaptive learning rate for each parameters individually and store the exponentially decay average of past squared gradients $v_t$ and $m_t$ like RMSprop and momentum, respectively.
+	Adaptive moment estimation called Adam \cite{gdoverview}, \cite{adam}, \cite{dive2dl} is an adaptive learning rate optimization algorithm that has been developed specifically for training a deep learning neural network. It was designed in 2014 and introduced at ICLR 2015. Adam is a combination between RMSprop (Geoffrey Hinton at el) and SGD with momentum. Specifically, Adam calculates adaptive learning rate for each parameters individually and store the exponentially decay average of past squared gradients $v_t$ and $m_t$ like RMSprop and momentum, respectively.
 	
 	\[ m_t = \beta_1 m_{t-1} + (1 - \beta_1)g_t \]
 	

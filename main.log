@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.15)  19 JUN 2021 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.15)  20 JUN 2021 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1653,39 +1653,39 @@ File: ./hinhanh/chap3/padding.png Graphic file (type png)
 Package pdftex.def Info: ./hinhanh/chap3/padding.png  used on input line 80.
 (pdftex.def)             Requested size: 366.24527pt x 180.94472pt.
  [15 <./hinhanh/chap3/padding.png>]
-<./hinhanh/chap3/max_pooling.png, id=593, 450.18187pt x 97.86563pt>
+<./hinhanh/chap3/max_pooling.png, id=595, 450.18187pt x 97.86563pt>
 File: ./hinhanh/chap3/max_pooling.png Graphic file (type png)
 <use ./hinhanh/chap3/max_pooling.png>
 Package pdftex.def Info: ./hinhanh/chap3/max_pooling.png  used on input line 95
 .
 (pdftex.def)             Requested size: 366.24527pt x 79.62163pt.
  [16 <./hinhanh/chap3/max_pooling.png>] [17] [18]
-<./hinhanh/chap3/bowl_shape.png, id=612, 562.1pt x 421.575pt>
+<./hinhanh/chap3/bowl_shape.png, id=615, 562.1pt x 421.575pt>
 File: ./hinhanh/chap3/bowl_shape.png Graphic file (type png)
 <use ./hinhanh/chap3/bowl_shape.png>
 Package pdftex.def Info: ./hinhanh/chap3/bowl_shape.png  used on input line 164
 .
 (pdftex.def)             Requested size: 320.46199pt x 240.34526pt.
  [19 <./hinhanh/chap3/bowl_shape.png>]
-<./hinhanh/chap3/global.png, id=619, 562.1pt x 421.575pt>
+<./hinhanh/chap3/global.png, id=622, 562.1pt x 421.575pt>
 File: ./hinhanh/chap3/global.png Graphic file (type png)
 <use ./hinhanh/chap3/global.png>
 Package pdftex.def Info: ./hinhanh/chap3/global.png  used on input line 175.
 (pdftex.def)             Requested size: 366.24527pt x 274.68306pt.
-<./hinhanh/chap3/saddle.png, id=620, 853.1875pt x 345.29pt>
+<./hinhanh/chap3/saddle.png, id=623, 853.1875pt x 345.29pt>
 File: ./hinhanh/chap3/saddle.png Graphic file (type png)
 <use ./hinhanh/chap3/saddle.png>
 Package pdftex.def Info: ./hinhanh/chap3/saddle.png  used on input line 186.
 (pdftex.def)             Requested size: 412.02156pt x 166.74889pt.
  [20 <./hinhanh/chap3/global.png>]
-<./hinhanh/chap3/flutuate_plate.jpg, id=628, 280.04625pt x 181.67876pt>
+<./hinhanh/chap3/flutuate_plate.jpg, id=631, 280.04625pt x 181.67876pt>
 File: ./hinhanh/chap3/flutuate_plate.jpg Graphic file (type jpg)
 <use ./hinhanh/chap3/flutuate_plate.jpg>
 Package pdftex.def Info: ./hinhanh/chap3/flutuate_plate.jpg  used on input line
  204.
 (pdftex.def)             Requested size: 228.90242pt x 148.50626pt.
  [21 <./hinhanh/chap3/saddle.png>]
-<./hinhanh/chap3/simple_f(x).png, id=635, 170.13562pt x 181.42781pt>
+<./hinhanh/chap3/simple_f(x).png, id=639, 170.13562pt x 181.42781pt>
 File: ./hinhanh/chap3/simple_f(x).png Graphic file (type png)
 <use ./hinhanh/chap3/simple_f(x).png>
 Package pdftex.def Info: ./hinhanh/chap3/simple_f(x).png  used on input line 23
@@ -1702,14 +1702,14 @@ Chapter 5.
 LaTeX Warning: Float too large for page by 11.37279pt on input line 69.
 
 [31] [32]
-<./hinhanh/chap4/faster_rcnn.png, id=703, 520.19344pt x 520.94624pt>
+<./hinhanh/chap4/faster_rcnn.png, id=711, 520.19344pt x 520.94624pt>
 File: ./hinhanh/chap4/faster_rcnn.png Graphic file (type png)
 <use ./hinhanh/chap4/faster_rcnn.png>
 Package pdftex.def Info: ./hinhanh/chap4/faster_rcnn.png  used on input line 91
 .
 (pdftex.def)             Requested size: 320.46199pt x 320.92455pt.
  [33 <./hinhanh/chap4/faster_rcnn.png>]
-<./hinhanh/chap4/roi_quantization.png, id=709, 334.24875pt x 124.96687pt>
+<./hinhanh/chap4/roi_quantization.png, id=717, 334.24875pt x 124.96687pt>
 File: ./hinhanh/chap4/roi_quantization.png Graphic file (type png)
 <use ./hinhanh/chap4/roi_quantization.png>
 Package pdftex.def Info: ./hinhanh/chap4/roi_quantization.png  used on input li
@@ -1718,7 +1718,7 @@ ne 120.
  [34]) (./noidung/chap5.tex
 [35 <./hinhanh/chap4/roi_quantization.png>]
 Chapter 6.
-<./hinhanh/chap5/problem.png, id=721, 451.6875pt x 456.20438pt>
+<./hinhanh/chap5/problem.png, id=729, 451.6875pt x 456.20438pt>
 File: ./hinhanh/chap5/problem.png Graphic file (type png)
 <use ./hinhanh/chap5/problem.png>
 Package pdftex.def Info: ./hinhanh/chap5/problem.png  used on input line 14.
@@ -1726,7 +1726,7 @@ Package pdftex.def Info: ./hinhanh/chap5/problem.png  used on input line 14.
 [36
 
  <./hinhanh/chap5/problem.png>]
-<./hinhanh/chap5/mask_rcnn.png, id=731, 443.40656pt x 243.91125pt>
+<./hinhanh/chap5/mask_rcnn.png, id=739, 443.40656pt x 243.91125pt>
 File: ./hinhanh/chap5/mask_rcnn.png Graphic file (type png)
 <use ./hinhanh/chap5/mask_rcnn.png>
 Package pdftex.def Info: ./hinhanh/chap5/mask_rcnn.png  used on input line 29.
@@ -1736,14 +1736,14 @@ Package pdftex.def Info: ./hinhanh/chap5/mask_rcnn.png  used on input line 29.
 LaTeX Warning: Command \L invalid in math mode on input line 42.
 
 [38] [39]
-<./hinhanh/chap5/architecture_mrcnn.png, id=755, 1011.78pt x 720.6925pt>
+<./hinhanh/chap5/architecture_mrcnn.png, id=763, 1011.78pt x 720.6925pt>
 File: ./hinhanh/chap5/architecture_mrcnn.png Graphic file (type png)
 <use ./hinhanh/chap5/architecture_mrcnn.png>
 Package pdftex.def Info: ./hinhanh/chap5/architecture_mrcnn.png  used on input 
 line 76.
 (pdftex.def)             Requested size: 320.46199pt x 228.26198pt.
  [40 <./hinhanh/chap5/architecture_mrcnn.png>]
-<./hinhanh/chap5/fpn_res5.png, id=763, 870.25125pt x 290.08376pt>
+<./hinhanh/chap5/fpn_res5.png, id=771, 870.25125pt x 290.08376pt>
 File: ./hinhanh/chap5/fpn_res5.png Graphic file (type png)
 <use ./hinhanh/chap5/fpn_res5.png>
 Package pdftex.def Info: ./hinhanh/chap5/fpn_res5.png  used on input line 87.
@@ -2228,24 +2228,24 @@ Overfull \hbox (6.13898pt too wide) in alignment at lines 126--152
  []
 
 [46]
-<./hinhanh/chap6/loss_t1.png, id=804, 1302.8675pt x 819.06pt>
+<./hinhanh/chap6/loss_t1.png, id=812, 1302.8675pt x 819.06pt>
 File: ./hinhanh/chap6/loss_t1.png Graphic file (type png)
 <use ./hinhanh/chap6/loss_t1.png>
 Package pdftex.def Info: ./hinhanh/chap6/loss_t1.png  used on input line 158.
 (pdftex.def)             Requested size: 206.01077pt x 129.50253pt.
-<./hinhanh/chap6/loss_t2.png, id=805, 1269.74374pt x 810.02625pt>
+<./hinhanh/chap6/loss_t2.png, id=813, 1269.74374pt x 810.02625pt>
 File: ./hinhanh/chap6/loss_t2.png Graphic file (type png)
 <use ./hinhanh/chap6/loss_t2.png>
 Package pdftex.def Info: ./hinhanh/chap6/loss_t2.png  used on input line 160.
 (pdftex.def)             Requested size: 206.01077pt x 131.42375pt.
  [47]
-<./hinhanh/chap6/mask_loss_t1.png, id=810, 1294.8375pt x 810.02625pt>
+<./hinhanh/chap6/mask_loss_t1.png, id=818, 1294.8375pt x 810.02625pt>
 File: ./hinhanh/chap6/mask_loss_t1.png Graphic file (type png)
 <use ./hinhanh/chap6/mask_loss_t1.png>
 Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t1.png  used on input line 1
 68.
 (pdftex.def)             Requested size: 206.01077pt x 128.86523pt.
-<./hinhanh/chap6/mask_loss_t2.png, id=811, 1314.9125pt x 766.865pt>
+<./hinhanh/chap6/mask_loss_t2.png, id=819, 1314.9125pt x 766.865pt>
 File: ./hinhanh/chap6/mask_loss_t2.png Graphic file (type png)
 <use ./hinhanh/chap6/mask_loss_t2.png>
 Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t2.png  used on input line 1
@@ -2253,23 +2253,23 @@ Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t2.png  used on input line 1
 (pdftex.def)             Requested size: 206.01077pt x 120.13829pt.
  [48 <./hinhanh/chap6/loss_t1.png> <./hinhanh/chap6/loss_t2.png> <./hinhanh/cha
 p6/mask_loss_t1.png> <./hinhanh/chap6/mask_loss_t2.png>]
-<./hinhanh/chap6/loss_t3.png, id=821, 1324.95pt x 851.18pt>
+<./hinhanh/chap6/loss_t3.png, id=829, 1324.95pt x 851.18pt>
 File: ./hinhanh/chap6/loss_t3.png Graphic file (type png)
 <use ./hinhanh/chap6/loss_t3.png>
 Package pdftex.def Info: ./hinhanh/chap6/loss_t3.png  used on input line 185.
 (pdftex.def)             Requested size: 206.01077pt x 132.34714pt.
-<./hinhanh/chap6/loss_t10.png, id=822, 1343.0175pt x 850.17625pt>
+<./hinhanh/chap6/loss_t10.png, id=830, 1343.0175pt x 850.17625pt>
 File: ./hinhanh/chap6/loss_t10.png Graphic file (type png)
 <use ./hinhanh/chap6/loss_t10.png>
 Package pdftex.def Info: ./hinhanh/chap6/loss_t10.png  used on input line 187.
 (pdftex.def)             Requested size: 206.01077pt x 130.40085pt.
-<./hinhanh/chap6/mask_loss_t3.png, id=823, 1329.96875pt x 850.17625pt>
+<./hinhanh/chap6/mask_loss_t3.png, id=831, 1329.96875pt x 850.17625pt>
 File: ./hinhanh/chap6/mask_loss_t3.png Graphic file (type png)
 <use ./hinhanh/chap6/mask_loss_t3.png>
 Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t3.png  used on input line 1
 95.
 (pdftex.def)             Requested size: 206.01077pt x 131.68515pt.
-<./hinhanh/chap6/mask_loss_t10.png, id=824, 1355.0625pt x 852.18375pt>
+<./hinhanh/chap6/mask_loss_t10.png, id=832, 1355.0625pt x 852.18375pt>
 File: ./hinhanh/chap6/mask_loss_t10.png Graphic file (type png)
 <use ./hinhanh/chap6/mask_loss_t10.png>
 Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t10.png  used on input line 
@@ -2277,13 +2277,13 @@ Package pdftex.def Info: ./hinhanh/chap6/mask_loss_t10.png  used on input line
 (pdftex.def)             Requested size: 206.01077pt x 129.55147pt.
  [49 <./hinhanh/chap6/loss_t3.png> <./hinhanh/chap6/loss_t10.png> <./hinhanh/ch
 ap6/mask_loss_t3.png> <./hinhanh/chap6/mask_loss_t10.png>]
-<./hinhanh/chap6/training_result.png, id=834, 859.21pt x 579.16376pt>
+<./hinhanh/chap6/training_result.png, id=842, 859.21pt x 579.16376pt>
 File: ./hinhanh/chap6/training_result.png Graphic file (type png)
 <use ./hinhanh/chap6/training_result.png>
 Package pdftex.def Info: ./hinhanh/chap6/training_result.png  used on input lin
 e 220.
 (pdftex.def)             Requested size: 206.01077pt x 138.86073pt.
-<./hinhanh/chap6/testing_result.png, id=835, 913.4125pt x 616.3025pt>
+<./hinhanh/chap6/testing_result.png, id=843, 913.4125pt x 616.3025pt>
 File: ./hinhanh/chap6/testing_result.png Graphic file (type png)
 <use ./hinhanh/chap6/testing_result.png>
 Package pdftex.def Info: ./hinhanh/chap6/testing_result.png  used on input line
@@ -2291,20 +2291,20 @@ Package pdftex.def Info: ./hinhanh/chap6/testing_result.png  used on input line
 (pdftex.def)             Requested size: 206.01077pt x 139.00063pt.
  [50 <./hinhanh/chap6/training_result.png> <./hinhanh/chap6/testing_result.png>
 ]
-<./hinhanh/chap6/hc_system.png, id=844, 892.33376pt x 543.02875pt>
+<./hinhanh/chap6/hc_system.png, id=852, 892.33376pt x 543.02875pt>
 File: ./hinhanh/chap6/hc_system.png Graphic file (type png)
 <use ./hinhanh/chap6/hc_system.png>
 Package pdftex.def Info: ./hinhanh/chap6/hc_system.png  used on input line 237.
 
 (pdftex.def)             Requested size: 412.02156pt x 250.73256pt.
  [51 <./hinhanh/chap6/hc_system.png>] [52]
-<./hinhanh/chap6/crop_mask.jpg, id=858, 803.0pt x 542.025pt>
+<./hinhanh/chap6/crop_mask.jpg, id=867, 803.0pt x 542.025pt>
 File: ./hinhanh/chap6/crop_mask.jpg Graphic file (type jpg)
 <use ./hinhanh/chap6/crop_mask.jpg>
 Package pdftex.def Info: ./hinhanh/chap6/crop_mask.jpg  used on input line 276.
 
 (pdftex.def)             Requested size: 206.01077pt x 139.054pt.
-<./hinhanh/chap6/ellipse_on_crop_mask.jpg, id=859, 803.0pt x 542.025pt>
+<./hinhanh/chap6/ellipse_on_crop_mask.jpg, id=868, 803.0pt x 542.025pt>
 File: ./hinhanh/chap6/ellipse_on_crop_mask.jpg Graphic file (type jpg)
 <use ./hinhanh/chap6/ellipse_on_crop_mask.jpg>
 Package pdftex.def Info: ./hinhanh/chap6/ellipse_on_crop_mask.jpg  used on inpu
@@ -2569,10 +2569,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 33283 strings out of 481239
- 602008 string characters out of 5920377
+ 33285 strings out of 481239
+ 602029 string characters out of 5920377
  1238304 words of memory out of 5000000
- 47540 multiletter control sequences out of 15000+600000
+ 47541 multiletter control sequences out of 15000+600000
  609925 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  67i,11n,90p,1508b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2589,10 +2589,10 @@ are/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (76 pages, 2298217 bytes).
+Output written on main.pdf (76 pages, 2298773 bytes).
 PDF statistics:
- 1017 PDF objects out of 1200 (max. 8388607)
- 860 compressed objects within 9 object streams
- 216 named destinations out of 1000 (max. 500000)
+ 1031 PDF objects out of 1200 (max. 8388607)
+ 874 compressed objects within 9 object streams
+ 217 named destinations out of 1000 (max. 500000)
  645 words of extra memory for PDF output out of 10000 (max. 10000000)
 

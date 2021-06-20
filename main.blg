@@ -8,6 +8,7 @@ Warning--can't use both author and editor fields in svm
 Warning--empty journal in fastrcnn
 Warning--empty booktitle in rcnn
 Warning--empty booktitle in resnet
+Warning--empty publisher in mlcoban
 Warning--empty booktitle in fcn
 Warning--empty booktitle in perez
 Warning--empty booktitle in fasterrcnn
@@ -17,45 +18,45 @@ Warning--empty journal in perimeter
 Warning--empty booktitle in dlvstradition
 Warning--empty booktitle in xorproblem
 Warning--empty publisher in dive2dl
-You've used 37 entries,
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            711 strings with 12024 characters,
-and the built_in function-call counts, 16192 in all, are:
-= -- 1452
-> -- 1055
+            715 strings with 12103 characters,
+and the built_in function-call counts, 16417 in all, are:
+= -- 1472
+> -- 1062
 < -- 15
-+ -- 417
-- -- 376
-* -- 1273
-:= -- 2671
-add.period$ -- 114
-call.type$ -- 37
-change.case$ -- 292
++ -- 420
+- -- 378
+* -- 1283
+:= -- 2710
+add.period$ -- 118
+call.type$ -- 38
+change.case$ -- 295
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 563
-empty$ -- 1090
-format.name$ -- 376
-if$ -- 3355
+cite$ -- 53
+duplicate$ -- 575
+empty$ -- 1112
+format.name$ -- 378
+if$ -- 3402
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 40
-newline$ -- 189
-num.names$ -- 78
-pop$ -- 343
+int.to.str$ -- 38
+missing$ -- 42
+newline$ -- 195
+num.names$ -- 80
+pop$ -- 351
 preamble$ -- 1
-purify$ -- 258
+purify$ -- 261
 quote$ -- 0
-skip$ -- 422
+skip$ -- 428
 stack$ -- 0
-substring$ -- 806
-swap$ -- 160
+substring$ -- 811
+swap$ -- 161
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
-warning$ -- 14
-while$ -- 118
-width$ -- 39
-write$ -- 393
-(There were 14 warnings)
+type$ -- 144
+warning$ -- 15
+while$ -- 120
+width$ -- 40
+write$ -- 404
+(There were 15 warnings)

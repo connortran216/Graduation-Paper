@@ -64,7 +64,7 @@
 \label{subsection:mrcnn_training}
 \noindent
 
-	As mentioned before, we used transfer learning technique to train Mask R-CNN. The dataset we used was described in \ref{subsection:dataset}. With a small pre-processing, we changed the annotation images and exported annotation's information (COCO's format) from it to fit Mask R-CNN's input requirement. In addition, we also applied data augmentation to increase the dataset size in order to avoid over-fitting problem. To be more precise, we created more images by:
+	As mentioned before, we used transfer learning technique to train Mask R-CNN. The dataset we used was described in Subsection \ref{subsection:dataset}. With a small pre-processing, we changed the annotation images and exported annotation's information (COCO's format) from it to fit Mask R-CNN's input requirement. In addition, we also applied data augmentation to increase the dataset size in order to avoid over-fitting problem. To be more precise, we created more images by:
 	
 	\begin{itemize}
 		\item Flipping 50\% images vertically and horizontally, respectively.
@@ -76,7 +76,7 @@
 	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE. Because we only trained the head of the network, we decided to use 20-30 epochs.
 	
 	
-	The result is illustrated in Table \ref{table:exp1}, \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
+	The result is illustrated in Table \ref{table:exp1} and \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
 	
 
 	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}

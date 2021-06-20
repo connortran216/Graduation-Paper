@@ -7,7 +7,7 @@
 
 	Until now, we know how Faster R-CNN extract feature maps by passing the image through lots of convolutional layer. However, while down sampling the image, we also scaled down the RoIs inside the image with a specific factor and round the offset of their bounding boxes. As a result, we create a new bounding box for the object inside which cause missing information and reduce performance of our system.
 	
-	An example \ref{fig:quantization_problem}, it illustrates when we feed 512x512 image to VGG16 and cause quantization on bounding box offset. The blue part is the missing piece data and the one green is a new data created by quantization.
+	An example in Figure \ref{fig:quantization_problem}, it illustrates when we feed 512x512 image to VGG16 and cause quantization on bounding box offset. The blue part is the missing piece data and the one green is a new data created by quantization.
 	
 	\begin{figure}[H]
 		\centering
@@ -16,7 +16,7 @@
 		\label{fig:quantization_problem}
 	\end{figure}
 	
-	As mention before in \ref{subsection:roi_pool}, RoI pooling operation will quantize floating number of RoI offset to a discrete offset. Then this quantized RoI is subdivided into spatial bins which are then aggregated (usually by max pooling) \cite{fasterrcnn}. And once again, we lose vector information. We can look at \ref{fig:quantization_problem} for more details.
+	As mention before in Subsection \ref{subsection:roi_pool}, RoI pooling operation will quantize floating number of RoI offset to a discrete offset. Then this quantized RoI is subdivided into spatial bins which are then aggregated (usually by max pooling) \cite{fasterrcnn}. And once again, we lose vector information. We can look at Figure \ref{fig:quantization_problem} for more details.
 
 \section{An extended solving the problem - Mask R-CNN}
 \label{section:maskrcnn}
@@ -31,7 +31,7 @@
 		\label{fig:maskrcnn}
 	\end{figure}
 	
-	As \ref{fig:maskrcnn} shows that Mask R-CNN is constructed by Faster R-CNN and a small fully convolution neural network. Because it is a stack of convolutional layer, the mask branch only consumes a small computational resource enabling the system to run extremely fast in testing phrase just like Faster R-CNN speed (~0.2s/image). 
+	As Figure \ref{fig:maskrcnn} shows that Mask R-CNN is constructed by Faster R-CNN and a small fully convolution neural network. Because it is a stack of convolutional layer, the mask branch only consumes a small computational resource enabling the system to run extremely fast in testing phrase just like Faster R-CNN speed (~0.2s/image). 
 	
 	It is noticeable that Mask R-CNN’s authors solved the problem of RoI Pooling quantization by proposing a brand-new alternative technique called RoI Align which completely secure spatial locations of bounding box and information inside it. According to the paper, this minor change can affect the result accuracy up to 50\%.
 	
@@ -57,7 +57,7 @@
 \label{subsection:roialign}
 \noindent
 	
-	As mentioned before in \ref{subsection:roi_pool} and \ref{section:problemofFasterRCNN}, RoI pooling's quantization causes missing information two times in it process. Firstly, a quantization operations is executed to map the generated RoI's coordinates (x, y indexes) from floating values to integer ones. Secondly, this quantized RoI is then sub-divided into small boxes whose size are rounded up. As a result, these quantization operations lead us to the problem of misalignment between the RoI and the extracted feature map. Even though, it does not affect the classification or detection task due to the robustness on small adjustment, it is extremely sensitive on the pixel predicting of the segmentation task and impact directly to the model performance.
+	As mentioned before in Subsection \ref{subsection:roi_pool} and Section \ref{section:problemofFasterRCNN}, RoI pooling's quantization causes missing information two times in it process. Firstly, a quantization operations is executed to map the generated RoI's coordinates (x, y indexes) from floating values to integer ones. Secondly, this quantized RoI is then sub-divided into small boxes whose size are rounded up. As a result, these quantization operations lead us to the problem of misalignment between the RoI and the extracted feature map. Even though, it does not affect the classification or detection task due to the robustness on small adjustment, it is extremely sensitive on the pixel predicting of the segmentation task and impact directly to the model performance.
 	
 	To address the problem, Kaiming He and his partners proposed a method called RoI align that erase the harassment of quantization from RoI pool technique. The change is minor but it works significantly effective on segmentation task. By taking advantage of bi-linear interpolation, the whole quantization issue is solved. Similar to RoI pool method, the RoI is divided into pre-fixed number of smaller regions. Within each smaller regions, 4 points are sampled. To be more specific, the calculation does not fall on a specific pixel, and the nearest pixel is used to perform bilinear interpolation on this \textit{virtual pixel} to obtain the pixel value and then max or average operation is executed to get the final result \cite{maskrcnn}.
 
