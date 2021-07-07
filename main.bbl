@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{localvsglobal}
+https://www.matlabsolutions.com/documentation/matlab-basics/change-color-schemes-using-a-colormap.php.
+
+\bibitem{bowl_shape}
+https://de.mathworks.com/help/symbolic/ezsurf.html.
+
 \bibitem{backpropagation}
 Luiz Camargo, Hegler Tissot, and Aurora Pozo.
 \newblock Use of backpropagation and differential evolution algorithms to
@@ -24,6 +30,9 @@ Anca Ciurte, Xavier Bresson, Olivier Cuisenaire, Nawal Houhou, Sergiu
 Nello Cristianini and Elisa Ricci.
 \newblock {\em Support Vector Machines}, pages 928--932.
 \newblock Springer US, Boston, MA, 2008.
+
+\bibitem{roi_align}
+Kemal Erdem, Feb 2020.
 
 \bibitem{espinoza}
 Jimmy Espinoza, Sara Good, Evie Russell, and Wesley Lee.
@@ -59,6 +68,13 @@ Kaiming He, Georgia Gkioxari, Piotr Dollar, and Ross Girshick.
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock Deep residual learning for image recognition.
 \newblock pages 770--778, 06 2016.
+
+\bibitem{saddle_point}
+Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp
+  Hochreiter.
+\newblock Gans trained by a two time-scale update rule converge to a local nash
+  equilibrium.
+\newblock {\em ArXiv pre-print}, pages 6629--, 06 2017.
 
 \bibitem{thomas}
 Thomas Heuvel, Dagmar de~bruijn, Chris de~Korte, and Bram Ginneken.

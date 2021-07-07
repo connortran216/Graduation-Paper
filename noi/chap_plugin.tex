@@ -157,7 +157,7 @@
 	
 	There lots of problems when we try to optimize loss function of a deep learning model. Therefore, in this section, we will focus on several controversial issues such as local minima, saddle point, gradient exploding and gradient vanishing.
 	
-	As mentioned in loss function section, gradient-based method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at Figure \ref{fig:bowl_shape}.
+	As mentioned in loss function section, gradient-based method is mostly apply to train a deep learning model using backpropagation algorithm. Hence, in the process of training a model, the derivative calculation is done continuously and throughout to find the global minimum point of the function representing the data set - $ f (x) $. For ease of visualization, we will look at Figure \ref{fig:bowl_shape}  \cite{bowl_shape}.
 	
 	\begin{figure}[H]
 		\centering
@@ -166,9 +166,9 @@
 		\label{fig:bowl_shape}
 	\end{figure}
 	
-	Assuming this cup-shaped plane is the equation f (x), its minimum point will be in the center of the cup. If we jump into this plane, of course we will slip straight to its minimum point. So when a function converges at its minimum, it optimizes as much as possible in the ability to classify the data. This is the fundamental goal of training: to continue modifying weights until the global minimum has been reached.
+	Assuming this plane is the equation f (x), its minimum point will be in the center of the valley. If we jump into this plane, of course we will slip straight to its minimum point. So when a function converges at its minimum, it optimizes as much as possible in the ability to classify the data. This is the fundamental goal of training: to continue modifying weights until the global minimum has been reached.
 	
-	However, not all functions are cup-shaped. Let's take a look at Figure \ref{fig:global} below for easier visualization.
+	However, not all functions are cup-shaped. Let's take a look at Figure \ref{fig:global} below for easier visualization \cite{localvsglobal}.
 	
 	\begin{figure}[H]
 		\centering
@@ -179,7 +179,7 @@
 	
 	A function of the deep learning model usually takes the same form for many local minima points. Then, the function is susceptible to convergence at local minima points because it can only optimize the function of the model locally. This causes the gradients to be zero early and adversely affects the model's training and its results.
 	
-	Besides local minima, saddle points are also a cause which make gradient vanish early. Although saddle point can cause gradient vanishing, it is not neither local minima nor global minima. 
+	Besides local minima, saddle points are also a cause which make gradient vanish early. Although saddle point can cause gradient vanishing, it is not neither local minima nor global minima. Look at Figure \ref{fig:saddle} for a better understanding \cite{saddle_point} 
 	
 	\begin{figure}[H]
 		\centering

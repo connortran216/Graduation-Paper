@@ -7,7 +7,7 @@
 
 	Until now, we know how Faster R-CNN extract feature maps by passing the image through lots of convolutional layer. However, while down sampling the image, we also scaled down the RoIs inside the image with a specific factor and round the offset of their bounding boxes. As a result, we create a new bounding box for the object inside which cause missing information and reduce performance of our system.
 	
-	An example in Figure \ref{fig:quantization_problem}, it illustrates when we feed 512x512 image to VGG16 and cause quantization on bounding box offset. The blue part is the missing piece data and the one green is a new data created by quantization.
+	An example in Figure \ref{fig:quantization_problem}, it illustrates when we feed 512x512 image to VGG16 and cause quantization on bounding box offset \cite{roi_align}. The blue part is the missing piece data and the one green is a new data created by quantization.
 	
 	\begin{figure}[H]
 		\centering

@@ -73,44 +73,45 @@
 		\item Blurring images using a gaussian kernel with a random standard deviation sampled uniformly (per image) from the interval [0.0, 5.0].
 	\end{itemize}
 	
-	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset.... INTRODUCE the SCORE. Because we only trained the head of the network, we decided to use 20-30 epochs.
+	In the training process, we took advantages by using a pre-trained of Mask R-CNN trained on COCO dataset. Because we only trained the head of the network, we decided to use 20-30 epochs.
 	
+	\textbf{Noted:} Mask RCNN includes a FCN \cite{fcn} and Faster RCNN \cite{f}. Hence, loss weight includes RPN (class loss, bbox loss) and Mask RCNN (class loss, bbox loss, and mask loss).
 	
 	The result is illustrated in Table \ref{table:exp1} and \ref{table:exp2}. All of these configurations were set and fin-tuned based on \cite{maskrcnn} and \url{https://github.com/matterport/Mask_RCNN}.
 	
 
-	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
+	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.14\textwidth}|p{0.14\textwidth}|p{0.14\textwidth}|p{0.14\textwidth}|}
 		\hline
-		& \multicolumn{1}{c|}{\textbf{Test 1}} & \multicolumn{1}{c|}{\textbf{Test 2}} & \multicolumn{1}{c|}{\textbf{Test 3}} & \multicolumn{1}{c|}{\textbf{Test 4}} & \multicolumn{1}{c|}{\textbf{Test 5}} \\ \hline
+		& \multicolumn{1}{c|}{\textbf{Test 1}} & \multicolumn{1}{c|}{\textbf{Test 2}} & \multicolumn{1}{c|}{\textbf{Test 3}} & \multicolumn{1}{c|}{\textbf{Test 4}} \\ \hline
 		\endfirsthead
 		%
-		\multicolumn{6}{c}%
+		\multicolumn{5}{c}%
 		{{\bfseries Table \thetable\ continued from previous page}}
 		\endhead
 		%
-		\textbf{Backbone} & Resnet50 & Resnet50 & Resnet101 & Resnet101 & Resnet101 \\ \hline
-		\textbf{Optimizer} & SGD & Adam & SGD & Adam & SGD \\ \hline
-		\textbf{Learning rate} & 0.001 & 0.001 & 0.001 & 0.001 & 0.0001 \\ \hline
-		\textbf{Weight decay} & 0.0005 & 0.0005 & 0.0005 & 0.0005 & 0.0005 \\ \hline
-		\textbf{Momentum} & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
-		\textbf{Epoch} & 20 & 20 & 20 & 20 & 30 \\ \hline
-		\textbf{Train - Val step} & 150 - 50 & 150 - 50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
-		\textbf{Detection min confidence} & 0 & 0 & 0.9 & 0.9 & 0.9 \\ \hline
-		\textbf{Detection NMS threshold} & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
-		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
-		\textbf{Resize mode} & square & square & square & square & square \\ \hline
-		\multirow{6}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-6} 
-		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-6} 
-		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-6} 
+		\textbf{Backbone} & Resnet50 & Resnet50 & Resnet101 & Resnet101 \\ \hline
+		\textbf{Optimizer} & SGD & Adam & SGD & Adam \\ \hline
+		\textbf{Learning rate} & 0.001 & 0.001 & 0.001 & 0.001 \\ \hline
+		\textbf{Weight decay} & 0.0005 & 0.0005 & 0.0005 & 0.0005 \\ \hline
+		\textbf{Momentum} & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
+		\textbf{Epoch} & 20 & 20 & 20 & 20 \\ \hline
+		\textbf{Train - Val step} & 150 - 50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
+		\textbf{Detection min confidence} & 0 & 0 & 0.9 & 0.9 \\ \hline
+		\textbf{Detection NMS threshold} & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
+		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
+		\textbf{Resize mode} & square & square & square & square \\ \hline
+		\multirow{6}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-5} 
+		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-5} 
+		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-5} 
 		
-		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-6} 
+		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-5} 
 		
-		& mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 \\ \hline
+		& mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 \\ \hline
 		
-		\textbf{mAP} & 0.511111 & 0.822222222 & 0.977777777 & 0.0 & 0.9419753 \\ \hline
-		\textbf{mAR} & 0.533333 & 0.837037037 & 0.977777777 & 0.0 & 0.9703703 \\ \hline
-		\textbf{NOTE} & loss weight balance helps improving the result & Adam shows better much results but training time is slower than SGD & SGD shows it is better in using resnet101 & Training loss went NaN value because lr is high &  \\ \hline
-		
+		\textbf{mAP} & 0.511111 & 0.822222222 & 0.977777777 & 0.0 \\ \hline
+		\textbf{mAR} & 0.533333 & 0.837037037 & 0.977777777 & 0.0 \\ \hline
+%		\textbf{NOTE} & loss weight balance helps improving the result & Adam shows better much results but training time is slower than SGD & SGD shows it is better in using resnet101 & Training loss went NaN value because lr is high &  \\ \hline
+%		
 		\caption{Experiment results}
 		\label{table:exp1}
 	\end{longtable}
@@ -120,38 +121,38 @@
 	% \usepackage{multirow}
 	% \usepackage{longtable}
 	% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
+	\begin{longtable}[c]{|p{0.2\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|}
 		\hline
-		& \multicolumn{1}{c|}{\textbf{Test 6}} & \multicolumn{1}{c|}{\textbf{Test 7}} & \multicolumn{1}{c|}{\textbf{Test 8}} & \multicolumn{1}{c|}{\textbf{Test 9}} & \multicolumn{1}{c|}{\textbf{Test 10}} \\ \hline
+		& \multicolumn{1}{c|}{\textbf{Test 5}} & \multicolumn{1}{c|}{\textbf{Test 6}} & \multicolumn{1}{c|}{\textbf{Test 7}} & \multicolumn{1}{c|}{\textbf{Test 8}} \\ \hline
 		\endhead
 		%
-		\textbf{Backbone} & Resnet50 & Resnet50 & Resnet50 & Resnet101 & Resnet101 \\ \hline
-		\textbf{Optimizer} & Adam & Adam & SGD & SGD & Adam \\ \hline
-		\textbf{Learning rate} & 0.0001 & 0.0001 & 0.001 & 0.001 & 0.0001 \\ \hline
-		\textbf{Weight decay} & 5,00E-05 & 5,00E-05 & 0.0005 & 0.0005 & 0.0005 \\ \hline
-		\textbf{Momentum} & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \hline
-		\textbf{Epoch} & 30 & 30 & 30 & 30 & 30 \\ \hline
-		\textbf{Train - Val step} & 150 - 50 & 150-50 & 150 - 50 & 150 - 50 & 150 - 50 \\ \hline
-		\textbf{Detection min confidence} & 0.7 & 0.7 & 0.7 & 0.7 & 0 \\ \hline
-		\textbf{Detection NMS threshold} & 0.7 & 0.7 & 0.7 & 0.7 & 0.9 \\ \hline
-		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
-		\textbf{Resize mode} & square & square & square & square & square \\ \hline
+		\textbf{Backbone} & Resnet101 & Resnet101 & Resnet50 & Resnet101 \\ \hline
+		\textbf{Optimizer} & Adam & SGD & SGD & SGD \\ \hline
+		\textbf{Learning rate} & 0.0001 & 0.0001 & 0.001 & 0.001 \\ \hline
+		\textbf{Weight decay} & 0.0005 & 0.0005 & 0.0005 & 0.0005 \\ \hline
+		\textbf{Momentum} & 0.9 & 0.9 & 0.7 & 0.7 \\ \hline
+		\textbf{Epoch} & 30 & 30 & 30 & 30 \\ \hline
+		\textbf{Train - Val step} & 150 - 50 & 150-50 & 150 - 50 & 150 - 50 \\ \hline
+		\textbf{Detection min confidence} & 0.9 & 0.9 & 0.7 & 0.7 \\ \hline
+		\textbf{Detection NMS threshold} & 0.9 & 0.9 & 0.7 & 0.7 \\ \hline
+		\textbf{RPN anchor scale} & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 & 16, 32, 64, 128, 256 \\ \hline
+		\textbf{Resize mode} & square & square & square & square \\ \hline
 		
-		\multirow{6}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-6} 
-		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-6} 
-		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, \\ \cline{2-6} 
-		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-6} 
-		& mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 1.0 & mrcnn mask loss: 3.0 \\  \hline
+		\multirow{5}{*}{\textbf{Loss weight}} & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, & rpn class loss: 1.0, \\ \cline{2-5} 
+		& rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, & rpn bbox loss: 1.0, \\ \cline{2-5} 
+		& mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0, & mrcnn class loss: 1.0 \\ \cline{2-5} 
+		& mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, & mrcnn bbox loss: 1.0, \\ \cline{2-5} 
+		& mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 & mrcnn mask loss: 3.0 \\ \hline
 		
-		\textbf{mAP} & 0.43703703 & 0.955555556 & 0.16296298 & 0.9407408 & 0.9629629629 \\ \hline
-		\textbf{mAR} & 0.622222222 & 0.970370370 & 0.16296298 & 0.9851852 & 0.9703703703 \\ \hline
-		\textbf{NOTE} & ??? & ??? & SGD not works well with resnet50 &  &  \\ \hline
+		\textbf{mAP} & 0.9629629629 & 0.9419753 & 0.16296298 & 0.9407408 \\ \hline
+		\textbf{mAR} & 0.9703703703 & 0.9703703 & 0.16296298 & 0.9851852 \\ \hline
+%		\textbf{NOTE} & ??? & ??? & SGD not works well with resnet50 &  \\ \hline
 	
 	\caption{Experiment results}
 	\label{table:exp2}
 	\end{longtable}
 	
-	Firstly, we started our training process with "Test 1" and "Test 2" in order to find out which optimizer was better than the other. In general, it is noticeable that Adam optimizer converged slightly faster than SGD one. Moreover, model with Adam optimizer showed a much better mAP and mAR compared to model with SGD. Yet, the total loss, especially the mask loss was still high (more than 0.4 and 0.2, respectively). Let's look at Figure \ref{fig:loss_12} and \ref{fig:mask_loss_12} for more details.
+	Firstly, we started our training process with \textit{Test 1} and \textit{Test 2} in order to find out which optimizer was better than the other. In general, it is noticeable that Adam optimizer converged slightly faster than SGD one. Moreover, model with Adam optimizer showed a much better mAP and mAR compared to model with SGD. Yet, the total loss, especially the mask loss was still high (more than 0.4 and 0.2, respectively). Let's look at Figure \ref{fig:loss_12} and \ref{fig:mask_loss_12} for more details.
 	
 	\begin{figure}[H]
 		\centering
@@ -174,11 +175,13 @@
 	\end{figure}
 
 \noindent	
-	\textbf{Noted:} In training phrase, we mostly paid attention for the mask loss due to the characteristic of the problem which was instance segmentation. Therefore, we altered the weight balance with the ratio was 1.0 - 1.0 - 3.0 (for classification loss, detection loss, and segmentation loss, respectively) in order to calculate the perimeter of HC with the minimum error using the generated mask.
+	\textbf{Noted:} In training phrase, we mostly paid attention for the mask loss due to the characteristic of the problem which was instance segmentation. herefore, we altered the weight balance with the ratio was 1.0-1.0-1.0-1.0-3.0 in order to calculate the circumference of HC with the minimum error using the generated mask.
 	
- 	In next the experiments, we change the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going \textit{deeper}? And the results were quite significant. In "Test 3", with ResNet101, we improved the model mAP and mAR from ~0.5 to 0.97777 which was the highest score in lots of experiments we had proceeded. However, the total loss of "Test 4" went to NaN due to the high learning rate which showed Adam optimizer was quite sensitive to the high learning rate (overshooting problem). Therefore, in "Test 5" we decreased the learning rate to 0.0001, consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively.
-	
-	Although, Adam optimizer with ResNet101/Resnet50 backbone also showed a remarkable result (Test7, 10), SGD optimizer with ResNet101 backbone illustrated the improvement in results of "Test 3" and "Test 9" with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively.
+ 	In next the experiments, we changed the backbone from ResNet50 to ResNet101 to see could we actually improve the model by going deeper? Besides, we also adjust the detection minimum confidence from 0 to 0.9 (we set it as 0 only the test the pre-trained at first). Hence, the results were remarkably significant. In \textit{Test 3}, with ResNet101, we improved the model mAP and mAR scores from ~0.5 to 0.97777 which were the highest scores in lots of experiments we had proceeded. 
+ 	
+ 	However, in \textit{Test 4} we replaced SGD by Adam again to check which one was better with ResNet101. Thus, the total loss of \textit{Test 4} unexpectedly went to NaN. Naturally, we had a hypothesis was that Adam optimizer was sensitive to the high learning rate (overshooting problem). Therefore, in \textit{Test 5} we decreased the learning rate to 0.0001, consequently, we could boost mAP and mAR score to 0.9419753 and 0.9703703, respectively. So the hypothesis was proved, it was due to the high learning rate that caused overshooting problem to \textit{Test 4}.
+ 	
+	Although, Adam optimizer with ResNet50/Resnet101 backbone also showed a remarkable result \textit{Test 5}, SGD optimizer with ResNet101 backbone illustrated the improvement in results of \textit{Test 3} and \textit{Test 8} with mAP and mAR are (0.977777, 0.977777) and (0.9407408, 0.9851852), respectively. Moreover, based on \textit{Test 1} and \textit{Test 7}, it was confirmed that SGD did not work well with ResNet50.
 	
 	\begin{figure}[H]
 		\centering
@@ -262,9 +265,9 @@
 \subsection{Mask Generator}
 \noindent
 	
-	As the first processing stage, Mask Generator receives a request from Center Processing to segment the fetus's head in an RGB image and returns a binary mask for it. Based on previous experiments, we decide to use the weights from "Test 3" (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
+	As the first processing stage, Mask Generator receives a request from Center Processing to segment the fetus's head in an RGB image and returns a binary mask for it. Based on previous experiments, we decide to use the weights from \textit{Test 3} (which is our best model) to build Mask Generator API despite its imperfection in inference stage (but the result is still acceptable) as Figure \ref{fig:train_test_result} shows. 
 	
-	Even though the whole mask generating process is worked on a non-GPU computer, it still maintains the processing speed at 1~2s per image. Therefore, with a better hardware, we believe that the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
+	Even though the whole mask generating process is worked on a non-GPU computer, it still maintains the processing speed at 1 to 2s per image. Therefore, with a better hardware, we believe that the processing speed will definitely decrease and may achieve real-time processing speed to a certain extent.
 	
 \subsection{Ellipse Fitter}
 \noindent
